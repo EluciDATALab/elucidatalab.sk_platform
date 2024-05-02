@@ -1,0 +1,109 @@
+<header class="bg-sky-900 dark:bg-slate-700 dark:border-gray-500 border-gray-300 p-2 shadow-lg w-full fixed top-0 transition-transform transform duration-700 ease-in-out header-scroll z-50 mb-auto">
+    <nav class="flex justify-between items-center w-[92%] mx-auto">
+        <div>
+            <a href="/jekyll-elucidata/" class="block">
+                <img class="w-48 py-2 cursor-pointer" src="src/assets/logo.png" alt="EluciDATA Logo">
+            </a>
+        </div>
+        <div id="navLinks" class="nav-links duration-500 md:static bg-sky-900 dark:bg-slate-700 md:w-auto w-full flex flex-col items-center md:flex-row">
+            <ul class="flex md:flex-row md:items-center md:gap-[4vw] gap-8">
+                <li>
+                    <a class="relative text-2xl text-slate-50 dark:text-white group" href="skits" onclick="closeMenu()">
+                        Starter Kits
+                        <span class="absolute bottom-0 left-0 w-full h-1 bg-slate-50 dark:bg-slate-300 transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+                    </a>
+                </li>
+                <li>
+                    <a class="relative text-2xl text-slate-50 dark:text-white group" href="blog" onclick="closeMenu()">
+                        Blog
+                        <span class="absolute bottom-0 left-0 w-full h-1 bg-slate-50 dark:bg-slate-300 transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+                    </a>
+                </li>
+                <li>
+                    <a class="relative text-2xl text-slate-50 dark:text-white group" href="community" onclick="closeMenu()">
+                        Community
+                        <span class="absolute bottom-0 left-0 w-full h-1 bg-slate-50 dark:bg-slate-300 transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+                    </a>
+                </li>
+                <li>
+                    <a class="relative text-2xl text-slate-50 dark:text-white group" href="about" onclick="closeMenu()">
+                        About
+                        <span class="absolute bottom-0 left-0 w-full h-1 bg-slate-50 dark:bg-slate-300 transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="md:hidden">
+            <button id="hamburger" class="text-white focus:outline-none">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+        <div id="closeButton" class="md:hidden hidden">
+            <button class="text-white focus:outline-none">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 18L18 6M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    const closeButton = document.getElementById('closeButton');
+    const currentPage = window.location.pathname;
+    const navLinksUnderline = document.querySelectorAll('.nav-links a');
+
+    navLinksUnderline.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+            link.querySelector('span').classList.add('scale-x-100');
+        }
+    });
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('hidden');
+        closeButton.classList.toggle('hidden');
+    });
+
+    closeButton.addEventListener('click', () => {
+        navLinks.classList.add('hidden');
+        closeButton.classList.add('hidden');
+    });
+
+    function closeMenu() {
+        navLinks.classList.add('hidden');
+        closeButton.classList.add('hidden');
+    }
+
+    const header = document.querySelector('.header-scroll');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        if (currentScroll > lastScroll) {
+            header.classList.add('-translate-y-full');
+        } else {
+            header.classList.remove('-translate-y-full');
+        }
+        lastScroll = currentScroll;
+    });
+
+    // Show/hide hamburger button based on screen size
+    const mq = window.matchMedia('(max-width: 767px)');
+
+    function handleMediaQueryChange(mq) {
+        if (mq.matches) {
+            hamburger.classList.remove('hidden');
+            navLinks.classList.add('hidden');
+        } else {
+            hamburger.classList.add('hidden');
+            navLinks.classList.remove('hidden');
+        }
+    }
+
+    handleMediaQueryChange(mq); // Initial check
+    mq.addListener(handleMediaQueryChange); // Listen for changes
+</script>

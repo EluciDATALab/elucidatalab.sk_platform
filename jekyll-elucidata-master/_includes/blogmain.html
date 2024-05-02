@@ -1,0 +1,70 @@
+<main class="mt-16">
+  <section class="header-and-searchbar">
+    <div class="flex flex-col md:justify-between">
+      <h1 class="text-5xl font-bold text-gray-700 m-4 pt-16 text-center">Our Latest Posts</h1>
+      <h3 class="text-3xl font-medium text-gray-700 m-4 text-center">Stay informed and inspired with our up-to-date articles</h3>
+      <hr class="h-1 my-8 m-20 bg-gray-500 border-0">
+    </div>
+  </section>
+
+
+  <section class="flex flex-col md:flex-row justify-center  lg:px-4">
+    <!-- Categories Section -->
+    <div class="w-full md:w-1/5 mb-8 md:mb-0 lg:w-1/6 lg:px-8 px-8">
+      <h2 class="font-bold text-3xl mb-4 text-gray-700">Categories</h2>
+      <div id="archives">
+        {% for category in site.categories %}
+          {% capture category_name %}{{ category | first }}{% endcapture %}
+          <div class="archive-group">
+            {% assign category_posts = site.categories[category_name] | where: "layout", "post" %}
+            {% if category_posts.size > 0 %}
+              <h3 class="category-head font-semibold text-2xl mb-2 text-gray-600 pl-4">{{ category_name }}</h3>
+              <ul class="list-disc pl-12">
+                {% for post in category_posts %}
+                  <li>
+                    <a href="{{ site.baseurl }}{{ post.url }}" class="text-blue-500 hover:underline">{{ post.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    
+    <!-- Blog Posts Section -->
+    <section class="blog-cards w-full md:w-4/5 flex flex-wrap justify-center">
+      {% assign blog_posts = site.posts | where: "layout", "post" %}
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">  
+        {% for post in blog_posts %}
+          <a href="{{ site.baseurl }}{{ post.url }}" class="w-full sm:w-3/4 md:w-full p-8">  <div class="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-700 transform hover:scale-105">
+              <div class="p-6">
+                <img src="{{ post.image }}" alt="{{ post.title }} - Featured Image" class="w-full h-72 object-cover rounded-2xl" />
+                <h2 class="text-xl font-bold text-gray-800 py-4">{{ post.title }}</h2>
+                {% assign words = post.excerpt | split: ' ' %}
+                {% assign limited_words = '' %}
+                {% assign max_words = 20 %}
+                {% for word in words limit: max_words %}
+                  {% assign limited_words = limited_words | append: word | append: ' ' %}
+                {% endfor %}
+                <p class="text-gray-700">{{ limited_words }} ...</p>
+                <div class="flex justify-between flex-wrap md:flex-row">
+                  <p class="text-gray-600 py-2 font-medium">Author: {{ post.author }}</p>
+                  <p class="text-gray-600 py-2 font-medium">Read Time: {{ post.read_time }}</p>
+                  <p class="bg-blue-200 rounded-2xl py-2 text-center border-gray-700 border-2 p-2 text-gray-700 font-medium">
+                    {% if post.categories.size > 0 %}
+                      {{ post.categories }}
+                    {% else %}
+                      No Category
+                    {% endif %}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    </section>
+  </section>
+  
+</main>

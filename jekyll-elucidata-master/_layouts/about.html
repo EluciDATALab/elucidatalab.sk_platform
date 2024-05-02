@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}" class="scroll-smooth">
+
+  {%- include head.html -%}
+
+  <body class="font-[Poppins] bg-gradient-to-br from-gray-50 via-sky-200 to-blue-300 min-h-screen">
+
+    {%- include header.html -%}
+
+    {%- include aboutmain.html -%}
+
+    {%- include footer.html -%}
+
+    {%- include scrolltotop.html -%}
+
+
+    <!-- JavaScript code -->
+    <script>
+      const searchInput = document.querySelector('input[type="search"]');
+
+      searchInput.addEventListener('input', (event) => {
+          const searchTerm = event.target.value;
+          const sanitizedTerm = DOMPurify.sanitize(searchTerm);
+      });
+
+      const currentPage = window.location.pathname;
+      const navLinksUnderline = document.querySelectorAll('.nav-links a');
+
+      navLinksUnderline.forEach(link => {
+          if (link.getAttribute('href') === currentPage) {
+              link.querySelector('span').classList.add('scale-x-100');
+          }
+      })
+
+      const header = document.querySelector('.header-scroll');
+      let lastScroll = 0;
+
+      window.addEventListener('scroll', () => {
+          const currentScroll = window.pageYOffset;
+          if (currentScroll > lastScroll) {
+              header.classList.add('-translate-y-full');
+          } else {
+              header.classList.remove('-translate-y-full');
+          }
+          lastScroll = currentScroll;
+      });
+
+      // Toggle mobile menu
+      const hamburgerBtn = document.getElementById('hamburger');
+      const mobileNav = document.querySelector('.mobile-nav');
+
+      hamburgerBtn.addEventListener('click', () => {
+          mobileNav.classList.toggle('active');
+          hamburgerBtn.querySelector('ion-icon').classList.toggle('transform');
+      });
+  </script>
+  </body> 
+
+</html>
