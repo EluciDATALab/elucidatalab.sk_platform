@@ -35,9 +35,10 @@
     <!-- Blog Posts Section -->
     <section class="blog-cards w-full md:w-4/5 flex flex-wrap justify-center">
       {% assign blog_posts = site.posts | where: "layout", "post" %}
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">  
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
         {% for post in blog_posts %}
-          <a href="{{ site.baseurl }}{{ post.url }}" class="w-full sm:w-3/4 md:w-full p-8">  <div class="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-700 transform hover:scale-105">
+          <a href="{{ site.baseurl }}{{ post.url }}" class="w-full sm:w-3/4 md:w-full p-8">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-700 transform hover:scale-105">
               <div class="p-6">
                 <img src="{{ post.image }}" alt="{{ post.title }} - Featured Image" class="w-full h-72 object-cover rounded-2xl" />
                 <h2 class="text-xl font-bold text-gray-800 py-4">{{ post.title }}</h2>
@@ -49,11 +50,21 @@
                 {% endfor %}
                 <p class="text-gray-700">{{ limited_words }} ...</p>
                 <div class="flex justify-between flex-wrap md:flex-row">
-                  <p class="text-gray-600 py-2 font-medium">Author: {{ post.author }}</p>
-                  <p class="text-gray-600 py-2 font-medium">Read Time: {{ post.read_time }}</p>
+                  <p class="text-gray-600 py-2 font-medium">Author: 
+                    {% if post.author %}
+                      {% assign normalized_authors = post.author | replace: " and ", ", " %}
+                      {% assign authors = normalized_authors | split: ", " %}
+                      {{ authors[0] }}
+                    {% else %}
+                      eluciDATA
+                    {% endif %}
+                  </p>
+                  {% assign word_count = post.content | count_words %}
+                  {% assign read_time = word_count | divided_by: 100 | round %}
+                  <p class="text-gray-600 py-2 font-medium">Read Time: {{ read_time }} min</p>
                   <p class="bg-blue-200 rounded-2xl py-2 text-center border-gray-700 border-2 p-2 text-gray-700 font-medium">
                     {% if post.categories.size > 0 %}
-                      {{ post.categories }}
+                      {{ post.categories | join: ', ' }}
                     {% else %}
                       No Category
                     {% endif %}

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Elucidata - Powered By Sirris">
+    <title>Elucidata - Unravelling volume patterns of Brussels traffic in times of Covid-19</title> 
+    <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Elucidata - Your AI experience" />
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Unravelling volume patterns of Brussels traffic in times of Covid-19 | Elucidata - Your AI experience</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Unravelling volume patterns of Brussels traffic in times of Covid-19" />
+<meta name="author" content="Michiel Dhont, Elena Tsiporkova, Tom Tourwé and Nicolás González-Deleito" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This is the second in a series of blogs, in the context of the MISTic project. In this second blog, we focus on the evolution of traffic during the relaxations of the restrictions, and on providing answers to questions such as “What is the effect from each relaxation of the restrictions on the Brussels traffic?” and “Do people consistently obey the restrictions?”." />
+<meta property="og:description" content="This is the second in a series of blogs, in the context of the MISTic project. In this second blog, we focus on the evolution of traffic during the relaxations of the restrictions, and on providing answers to questions such as “What is the effect from each relaxation of the restrictions on the Brussels traffic?” and “Do people consistently obey the restrictions?”." />
+<link rel="canonical" href="http://localhost:4000/unravelling-volume-patterns-of-brussels" />
+<meta property="og:url" content="http://localhost:4000/unravelling-volume-patterns-of-brussels" />
+<meta property="og:site_name" content="Elucidata - Your AI experience" />
+<meta property="og:image" content="http://localhost:4000/src/assets/cover-photo-blog2_0.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-05-19T00:00:00+02:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/src/assets/cover-photo-blog2_0.jpg" />
+<meta property="twitter:title" content="Unravelling volume patterns of Brussels traffic in times of Covid-19" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Michiel Dhont, Elena Tsiporkova, Tom Tourwé and Nicolás González-Deleito"},"dateModified":"2020-05-19T00:00:00+02:00","datePublished":"2020-05-19T00:00:00+02:00","description":"This is the second in a series of blogs, in the context of the MISTic project. In this second blog, we focus on the evolution of traffic during the relaxations of the restrictions, and on providing answers to questions such as “What is the effect from each relaxation of the restrictions on the Brussels traffic?” and “Do people consistently obey the restrictions?”.","headline":"Unravelling volume patterns of Brussels traffic in times of Covid-19","image":"http://localhost:4000/src/assets/cover-photo-blog2_0.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/unravelling-volume-patterns-of-brussels"},"url":"http://localhost:4000/unravelling-volume-patterns-of-brussels"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="src/assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="src/assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="src/assets/favicon.ico">
+
+    <!-- Google font  -->
+    <link href="https://fonts.googleapis.com/css2?family=Comme:wght@500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:wght@500&display=swap" rel="stylesheet">
+   
+    <!-- Tailwind cascade styling sheet -->
+    <link rel="stylesheet" href="src/styles/output.css" type="text/css">
+   
+    <!-- Icons and small favicons -->
+    <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XT2V9XL90H"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XT2V9XL90H');
+    </script>
+</head>
+<body><html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <nav class="p-5 bg-sky-900 dark:bg-slate-700 shadow md:flex md:items-center md:justify-between z-50">
+      <div class="flex justify-between items-center ">
+        <a href="/" class="text-2xl font-[Poppins] cursor-pointer">
+            <img class="h-10 inline" src="src/assets/logo.png" alt="Logo">
+        </a>
+        
+  
+        <span class="text-3xl cursor-pointer mx-2 md:hidden block text-slate-100">
+          <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+        </span>
+      </div>
+  
+      <ul class="md:flex md:items-center z-50 md:z-auto md:static absolute bg-sky-900 dark:bg-slate-700 w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
+        <li class="mx-4 my-6 md:my-0">
+          <a href="skits" class="text-xl text-slate-100 hover:underline duration-500">Starter Kits</a>
+        </li>
+        <li class="mx-4 my-6 md:my-0">
+          <a href="blog" class="text-xl text-slate-100 hover:underline duration-500">Blog</a>
+        </li>
+        <li class="mx-4 my-6 md:my-0">
+          <a href="community" class="text-xl text-slate-100 hover:underline duration-500">Community</a>
+        </li>
+        <li class="mx-4 my-6 md:my-0">
+          <a href="about" class="text-xl text-slate-100 hover:underline duration-500">About</a>
+        </li>
+  
+  <h2 class=""></h2>
+      </ul>
+    </nav>
+  
+  
+    <script>
+      function Menu(e){
+        let list = document.querySelector('ul');
+        e.name === 'menu' ? (e.name = "close",list.classList.add('top-[80px]') , list.classList.add('opacity-100')) :( e.name = "menu" ,list.classList.remove('top-[80px]'),list.classList.remove('opacity-100'))
+      }
+    </script>
+  </body>
+  </html><main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div id="breadcrumbs" class="bg-slate-50 text-black p-8 m-8 rounded-lg shadow-md">
+    
+    <a href="/" class="text-black hover:underline">Home</a>
+    
+      
+        / <span>Unravelling volume patterns of Brussels traffic in times of Covid-19</span>
+      
+    
+  </div>
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unravelling volume patterns of Brussels traffic in times of Covid-19</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="font-[Poppins] bg-gradient-to-br from-gray-50 via-sky-200 to-blue-300 min-h-screen">
+    <div class="mx-auto px-4 lg:px-60 xl:px-96 pt-32">
+        <h1 class="font-bold flex justify-center text-4xl pt-16 m-4 text-gray-700">Unravelling volume patterns of Brussels traffic in times of Covid-19</h1>
+        <div class="flex justify-between pt-8 p-8">
+            <!-- Left side -->
+            <div class="flex items-center space-x-4">
+                <!-- Dummy image -->
+                <div class="w-12 h-12 flex items-center justify-center border border-gray-300 rounded-full">
+                    <img src="src/assets/author-icon.png" alt="Author face image" class="w-10 h-10 rounded-full">
+                </div>
+                
+                <!-- Author name and post date -->
+                <div class="text-sm">
+                    <div class="font-semibold">Written by  
+                        
+                          Michiel Dhont, Elena Tsiporkova, Tom Tourwé and Nicolás González-Deleito
+                        
+                    </div>
+                    <div class="text-gray-500">On 19 May 2020</div>
+                </div>
+            </div>
+            <!-- Right side -->
+            <div class="flex items-center space-x-4">
+                <!-- Twitter sharing icon -->
+                <a href="https://twitter.com/intent/tweet?url=http://localhost:4000%2Funravelling-volume-patterns-of-brussels" target="_blank" rel="noopener noreferrer" class="w-8 h-8 flex items-center justify-center bg-blue-500 rounded-full">
+                    <i class="fab fa-twitter text-white"></i>
+                </a>
+                <!-- Facebook sharing icon -->
+                <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000%2Funravelling-volume-patterns-of-brussels" target="_blank" rel="noopener noreferrer" class="w-8 h-8 flex items-center justify-center bg-blue-800 rounded-full">
+                    <i class="fab fa-facebook-f text-white"></i>
+                </a>
+                <!-- Link icon (copy link) -->
+                <button onclick="copyToClipboard('http://localhost:4000/unravelling-volume-patterns-of-brussels')" class="w-8 h-8 flex items-center justify-center bg-gray-300 rounded-full cursor-pointer">
+                    <i class="fas fa-link"></i>
+                </button>
+            </div>  
+        </div>
+
+        <!-- Content section -->
+        <div class="prose max-w-none p-8 bg-white rounded-lg shadow-lg">
+            <img src="src/assets/cover-photo-blog2_0.jpg" alt="Unravelling volume patterns of Brussels traffic in times of Covid-19 - Featured Image" class="rounded-xl shadow-lg mb-8">
+            <a href="src/assets/cover-photo-blog2_0.jpg" target="_blank" class="text-center text-blue-600 text-md font-medium pb-8 block hover:underline">Image Link</a>
+            <div class="text-lg leading-relaxed mb-8">
+                <p class="rtejustify"><em>This is the second in a series of blogs, in the context of the </em><a href="https://elucidata.be/projects/mistic"><em>MISTic project</em></a><em> executed by the </em><em><a href="https://elucidata.be/">EluciDATA Lab of Sirris</a> with <a href="https://www.macq.eu/nl_BE/">Macq</a> and <a href="https://www.vub.be/">VUB</a> as partners, concerning the traffic situation in Brussels in times of Covid-19 restrictions. </em></p>
+<p class="rtejustify"><em>Our analysis is based on</em><em> the open dataset of </em><a href="https://mobilite-mobiliteit.brussels/en"><em>Brussels Mobility</em></a><em>, which contains vehicle counts on 55 busy locations in the city of Brussels. In our </em><a href="https://elucidata.be/mistic/blog/insightful-blueprints-brussels-traffic-emerge-times-covid-19"><em>first blog</em></a><em>, we discovered that traffic has dramatically, but unevenly reduced in terms of locations (e.g. less reduction witnessed at the small ring of Brussels) and of time (e.g. evening peaks retained up to 80%). In this second blog, we focus on the evolution of traffic during the relaxations of the restrictions, and on providing answers to questions such as “What is the effect from each relaxation of the restrictions on the Brussels traffic?” and “Do people consistently obey the restrictions?”.</em></p>
+<h2>Traffic fingerprints</h2>
+<p class="rtejustify">Since the Covid-19 restrictions are gradually being relaxed, traffic is slowly returning to 'normal' and allows us to observe the emergence of traffic volumes associated to different activities. Following the approach from the first blog, we have generated characteristic weekly fingerprints for different time periods depicted in the upper row of the figure below. Each of these fingerprints depicts the hourly traffic intensity throughout the (averaged) week. Our baseline (100% traffic volume) is constructed by averaging over 5 'regular' work-school weeks, excluding the school holidays, in January and February 2020. The second fingerprint (Carnival holidays) refers to the school vacation at the end of February, while the remaining fingerprints average traffic intensities over the different phases of the quarantine period e.g. complete lockdown between 14 March and 17 April, followed by opening of the DIY &amp; garden shops, re-starting of companies' activities, re-opening of all other shops.</p>
+<p><img alt="finger_prints_evolution.png" src="src/assets/finger_prints_evolution.png" /></p>
+<p class="rtejustify">The bottom row of this figure depicts the result of subtracting each weekly ‘fingerprint’ from the fingerprint immediately on its left. This highlights better the time slots where traffic has increased (blue) or decreased (orange) compared to the previous ‘fingerprint’.</p>
+<h2>18<sup>th</sup> of April: opening of DIY shops might cause some non-essential traffic</h2>
+<p class="rtejustify">The opening of the DIY and garden shops resulted overall in 7% of traffic increase. Since Brussels is a major city with few DIY shops, we expected to see this increase mostly for some nodes only, and for sure not for nodes located in residential areas. However, we observed a similar increase for all nodes across the entire city. In addition, it appears the traffic volume also increased with a similar amount on Sunday, when shops are closed. All this seems to suggest that <strong>probably not all observed traffic increase is due to DIY-garden shopping.</strong> Perhaps people thought that DIY-shopping could be used as a valid pretext for doing other non-essential commutes?</p>
+<p class="rtejustify">Notice also how the volume didn’t increase consistently for all days: Friday even has a decrease in traffic volume. This Friday is Labour Day, an official bank holiday.</p>
+<h2>4<sup>th</sup> of May: friends or family visits are preferred over going to work again</h2>
+<p class="rtejustify">In the next fingerprint, corresponding to the week in which B2B companies could restart their activities, we see 11% average increase in traffic volume. Even though more people were allowed to go to work again, we see the highest increase in traffic volume on Sunday. This is obviously not due work activities. This particular Sunday was Mother’s Day, and people were allowed to meet with up to 4 other people. <strong>Many</strong><strong> people seem to have seized this opportunity to go visit their relatives and friends.</strong> Note that the very clear increase of traffic on Friday is influenced by the reduced traffic on Labour Day of the week before, so this is probably not significant.</p>
+<h2>11<sup>th</sup> of May: there’s no rush to go shopping</h2>
+<p class="rtejustify">The most recent relaxation, namely the opening of all B2C shops, results only in a <strong>moderate increase of 7% in the overall traffic that seems to be quite nicely spread over all days of the week.</strong> It appears that not everybody rushed to benefit immediately from the shopping opportunities at the same time. This has helped to avoid very busy peak periods at the shopping areas. It is also interesting to note that no increase of traffic was observed on Sunday, 17<sup>th</sup> of May. This indicates that people travelled as much as on the previous Sunday, which was Mother’s Day. Does this mean that people visited their friends on both Sundays, and not their mothers? Or they just visited their mothers again complying strictly to the rule of 4?</p>
+<hr />
+
+<p><em>Project subsidized by the Brussels-Capital Region - Innoviris.</em><a href="https://innoviris.brussels/" target="_blank"><img alt="RGB_innoviris_we fund your future_MAIN LOGO.jpg" src="src/assets/RGB_innoviris_we fund your future_MAIN LOGO.jpg" /></a></p>
+<p>&nbsp;</p>
+<hr />
+
+<p><br />
+<a href="https://elucidata.be/projects/mistic#Blog" target="_self"><img alt="button_to_blog.jpg" src="src/assets/button_to_blog.jpg" /></a></p>
+
+            </div>
+            <hr class="h-0.5 my-8 bg-gray-500 border-0">
+        
+            <p class="mb-4 font-semibold italic text-xl text-gray-700">
+                Let us know what you think about this article. Submit a letter to the editor at
+                
+                <a href="mailto:michieldhont,elenatsiporkova,tomtourwéandnicolásgonzález-deleito">michieldhont,elenatsiporkova,tomtourwéandnicolásgonzález-deleito</a>.
+            </p>
+            <hr class="h-0.5 my-8 bg-gray-500 border-0">
+            <h2 class="mb-4 font-bold text-3xl text-gray-700">You Might Also Like …</h2>
+            <ul class="list-disc pl-4 mb-8">
+            
+            <li class="mb-2">
+                <a href="/2024-07-03-dataexploration" class="text-blue-500 hover:underline"></a>
+            </li>
+            
+            <li class="mb-2">
+                <a href="/testing-dynamic-skit" class="text-blue-500 hover:underline">Dynamic starter kit card</a>
+            </li>
+            
+            <li class="mb-2">
+                <a href="/sdt" class="text-blue-500 hover:underline">Swinging Door Trending</a>
+            </li>
+            
+            <li class="mb-2">
+                <a href="/introduction" class="text-blue-500 hover:underline">Introduction</a>
+            </li>
+            
+            <li class="mb-2">
+                <a href="/samuel-itea-excellence-award" class="text-blue-500 hover:underline">Collaboration with Materialise and Cr3do selected for the ITEA Award of Excellence for Innovation</a>
+            </li>
+            
+            </ul> 
+
+            <hr class="h-0.5 my-8 bg-gray-500 border-0">
+
+            <div class="mb-8">
+                <h2 class="font-bold text-3xl mb-4 text-gray-700">Categories</h2>
+                <ul class="flex flex-wrap text-center justify-start">
+                    
+                    
+                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Prediction</li>
+                    
+                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Company</li>
+                    
+                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Algorithms</li>
+                    
+                </ul>
+            </div>
+            <hr class="h-px my-8 bg-gray-400 border-0">
+        </div>
+    </div>
+        
+    <script>
+        function copyToClipboard(text) {
+            const dummy = document.createElement('textarea');
+            document.body.appendChild(dummy);
+            dummy.value = text;
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
+
+            const messageElement = document.getElementById('copy-message');
+            messageElement.classList.remove('hidden');
+            setTimeout(() => {
+                messageElement.classList.add('hidden');
+            }, 2000); // Hide the message after 2 seconds
+        }
+    </script>
+</body>
+</html>
+
+      </div>
+    </main><footer class="bg-sky-900 dark:bg-slate-700 p-4 border-t-4 border-gray-200 overflow-hidden flex-shrink-0 sticky top-[100vh]">
+    <div class="flex flex-col md:flex-row justify-between items-center h-full">
+        <!-- Left Section -->
+        <div class="flex flex-col items-center mb-4 md:mb-0">
+            <img class="w-full h-full mr-0 flex p-4 md:p-10" src="src/assets/PoweredBySirris_negatif 1.png" alt="Logo">
+            <div class="flex items-center space-x-2">
+                <a href="https://www.facebook.com/Sirris.be" alt="facebook logo" class="text-slate-100 hover:text-blue-500 p-2 md:p-4 text-xl md:text-3xl"><i class="fab fa-facebook"></i> Facebook</a>
+                <a href="https://twitter.com/Sirris_be" alt="twitter logo" class="text-slate-100 hover:text-blue-500 p-2 md:p-4 text-xl md:text-3xl"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="https://be.linkedin.com/company/sirris" alt="linkedin logo" class="text-slate-100 hover:text-blue-500 p-2 md:p-4 text-xl md:text-3xl"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+
+        <!-- Middle Section -->
+        <div class="w-full md:w-auto mb-4 md:mb-0 flex justify-center">
+            <a href="/" class="block">
+                <img class="w-60 md:w-72 cursor-pointer flex items-center" src="src/assets/logo.png" alt="EluciDATA Logo">
+            </a>
+        </div>
+
+        <!-- Right Section -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-center md:text-left mx-4 md:mx-0">
+            <div class="flex flex-col items-center p-4 md:p-10">
+                <ul class="list-none text-center">
+                    <li class="mb-2">
+                        <a href="skits" class="text-slate-100 hover:underline block">
+                            <div class="font-bold pb-2 text-xl">Starter kits</div>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="mb-2">
+                        <a href="/testing-dynamic-skit" class="text-slate-100 hover:underline block">Dynamic starter kit card</a>
+                    </li>
+                    
+                    <li class="mb-2">
+                        <a href="/sdt" class="text-slate-100 hover:underline block">Swinging Door Trending</a>
+                    </li>
+                    
+                    <li class="mb-2">
+                        <a href="/introduction" class="text-slate-100 hover:underline block">Introduction</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div class="flex justify-center items-center p-4 md:p-10">
+                <ul class="list-none text-center">
+                    <li class="mb-2">
+                        <a href="blog" class="text-slate-100 hover:underline block">
+                            <div class="font-bold pb-2 text-xl">Blog</div>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="mb-2">
+                        
+                        
+                        <a href="/samuel-itea-excellence-award" class="text-slate-100 hover:underline block">Collaboration with Materialise...</a>
+                    </li>
+                    
+                    <li class="mb-2">
+                        
+                        
+                        <a href="/conscious-phmc-award" class="text-slate-100 hover:underline block">Our team won...</a>
+                    </li>
+                    
+                    <li class="mb-2">
+                        
+                        
+                        <a href="/the-invisible-war-against-women" class="text-slate-100 hover:underline block">Sir Adas' series...</a>
+                    </li>
+                    
+                    <li class="mb-2">
+                        
+                        
+                        <a href="/giving-circular-economy-a-boost" class="text-slate-100 hover:underline block">Giving circular economy...</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div class="flex flex-col items-center p-4 md:p-10">
+                <ul class="list-none text-center">
+                    <li class="mb-2">
+                        <a href="community" class="text-slate-100 hover:underline block">
+                            <div class="font-bold pb-2 text-xl">Community</div>
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="community#membership" class="text-slate-100 hover:underline block">Membership</a>
+                        <a href="community#contact" class="text-slate-100 hover:underline block">Contact Us</a>
+                        <a href="community#advantages" class="text-slate-100 hover:underline block">Advantages</a>
+                        <a href="community#members" class="text-slate-100 hover:underline block">Our Members</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col items-center p-4 md:p-10">
+                <ul class="list-none text-center">
+                    <li class="mb-2">
+                        <a href="about" class="text-slate-100 hover:underline block">
+                            <div class="font-bold pb-2 text-xl">About Us</div>
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="about#team" class="text-slate-100 hover:underline block">EluciDATA Team</a>
+                        <a href="about#insights" class="text-slate-100 hover:underline block">Our Insights</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Links -->
+    <div class="text-xs text-slate-100 mt-4 text-center">
+        &copy; 2024 EluciDATA. All rights reserved. | 
+        <a href="https://www.sirris.be/en/legal-notice" class="text-white dark:text-slate-50 underline">User Agreement</a> | 
+        <a href="https://www.sirris.be/en/accessibility-statement" class="text-white dark:text-slate-50 underline">Accessibility statement</a>
+    </div>
+</footer>
+</body>
+
+</html>

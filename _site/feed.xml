@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-07-08T09:33:53+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Elucidata - Your AI experience</title><subtitle>Elucidata - AI Starter kits Experience. AI Starter Kits with complementary video tutorials, Interactive Experience, Bring Your Own Data workshops.</subtitle><entry><title type="html"></title><link href="http://localhost:4000/2024-07-03-dataexploration" rel="alternate" type="text/html" title="" /><published>2024-07-08T09:33:53+02:00</published><updated>2024-07-08T09:33:53+02:00</updated><id>http://localhost:4000/2024-07-03-DataExploration</id><content type="html" xml:base="http://localhost:4000/2024-07-03-dataexploration"><![CDATA[<h2 id="introduction">Introduction</h2>
+<p><br /></p>
+<p align="center"><iframe src="https://player.vimeo.com/video/612907452?h=1c07951c12&amp;color=e700ef" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>
+<br /></p>
+<p><br />
+Welcome to the video tutorial for the AI Starter Kit on data exploration. In this first video,
+we will discuss why data exploration is the first step in answering any data science question.</p>
+
+<p>Before starting to use complex algorithms to solve a data science problem, you need to gain a thorough understanding of the corresponding data and the underlying business challenge you are trying to address. Data exploration is the process through which you gain such an understanding. This will eventually enable you to derive viable working hypotheses related to the problem at hand, which is useful for the further analysis and modelling of the data.</p>
+
+<p>Throughout this process you will be faced with different types of variables, for example numerical or categorical, which require different types of treatment. In addition, looking at individual variables in isolation is not sufficient, as this does not consider the, often complex, interactions between different variables. Furthermore, you will need to identify which are the relevant variables in your dataset and, on the other hand, which ones worsen its outcome rather than improving the quality of your analysis. Finally, data exploration will help you to point out which data quality issues your dataset may have and which actions you should undertake to mitigate them.</p>
+
+<p>Amongst others, data exploration is useful to identify usual and unusual values for a variable but also, to study the evolution of a variable over time. It can be helpful to uncover significant relationships between different variables or to assess data quality and suitability.</p>
+
+<p>The goal behind this Starter Kit is to lay out a series of analyses that will teach you how to explore individual variables, look at how pairs of variables are related and study the complex interactions between groups of variables. You will learn how to conduct a quantitative and visual inspection of your dataset and you will be prepared for the next step in your advanced analytics workflow.</p>
+
+<p>In the tutorial of this AI Starter Kit, we follow a systematic approach to explore a dataset, based on the number of variables under consideration. We start by exploring individual variables in isolation, which is the simplest form of analysis and is called univariate analysis. We continue by studying pairs of variables, which is called bivariate analysis. And finally, we study the relationship between several variables, called multivariate analysis before we conclude on our findings. But before diving into this, in the next video, we will first introduce you to the dataset that we will use in this analysis and perform some basic preprocessing on it.</p>
+
+<h2 id="data-understanding-and-preprocessing">Data Understanding and Preprocessing</h2>
+<p><br /></p>
+<p align="center"><iframe src="https://player.vimeo.com/video/612908323?h=0c0a067202&amp;color=e700ef" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>
+<br /></p>
+<p><br />
+Welcome to the second tutorial video of the AI starterkit on data exploration. In this video, we will introduce the data that will be used throughout the tutorial and explain how to preprocess your data before you can start with the statistical exploration.</p>
+
+<p>Throughout the tutorial, we will explore the datasets shared by Pronto, Seattle’s bike sharing system. On the one hand, Pronto provides information about the single stations where you can take a bike. On the other hand, information about the single trips themselves are shared in an anonymized way. While we will have a brief look at the location data, the focus in this tutorial is on the trip data.</p>
+
+<p>Now, let’s have a look at the data sets.</p>
+
+<center><img src="src/assets/DE_figure1.png" width="600" class="center" /></center>
+
+<p>We can see, that - besides the pure geolocation data given by latitude and longitude – quite some information is shared about the single stations. Each station can be uniquely identified either by its id, its name, defined by the street intersection where the station is located and more technically, by its terminal name. We also have details on the size of the station, given by the number of docks available and when the station was put in service, given by the variable “online”. Finally, we also know about the station’s elevation from sea level.</p>
+
+<center><img src="src/assets/DE_figure2.png" width="400" class="center" /></center>
+
+<p>With the geo-coordinates given, we can put the single stations on a map - probably the easiest way for humans to understand where the stations are located. From the map, we deduct that - location-wise - there are two groups of stations in Seattle.</p>
+
+<p>One is located in the University district, while the other is located downtown and in its surroundings for example around Capitol Hill.</p>
+
+<p>Now that we know where the single stations are based, let’s have a look at the trips data in order to understand how the single trips can be linked to actual movements throughout Seattle.</p>
+
+<center><img src="src/assets/DE_figure3.png" width="700" class="center" /></center>
+
+<p>Even though the trip data is anonymized, still quite some information is given. For each trip, given by a unique “trip id”, we know when and from where the trip started and where and when the bike was returned. The resulting trip duration is given in seconds. Further, every bike in use has a unique “bike id” such that we can also follow a single bike. Additionally, we learn something about the single bike users. We know whether it either was an Annual Member having a ride or a Short-Term Pass Holder with a ticket for 1 or 3 days. On top of that, the gender and year of birth of the bike user is shared.</p>
+
+<p>In order to make it possible to also place the single trips on a map later-on, we merge the geographical information
+namely latitude, longitude, and elevation from the stations with the information of the single trips.</p>
+
+<center><img src="src/assets/DE_figure4.png" width="700" class="center" /></center>
+
+<p>Note that we need to execute two merge commands: A first one for the departure station and a second one for the arrival station. An excerpt of the merged data that we will use in the rest of this Starter Kit is shown in the table on the right. For reasons of readability, we show the data here in a transposed manner such that each column provides the information for one single trip.</p>
+
+<p>Before proceeding with the further exploration, we first check the completeness of the data, hence where we observe missing values.</p>
+
+<center><img src="src/assets/DE_figure5.png" width="250" class="center" /></center>
+
+<p>We can see that at most more than 140,000 entries are given. Most variables seem to be complete, except gender and birthyear, which only contain about 87,000 entries. The reason for this is that Short-Term Pass Holders do not need to specify their age and gender, due to which this information is just missing in the data. This can be confirmed by calculating the percentage of data present for these two variables for the single user types.</p>
+
+<center><img src="src/assets/DE_figure6.png" width="250" class="center" /></center>
+
+<p>While for all Annual Members, gender and birthyear are given, it is not known for any of the Short-Term Pass Holders. For our later analysis we want to replace the missing values with meaningful entries. In order to see how to replace them, we first have a look at the existing values.</p>
+
+<center><img src="src/assets/DE_figure7.png" width="600" class="center" /></center>
+
+<p>For the Annual Pass Members, three different gender options are available: Female, Male, and Other. In order to be able to distinguish the missing values from the remaining ones later-on, we replace them by “Unknown”. Interesting is the fact that almost 80% of all users are male. We will get back to this in the following video.</p>
+
+<p>In order to further prepare the data for subsequent analysis, we perform the following actions: First, we convert the variable tripduration which is currently given as a float variable, to a datetime.timedelta object and store it as new variable tripdurationTimeDelta. Further, we add a new variable tripdurationMinutes indicating the duration of a trip in minutes which we keep as a float value.</p>
+
+<p>For further analysis, it can be convenient to work with age instead of year of birth. Therefore, we convert the variable birthyear to an integer and create a new variable age. Finally, we extract from the starttime variable
+the month, the day of the week and the hour of the day, and use the starttime variable to index the data.</p>
+
+<center><img src="src/assets/DE_figure8.png" width="700" class="center" /></center>
+
+<p>The table presents an excerpt of the dataset after these transformations. Note that also here, each column indicates one trip.</p>
+
+<p>With this well-prepared dataset, we can start the actual data exploration in the next video.</p>
+
+<h2 id="univariate-analysis">Univariate Analysis</h2>
+<p><br /></p>
+<p align="center"><iframe src="https://player.vimeo.com/video/612909604?h=4fd431ac74&amp;color=e700ef" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>
+<br /></p>
+<p><br />
+Welcome to the third video on data exploration. In this one, we will concentrate on the univariate analysis of the given data of the Pronto bike-sharing service.</p>
+
+<p>For this, we start by investigating the different variables individually.</p>
+
+<center><img src="src/assets/DE_figure9.png" width="400" class="center" /></center>
+
+<p>We know already that the dataset contains information on more than 140,000 single trips. By checking the first and last date of the trip data, we see that the information is given for exactly one year.</p>
+
+<p>Additionally, we can check how many single bikes and stations are given in the dataset. With more than 480 bikes at over 50 stations, we expect diverse riding behaviour with interesting inter-dependencies.</p>
+
+<p>As a first analysis, we concentrate on the single trip durations because the trip duration directly affects bike availability and the type of service that can be provided by Pronto.</p>
+
+<center><img src="src/assets/DE_figure10.png" width="600" class="center" /></center>
+
+<p>First, we visually check whether there are outliers in trip duration. For this, we plot the distribution of trip durations to spot trips that are much shorter or longer than the remaining ones. Please note that the y-axis is reported in logarithmic scale to improve the readability of the graph.</p>
+
+<p>We observe that bike usage can vary from a few minutes to 480 minutes, or 8h. The latter is probably a limitation due to the service hours of the Pronto service, that is, the maximum amount of time that a bike can be rented during one single day. By just looking at the distribution we cannot notice any anomaly.</p>
+
+<p>In a second step, we have a look at the users’ age as we assume that it influences the bike usage behaviour for example due to health and working status. Consequently, it is relevant to explore the typical users’ age. Similarly to the previous analysis, we analyse the age distribution to spot outliers and let potentially interesting insights emerge.</p>
+
+<center><img src="src/assets/DE_figure11.png" width="600" class="center" /></center>
+
+<p>We see that the youngest user is 16 years old, the oldest one 79. As indicated before, please note that these are only the subscribed users. It is possible that younger or older people use the bikes as well but are Short-Term Pass Holders for which no specific information is available. The biggest group of users is 28 years old, hence the mode of the distribution, while the average age is 35. Interestingly, we can notice that the distribution of the ages is not as smooth as expected: An unexpectedly high number of users is 28 years old. To inspect this anomaly, we proceed with an analysis of the birth years.</p>
+
+<center><img src="src/assets/DE_figure12.png" width="600" class="center" /></center>
+
+<p>By additionally looking at this distribution, we discover that the anomaly may depend on the users’ declared birth year. The histogram indicates that bike rental seems to be quite common for users born in 1985 and 1987, but not for those born in 1986. It is unlikely that these peaks come from a ‘baby-boom’ in the Seattle area in these specific years. This may depend on a limited number of users born in those years which intensively used the service during the year for example, for a sports club with frequent commuters or a reoccurring city trip organized by some youth association. Unfortunately, the data does not include this type of information. In case you want to dig deeper into this anomaly, you could further analyse whether there are bikes that are frequently moving back and forth from or to the same locations in the same period of time for users that were born in 1985 and 1987. But this is beyond the scope of the univariate exploration.</p>
+
+<center><img src="src/assets/DE_figure13.png" width="600" class="center" /></center>
+
+<p>As already discussed in the former video, we also have a look at the gender distribution. Also in this case,
+we should note that we do not have the identity of the users of each ride. Consequently, we cannot exclude that this bar plot is biased by a limited number of men that used the service with an annual pass while more women use short-term passes. Nevertheless, it is a trend that is observed in many Western cities and is often linked to narrow and sometimes dangerous biking lanes.</p>
+
+<p>Finally, we have a look at the single locations where a bike was rented. The Pronto rental service relies on bike availability at each station. For this reason, it is interesting to explore how bikers used these stations and whether some stations are more popular than others.</p>
+
+<center><img src="src/assets/DE_figure14.png" width="700" class="center" /></center>
+
+<p>The bar plots shown here provide the top 10 most and least popular stations of arrival. As you can observe, there is a big difference in terms of trips toward these stations. This can lead to unbalanced stations, where extra bikes need to be continuously moved toward stations with missing bikes. This aspect will be further inspected later on in the tutorial.</p>
+
+<p>From this univariate analysis we already learnt several things about the biking - or at least the subscription – behaviour in Seattle. We know already that the average subscriber is male, around 30 and enjoys going to Pear 69.</p>
+
+<p>In the next video, we will expand our analysis to bivariate analysis in order to better understand how two variables influence each other.</p>
+
+<h2 id="bivariate-analysis">Bivariate Analysis</h2>
+<p><br /></p>
+<p align="center"><iframe src="https://player.vimeo.com/video/612901938?h=675ca4db7a&amp;color=e700ef" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>
+<br /></p>
+<p><br />
+Welcome to the tutorial video on bivariate analysis of the AI Starter Kit on data exploration. In this video we explore the relationships between the variables analysed in the previous videos. Our main focus is on the factors that may have an influence on the number of trips and their duration.</p>
+
+<p>As a starting point, let’s inspect how bikes are used through the different days of the week.</p>
+
+<center><img src="src/assets/DE_figure15.png" width="600" class="center" /></center>
+
+<p>For this, we have a look at a bar plot where the bars represent the number of trips performed on the different days of the week. On top of the bar plot, we plot a line that depicts the median duration of trips for which the scale is given on the right-hand side. The bar plot shows that there are slightly less trips in the weekend, but that they tend to last longer than during weekdays. Across the single weekdays, the number of trips is similar. From this, we can draw the following hypothesis: On the one hand, we have leisure bikers who use the bike recreationally essentially during the weekend. On the other hand, we have weekday users who use the bike for commuting to work with comparably short trips of around 10 minutes.</p>
+
+<p>Let’s try to validate the previous hypothesis by looking at the number of trips per hour, distinguishing between weekdays and weekends.</p>
+
+<center><img src="src/assets/DE_figure16.png" width="600" class="center" /></center>
+
+<p>In this figure, we see the number of trips for weekdays on the left-hand side and for weekends on the right-hand side.
+The angular position in the circles represents the hour of the day while the blue bars show the number of trips for each hour. As weekends consist of two days only compared to 5 weekdays, these figures are misleading.</p>
+
+<p>To have a clear visual comparison of the trips between weekdays and weekends, we need to normalize the data such that we have the number of trips per day. With this, we can avoid that wrong conclusions are drawn.</p>
+
+<center><img src="src/assets/DE_figure17.png" width="600" class="center" /></center>
+
+<p>Now that the data is normalised, we clearly see two different patterns on weekdays and weekends: during weekdays, there are two peaks in the number of trips, occurring during the morning and evening rush hours while on weekends the distribution is much more uniform throughout the day or at least throughout the period comprised between the late morning and the early evening. These patterns support the hypothesis of recreational bike trips at the weekend compared to work- or school-related trips during weekdays.</p>
+
+<p>We can further inspect the rush hours during weekdays to understand whether the rental locations share some similarities. As a first step, we divide the trips in two groups. On the one hand morning rush hours for which we select trips done on weekdays during 7 and 10 in the morning and on the other hand, evening rush hours with trips done on weekdays during 4 in the afternoon and 7 in the evening. Furthermore, for both groups we only retain the top 10 stations of arrival.</p>
+
+<center><img src="src/assets/DE_figure18.png" width="700" class="center" /></center>
+
+<p>The resulting data is shown in this bar plot
+with the morning rush hour on the right- and the evening hours on the left-hand side.
+The y-axis describes how many times a given station was reached.
+A dashed horizontal line at 1400 is drawn to ease the comparison between the bar plots.</p>
+
+<p>By comparing these bar plots, we discover that there are more stations of arrival that count more 1400 visits in morning rush hours than in the evening rush hours. This may indicate that bikers tend to converge in the morning rush hours toward a limited number of stations, like for example close to working places or schools, whereas in the evening rush hours bikers go in different directions like different residential areas. This hypothesis can also justify why stations that are quite popular in the morning rush hours such as Republican Street &amp; Westlake Avenue North or 9th Avenue North &amp; Mercer Street do not appear in the top ten stations of arrival in the evening rush hours and vice versa for Dexter Avenue North &amp; Aloha Street or 1st Avenue &amp; Marion Street. To further compare the difference between stations of arrival in the morning and evening hours, we plot them on the map of Seattle.</p>
+
+<center><img src="src/assets/DE_figure19.png" width="400" class="center" /></center>
+
+<p>The green circles indicate stations that were reached in the morning rush hours while the red circles indicate those stations that were reached in the evening rush hours. The size of each circle is proportional to the number of times that the station was reached. What can we learn from this? First of all, in the area of South Lake Union - just below Lake Union - there are green stations but no red stations. This may mean that this location is more commonly reached by working bikers. Further, the green ones seem to be more ‘condensed’ in the downtown area when compared to the red stations. This may be due to the fact that red stations are reached after working hours. Part of the bikers may decide from 4 to 6 in the afternoon to go back home in more residential areas. Interestingly, none of the top 10 stations is located in the University district. This can have different reasons: Most obviously, students don’t bike to university, maybe because they live close by. Another reason might be that lecture hours are not exactly the same as working hours and finally, the number of non-students is simply bigger than the number of students.</p>
+
+<p>Another influence on the biking behaviour is surely the weather. Even though, we don’t have the weather explicitly given in this tutorial, we know that the chance of rain and cold temperatures in a state like Washington is much higher in the winter months compared to the summer months.</p>
+
+<center><img src="src/assets/DE_figure20.png" width="600" class="center" /></center>
+
+<p>For this reason, it is enough to plot the number of trips against the months. The resulting pattern is as expected: More than double as many bikes are used in summer compared to winter. The most-frequented month is July. Interestingly, the mean trip duration given by the black line is more or less constant during the year.</p>
+
+<p>Let’s see whether on the other hand the trip duration is influenced by the age of a biker.</p>
+
+<center><img src="src/assets/DE_figure21.png" width="500" class="center" /></center>
+
+<p>For this purpose, we visualise the joint distribution of these two variables by means of a scatterplot and compute their Spearman’s correlation. This correlation is chosen to measure the monotonic relationship between the variables. The Spearman’s correlation is chosen in place of the Pearson’s correlation since the latter is not robust to outliers.</p>
+
+<p>As we can see, there is a broad age dispersion over a relatively narrow distribution of trip durations. Longer-lasting trips occur for many ages. Not surprisingly, the Spearman’s correlation is close to zero, hence the age does not seem to play an important role in the duration of trips. Note that driving speed might also play a role, but as we only know where each trip started and ended, we cannot estimate the speed, and hence no further analysis can be done.</p>
+
+<center><img src="src/assets/DE_figure22.png" width="250" class="center" /></center>
+
+<p>Another factor that could influence the trip duration is gender. As we can see, women bike longer with an average duration of about 12 minutes per trip compared to men with an average duration close to 10 minutes per trip. The fact that mean duration of the Unknown group is much longer - namely 36 minutes – suggests that short-term users do not use the bikes for commuting, but rather for leisure purposes.</p>
+
+<p>Additionally, we can have a look at the relationship between gender and age. In the univariate analysis, we highlighted a peak at 28 years. In the present analysis, we can further investigate it by seeing whether or not it is consistent across genders.</p>
+
+<center><img src="src/assets/DE_figure23.png" width="600" class="center" /></center>
+
+<p>We can see that the age distribution is relatively similar between men and women, with a more prominent bike usage around 30 years compared to younger and older ages. The peak at 28 years only clearly stands out for men and Other and remains difficult to interpret.</p>
+
+<p>Another relation that can support our hypothesis on commuters is given by the weekday of the trip and the type of user. Bike users can be distinguished based on the fact that they have an Annual Membership or a Short-Term Pass.</p>
+
+<center><img src="src/assets/DE_figure24.png" width="600" class="center" /></center>
+
+<p>We notice that Short-Term Pass users are more frequently riding a bike on weekends and much less on weekdays, as opposed to annual members. This suggests that Pronto’s choice of offering two types of subscriptions meets the needs of these two types of users. This supports the hypothesis that leisure bikers may often subscribe to a Short-Term Pass whereas bikers with an annual membership are probably commuters that need a bike for commuting to work.</p>
+
+<p>From the univariate analysis we know that the bike-sharing service is more often used by men than by women. Here we explore how this usage is over the days of the week.</p>
+
+<center><img src="src/assets/DE_figure25.png" width="600" class="center" /></center>
+
+<p>In the plot we see that there is no obvious difference in the gender ratio. The most noteworthy difference is the increase of the Unknown gender category over the weekend. As we already saw, this can be explained by the fact that this group represents Short-Term Pass holders, which travel mostly on weekends.</p>
+
+<p>It is possible that there is a relationship between a biker’s gender and the location where the biker is going. For this, we analyse whether there exist stations of arrival that are more popular for one gender than for the others. To this end, we split the trips according to gender. For each group, we compute how frequently each station was reached. Finally, for each station, we compute the ratio between the frequency of arrival for men and women. More specifically, we define the two following ratios: the ratio between the visit frequency for women compared to men and the inverse, namely, the ratio between the visit frequency for men compared to women.</p>
+
+<center><img src="src/assets/DE_figure26.png" width="600" class="center" /></center>
+
+<p>This bar plot reports the top 5 and bottom 5 stations with the highest difference in ratio. If we focus our attention on the dashed line we can see that the top 5 stations for women are at least twice as popular among women than among men. This popularity is quite striking especially for the first two stations on the left. Similar considerations are valid for the bottom 5 stations that are more popular among men than among women. The existence of such gender-related bias in the reached destinations is interesting to explore since it allows to make further assumptions on how city services or workplaces are organized in Seattle. These aspects will be investigated in the next video during the multivariate analysis.</p>
+
+<p>From the univariate analysis we already know that some stations are more popular than others in terms of arrivals. Now, we further inspect this aspect by checking for each station how many bikes arrive and depart. This analysis is important to identify unbalanced stations, namely stations that Pronto needs to take special care of when redistributing bikes among stations.</p>
+
+<center><img src="src/assets/DE_figure27.png" width="600" class="center" /></center>
+
+<p>In this plot we show for each station on the x-axis how many times it was the origin and on the y-axis how often it was the destination of a trip. We also include a dashed straight line to easily identify hub stations where the number of arrivals and departures is similar.</p>
+
+<p>We can observe the existence of unbalanced stations, namely stations that are depicted far away from the diagonal. A station can be unbalanced because many users pick up bikes from there, but few drop them off, or vice versa. From the graph above it is hard to extract further information on these stations. For this reason, we mark on the map of Seattle where these stations are located. To spot insights related to unbalanced stations, we draw stations using different colours and sizes: the green circles show unbalanced stations with more arrivals than departures. The red circles show unbalanced stations with more departures than arrivals. For both holds, the bigger its size, the higher the unbalance.</p>
+
+<p>To ease the visualisation, we only plot the top 10 (unbalanced) stations.</p>
+
+<center><img src="src/assets/DE_figure28.png" width="400" class="center" /></center>
+
+<p>As we can see on the map, the unbalanced stations with highest amount of departures - hence the red circles – are all located on Capitol Hill while the unbalanced stations with highest amount of arrivals - the green circles - are all located downtown. This last finding opens another possible explanation to justify why there are many stations of arrival downtown: bikers may be more prone to use bikes to move downhill. To explore this hypothesis, we again plot the unbalanced stations but now using the elevation from the sea level for the size of the circle.</p>
+
+<center><img src="src/assets/DE_figure29.png" width="400" class="center" /></center>
+
+<p>Comparing this map to the one before, we can confirm our hypothesis, namely that unbalanced stations with more departures than arrivals are the ones located uphill while unbalanced stations with more arrivals than departures are the ones located downhill. This observation provides useful insights for the Pronto system. Indeed, in case of the opening of new stations, we can already foresee whether the station would be unbalanced or not and take this into account for handling the logistics.</p>
+
+<p>With this bivariate analysis, we learnt a lot about the users’ behaviour. In the next video, we will go one step further and perform a multivariate analysis hence take more than two variables into account to find relations between them.</p>
+
+<h2 id="multivariate-analysis">Multivariate Analysis</h2>
+<p><br /></p>
+<p align="center"><iframe src="https://player.vimeo.com/video/612904790?h=6427d908ea&amp;color=e700ef" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>
+<br /></p>
+<p><br />
+Welcome to the fourth tutorial video on data exploration. In the former videos, we concentrated on uni- and bivariate analysis. In this video, we conclude the exploration of the bike-sharing dataset with a more sophisticated multivariate analysis, complementing the analyses presented before.</p>
+
+<p>At the end of the last video, we validated that the elevation plays a major role in explaining why some stations are unbalanced with respect to arrivals and departures. In other terms, the elevation embodies the ‘cost’ that a user has to face when moving between stations that are at different levels. This aspect, that is the cost of reaching nodes within a network, is a general problem that is faced in network analysis for identifying the best routing. For this reason, we continue the previous analysis by focusing on the ‘cost’ of reaching stations without the need of using the elevation explicitly. By making this problem more generic, the proposed analysis can be applied also to other networks where there are ‘costs’ for traveling between nodes which influence routing. We redefine hence the previous problem setting as follows: each bike station represents a node of a network and each node is connected through an edge to all other nodes of the network. The single edges are bidirectional, and each direction has an associated cost. In our case, the cost is represented by the time required for traveling between two stations. We assume that given the same distance, the time required for moving between two stations is determined by the difference in elevation, hence, biking uphill requires more time than biking downhill. As a first step to perform this analysis, we compute the trip duration among unbalanced stations. An excerpt of these trip durations is provided in the table on the right.</p>
+
+<center><img src="src/assets/DE_figure30.png" width="700" class="center" /></center>
+
+<p>The table shows the cost hence, the time it takes to reach a given node when departing from another one and vice versa. In the example, we see that the cost to go from Cal Anderson Park, 11th Avenue &amp; Pine Street to E Harrison Street &amp; Broadway Avenue East is less expensive than taking the return way with a time difference of less than a minute. Hence, it is slightly faster to go in one direction than in the opposite direction.</p>
+
+<center><img src="src/assets/DE_figure31.png" width="600" class="center" /></center>
+
+<p>From this table, we plot a matrix depicting the difference of trip durations between each couple of unbalanced stations. The colour map indicates how much longer the median trip duration is from one station to the other, hence the higher the values, the redder the colour and as such, the bigger is the difference between the costs in the two directions. If the colour tends to a darker blue, the difference is negative such that it takes less time from station A to station B than the return way. To facilitate the visualization of the stations located in Capitol Hill, and therewith with a high elevation, the names of these stations are reported in bold letters.</p>
+
+<p>We observe that the connection from 12th Avenue &amp; E Mercer Street to 2nd Avenue &amp; Spring Street has the largest negative difference indicated by the cell with the most intense blue colour. In addition, we can see that the first one is located in Capitol Hill while the latter is located downtown. Similarly, the connection between Cal Anderson Park, 11th Avenue &amp; Pine Street for example, which is also located in Capitol Hill, to Republican Street &amp; Westlake Avenue North, located downtown, also shows a large negative difference. In fact, all stations located in Capitol Hill show a significant negative difference compared to the stations located downtown. This is consistent with the previous observation that the first group of stations are located at a higher elevation than the second group. Between the stations located downtown we can observe light - positive and negative - differences, which might be due to the particular relief characteristics and traffic organization of Seattle’s downtown road network. Finally, between the stations located in Capitol Hill, we observe a slight positive difference, again likely revealing particular relief and traffic organization characteristics of that area. An exception is the large positive difference observed between 12th Avenue &amp; E Mercer Street and 15th Avenue East &amp; E Thomas Street. If we inspect the elevation of these two stations, we observe that there is a difference of 10m between them, which might at least partially explain their difference in trip duration as other pairs of stations exhibit a higher difference in altitude.</p>
+
+<p>Another interesting fact revealed during the bivariate analysis was the relationship between gender and the stations of arrival. In this analysis we want to further explore how this relationship evolves during the week. As a first step, we take the top ten stations of arrival on weekdays during the morning rush hour. We focus on this time window since we assume that it is used by bikers to go to work. For these stations, we check whether they are more popular among men or women.</p>
+
+<center><img src="src/assets/DE_figure32.png" width="600" class="center" /></center>
+
+<p>We can see that Pier 69, Alaskan Way &amp; Clay Street is twice more popular for women than for men, whereas 9th Avenue North &amp; Mercer Street is twice more popular for men than women. For all other stations, the difference is smaller, meaning that the popularity of a station of arrival in the morning rush hours is similar. If we compare this bar plot with the previous one in the former video we realize that the difference in ratio is significantly lower. This can signify that on weekdays, during rush hours, both men and women are going toward the same gathering places. To inspect this hypothesis, we now focus on stations of arrival during the weekend. The assumption is that during weekends bikers may go to different places than their work location, for example, to follow their personal interests and hobbies. For this reason, we use all stations of arrival that are reached on weekends. For these stations, we check whether they are more popular among men or women.</p>
+
+<center><img src="src/assets/DE_figure33.png" width="600" class="center" /></center>
+
+<p>With this analysis, we discover that during the weekend men and women have different favourite stations of arrival. Moreover, if we compare the last three bar plots, we discover that the ratio  of men vs women of the top stations of arrival changes during the week. Indeed, we can see that on weekends there are in total seven stations where the ratio of women to men or the ratio of men to women is above 2. During weekdays this ratio was above 2 for only two stations. This seems to imply that, in absence of constraints like the location of the working place, gender plays a role on where bikers go. We complete this analysis by plotting the previously identified stations on the map. We distinguish between the following criteria: We use blue circles for the top 10 stations which are reached in the morning rush hours during weekdays, green circles for the top 10 stations which are reached by women during weekends and red circles for the top 10 stations which are reached by men during weekends.</p>
+
+<center><img src="src/assets/DE_figure34.png" width="400" class="center" /></center>
+
+<p>Note that red circles appear in a light red tone, close to orange while superposition of blue and red circles results in a dark red colour and superposition of green and blue circles results in a dark green colour.</p>
+
+<p>The distribution of circles of different colours confirms that the popular arrival stations during weekdays do not match with the popular stations reached by men and women during weekends. Further, it confirms that there are popular locations of arrival during weekends in the University district which were not present during weekdays.</p>
+
+<p>In order to further explain the differences observed during weekends, a more in-depth knowledge about the city and the shared habits of its inhabitants would be required, which falls outside the scope of this tutorial.</p>
+
+<h2 id="key-take-away-messages">Key Take Away Messages</h2>
+<p><br /></p>
+<p align="center"><iframe src="https://player.vimeo.com/video/612906949?h=3b1b51f492&amp;color=e700ef" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>
+<br /></p>
+<p><br />
+Congratulations! You completed the tutorial accompanying the AI Starter Kit on data exploration.</p>
+
+<p>In this Starter Kit we have demonstrated how appropriate statistical and visualisation techniques can help a data scientist in discovering interesting patterns and gathering insights without applying any complex algorithm.</p>
+
+<p>We demonstrated how to explore a dataset by starting from a univariate analysis by means of which we could already get a clear view on who Pronto’s customers are with respect to age and gender, where they like to go, and for how long the single bikes are usually in use. By subsequently adding more information and combining different variables, we were able to reveal relationships between gender and most frequently visited stations but also how the bikes are used for different purposes, like a strong commuter’s pattern during the week and recreational usage on the weekends. Finally, via a multivariate analysis, we figured out how the elevation influences the biking behaviour. By introducing a cost to the single trips, we could explain why at some stations more bike trips are started while at other stations, more bike trips end.</p>
+
+<p>By applying comparably easy visualisations sometimes more insights can be gathered than by applying a sophisticated machine learning model.</p>
+
+<p>We thank you for completing this video series and hope to welcome you in another AI Starter Kit tutorial.</p>]]></content><author><name></name></author></entry><entry><title type="html">Dynamic starter kit card</title><link href="http://localhost:4000/testing-dynamic-skit" rel="alternate" type="text/html" title="Dynamic starter kit card" /><published>2024-02-20T14:06:53+01:00</published><updated>2024-02-20T14:06:53+01:00</updated><id>http://localhost:4000/testing-dynamic-skit</id><content type="html" xml:base="http://localhost:4000/testing-dynamic-skit"><![CDATA[]]></content><author><name>Berre</name></author><category term="Prediction" /><summary type="html"><![CDATA[Example of a commonly used algorithm]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/src/assets/life-prediction.png" /><media:content medium="image" url="http://localhost:4000/src/assets/life-prediction.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Swinging Door Trending</title><link href="http://localhost:4000/sdt" rel="alternate" type="text/html" title="Swinging Door Trending" /><published>2023-12-02T00:00:00+01:00</published><updated>2023-12-02T00:00:00+01:00</updated><id>http://localhost:4000/SDT</id><content type="html" xml:base="http://localhost:4000/sdt"><![CDATA[<p>In this Starter Kit we take a closer look at one particular state-of-the-art technique for intelligent data retention, called Swinging Door Trending (or SDT). Before applying it on our dataset, we first provide an  explanation of how it works conceptually below.</p>
+
+<p>The SDT technique compresses a sequence of data points by using a simplified linear representation. It is computationally simple, so it can run on low-resource devices without significant overhead.</p>
+
+<p>The technique considers an error deviation parameter Δy, which determines the error between the original signal and the compressed signal that one is willing to tolerate. The technique passes through the time series data sequentially, starting with the first two points. The first point is retained, a line is drawn between this point and the second point, and a so-called tolerance band is defined by computing the upper and lower bound, based on the deviation parameter.</p>
+
+<p>An iterative process is started, where the technique considers the next point in the time series and verifies whether that point falls within the tolerance band. If this is the case, the point does not need to be retained and the next data point is considered. This continues until a point is reached that does not fall within the tolerance band, meaning this point cannot be represented by a linear representation between the point last retained and the current point. This last point is then also retained, and a new iterative process starts.</p>
+
+<p>At each step, the tolerance band is also updated. When a next point is considered, its upper and lower bounds are reconsidered. The upper or lower bounds will be updated if the bounds of the next point fall below or above the previous ones, respectively, i.e. if the upper bound of the new point is lower than the previous upper bound, the upper bound is updated, and vice versa for the lower bound.  This ensures that the tolerance band will always become smaller when new points are added, since the more points, the less precise the linear representation will become.</p>
+
+<p>The process can be illustrated by means of an example as follows.</p>
+
+<ul>
+  <li>In a first phase, the technique starts with the first point in the time series, the potential tolerance band starts with the whole area after the point. When the second point is considered, a linear interpolation is constructed between these two points and the tolerance band is updated using the deviation parameter Δy.</li>
+</ul>
+
+<table><tr><td><img src="src/assets/SDTPhase1.png" /></td><td><img src="src/assets/SDTPhase2.png" /></td></tr></table>
+
+<ul>
+  <li>In a second phase, a next point is selected, the new linear representation is constructed between the last point that was retained and the next point, and the new tolerance band is defined. If the next point, i.e. point 4, has the new lower bound lower than the previous lower bound, the tolerance band is not updated (the purple area will not be used as a tolerance band update), similar for the upper bound.</li>
+</ul>
+
+<table><tr><td><img src="src/assets/SK_specific.png" /></td><td><img src="src/assets/SDTPhase4.png" /></td></tr></table>
+
+<ul>
+  <li>As long as there are new points that fall in the tolerance band, they can be represented by the linear representation. Once a new point is considered that falls outside the tolerance band, e.g. point 6, the last point of the linear representation, e.g. point 5, will be retained as the compressed version of points 1 to 5. Starting from point 5 a new linear representation will be constructed with point 6 as the first point to consider.</li>
+</ul>
+
+<table><tr><td><img src="src/assets/SDTPhase5.png" /></td><td><img src="src/assets/SDTPhase6.png" /></td></tr></table>
+
+<p>In this example, the first 5 points will be compressed by a linear representation that is defined by point 1 and point 5, i.e. removing points 2, 3 and 4.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[In this Starter Kit we take a closer look at one particular state-of-the-art technique for intelligent data retention, called Swinging Door Trending (or SDT). Before applying it on our dataset, we first provide an explanation of how it works conceptually below.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/src/assets/SDT_compression.png" /><media:content medium="image" url="http://localhost:4000/src/assets/SDT_compression.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Introduction</title><link href="http://localhost:4000/introduction" rel="alternate" type="text/html" title="Introduction" /><published>2023-12-01T00:00:00+01:00</published><updated>2023-12-01T00:00:00+01:00</updated><id>http://localhost:4000/introduction</id><content type="html" xml:base="http://localhost:4000/introduction"><![CDATA[<p class="text-center">
+  <iframe src="https://player.vimeo.com/video/612907452?h=1c07951c12&amp;color=e700ef" class="max-w-full mx-auto" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>
+</p>
+
+<h2 class="text-3xl font-bold mb-4 py-8" id="description">Description</h2>
+
+<p>More and more assets are instrumented and connected, in order to collect usage and performance data such that
+they can be monitored (semi-)continuously. A large number of sensors can be installed which log data in high frequency, resulting in a large amount of data being collected. Typically, these large volumes of data are transferred to a central server, where they are further analysed. This is not always optimal however:</p>
+
+<ul>
+  <li>
+    <p>a stable communication mechanism is required which can be very expensive or is sometimes simply not available. A vehicle operating in a remote area for example doesn’t always have a decent connection available, and sending huge amounts of data through a satellite connection is quite expensive.</p>
+  </li>
+  <li>
+    <p>if a continuous communication mechanism is not guaranteed, the data is typically stored locally first until it can be offloaded when communication can be established. However, providing storage also has an associated cost and if data is not offloaded periodically, storage will run out and parts of the data will need to be overwritten.</p>
+  </li>
+  <li>
+    <p>when data can be offloaded, e.g. a vehicle is close to a hotspot with a communication mechanism, this has to happen in a limited amount of time. Requiring a vehicle to stay with the sole purpose of offloading data is not acceptable. As such, it is not always possible to offload all data at once.</p>
+  </li>
+</ul>
+
+<p>In such kind of situations, data compression can be applied in order to reduce the size of the data that needs to be stored or transferred. Typically, lossless data compression techniques (such as zip) are considered, but these are suboptimal: not only are they resource demanding, they also consider each data point as equally important. However, since assets rarely fail, data representing normal behaviour is available in abundant quantities, while data representing abnormal behaviour is rather rare. In most cases, the abnormal data is much more interesting to retain at a high level of detail, as a thorough analysis of the abnormality is typically performed in order to determine the root cause. More intelligent data retention methods are able to distinguish between high and low informative data, i.e. abnormal and normal usage data, and can compress the data with low informativeness to a higher degree than the data with high informativeness.</p>
+
+<h3 class="text-2xl font-bold mb-4 py-8" id="business-goal">Business goal</h3>
+
+<p>The business goal related to this Starter Kit is <strong>intelligent data retention</strong>. More specifically, we will present a technique called <em>Swinging Door Trending</em> [1] that considers the informativeness of the data in order to retain at high frequency the interesting data while reducing the frequency of the less interesting data, thereby optimally using the storage or communication means of the asset.  The level of informativeness of the data is typically linked to the application for which the data is used. In this Starter Kit, an <strong>event detection algorithm</strong> will be used to validate the effectiveness of the technique. An intelligent data retention technique should effectively <strong>retain the most important data points</strong> such that the results of the application, in this case event detection, will be the same or only slightly different at most.</p>
+
+<h3 class="text-2xl font-bold mb-4 py-8" id="application-context">Application context</h3>
+
+<ul>
+  <li>
+    <p>Professional vehicles, such as cranes, trucks or airplanes, operating in remote areas without high-speed communication means</p>
+  </li>
+  <li>
+    <p>Wearable devices with a limited amount of memory and computing power that need to transfer data to secondary devices (e.g. a mobile phone)</p>
+  </li>
+  <li>
+    <p>Mobile industrial assets, such as compressors, that are leased and typically not connected to a company’s internal internet infrastructure for safety reasons</p>
+  </li>
+  <li>
+    <p>…</p>
+  </li>
+</ul>
+
+<h3 class="text-2xl font-bold mb-4 py-8" id="starter-kit-outline">Starter Kit outline</h3>
+
+<p>We will first describe the dataset that we will be using for this Starter Kit, which consists of accelerometer data containing six time series signals. Then, we conceptually explain the Swinging Door Trending technique, and apply this on the six signals separately. Afterwards, we apply the technique on the six signals at once, which makes sense since accelerometer signals are often correlated. We then evaluate the results of both compression approaches on a technical level by considering how much they manage to compress the original signals and what is the associated error. Finally, we validate the compression within a concrete application, i.e. event detection.</p>
+
+<h3 class="text-2xl font-bold mb-4 py-8" id="dataset">Dataset</h3>
+
+<p>The dataset used in this Starter Kit concerns over 100 drives of a vehicle that stores usage data while driving. The vehicle does not have a continuous communication means and thus cannot send the usage data to the centralized server continuously. Data can only be transferred when the vehicle reaches a location where a hotspot is installed to off-load the data. In this case, the hotspot is located at the entry of a parking spot, so the amount of time the vehicle is in range of the hostpot is limited, resulting in small amounts of data that can be off-loaded at once. The dataset consists of accelerometer data that is aggregated:
+the raw data is sampled at 200 Hz and two aggregations are calculated and retained each second,
+the <strong>min</strong> and <strong>max</strong> value.
+This results in six signals, identified as <strong>minXAcc, maxXAcc, minYAcc, maxYAcc, minZAcc</strong> and <strong>maxZAcc</strong> at 1 Hz, as shown in the table below.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[More and more assets are instrumented and connected, in order to collect usage and performance data such that they can be monitored (semi-)continuously. A large number of sensors can be installed which log data in high frequency, resulting in a large amount of data being collected. Typically, these large volumes of data are transferred to a central server, where they are further analysed. This is not always optimal however]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/src/assets/SDTPhase5.png" /><media:content medium="image" url="http://localhost:4000/src/assets/SDTPhase5.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Collaboration with Materialise and Cr3do selected for the ITEA Award of Excellence for Innovation</title><link href="http://localhost:4000/samuel-itea-excellence-award" rel="alternate" type="text/html" title="Collaboration with Materialise and Cr3do selected for the ITEA Award of Excellence for Innovation" /><published>2023-06-26T00:00:00+02:00</published><updated>2023-06-26T00:00:00+02:00</updated><id>http://localhost:4000/SAMUEL_ITEA_Excellence_Award</id><content type="html" xml:base="http://localhost:4000/samuel-itea-excellence-award"><![CDATA[<div class="text-md text-gray-700 ">
+
+
+Joint collaboration with Materialise and Cr3do selected for the ITEA Award of Excellence 2023 for Innovation
+
+ Although the additive manufacturing (AM) technology has evolved substantially over the last decades, the overall end to-end process involves many complex steps and still today requires manual input from an engineer at crucial points. We have been collaborating with Materialise and Cr3do to create an AM knowledge base that can assist in all major AM steps. The success of this collaboration has led to the project being selected for the ITEA Award of Excellence 2023 for Innovation
+
+Materialise is the largest company active in 3D-printing world-wide. It was founded in 1990 in Leuven, Belgium and has grown to a company with more than 2.100 employees world-wide, with strong international presence in software, industrial and medical applications with AM. Materialise has the largest group of software developers for AM and with more than 250 high-end industrial printers, is the largest service provider of AM parts in Europe.
+Cr3do is an SME specializing in generating personalized solutions for customers by using modern, smart manufacturing techniques such as AM and laser cutting, to lower the threshold for other SMEs to get started with these technologies. The company provides expertise, 3D modeling services and production of their solutions. Most customers are active in the architectural and residential development sector, for which Cr3do creates high-end 3D models and 3D visuals.
+Although the AM technology has evolved substantially over the last decades, the overall end-to-end process involves many complex steps that still today requires manual input from an engineer at crucial points. We have been collaborating with Materialise and Cr3do in the context of the ITEA3-SAMUEL project to combine an AM engineer’s experience with data-driven machine-learning methods to create an AM knowledge base that can assist in all major AM steps. The focus of the Belgian partners is on use cases related to build-time estimation (BTE) and build preparation (e.g. part orientation and nesting).
+
+Data-driven build-time estimation
+Accurate estimation of build times of 3D objects is of great importance in the different phases of an AM process including: 1) during quotation, an estimation of build time is needed since it impacts the printing cost of a part significantly, 2) during build preparation, part orientation influences build time significantly, hence information on build time can be exploited to find the optimal part orientation and, 3) at planning level, information on build time allows for optimal planning, maximizing machine utilization and minimizing total production time.
+The existing physics-based models can very precisely tackle this task but at the cost of spending a considerable amount of time. An alternative solution is to use a data-driven machine learning method for BTE. However, estimating build times of a dataset of objects with diverse and heterogeneous characteristics is a challenging task for a single learning algorithm.
+
+<figure><img alt="3D objects build time" src="src/assets/samuel_itea_award2.png" /><figcaption>(left) Examples of the modeled 3D objects with diverse characteristics, (right) complex and non-linear relations between the objects’ volumes and their build times</figcaption></figure>
+We therefore investigated the value of the ‘divide-and-conquer’ strategy in partitioning the dataset into subsets of homogeneous objects to facilitate the BTE task for the examined learning models. The usefulness of this strategy has been proven through performing comprehensive experiments. We proposed two different divide-and-conquer algorithms and the experimental results showed that both methods are indeed capable of providing accurate BTEs and can outperform the performance of a single learning method trained with all objects in the dataset. More specifically, the proposed algorithms yielded a mean relative estimation error below 10% for all objects and below 5% for around 40% of the objects in the dataset.
+
+The proposed data-driven divide-and-conquer strategies and the obtained results were published in <a href="https://ieeexplore.ieee.org/xpl/conhome/9679833/proceeding">2021 International Conference on Data Mining Workshops (ICDMW) (DOI: 10.1109/ICDMW53433.2021.00041).</a>
+</div>]]></content><author><name></name></author><category term="Company" /><summary type="html"><![CDATA[We have been collaborating with Materialise and Cr3do to create an AM knowledge base that can assist in all major AM steps. The success of this collaboration has led to the project being selected for the **ITEA Award of Excellence 2023 for Innovation**.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/src/assets/samuel_itea_award1_piqsels.com-id-zmdsp.jpg" /><media:content medium="image" url="http://localhost:4000/src/assets/samuel_itea_award1_piqsels.com-id-zmdsp.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Our team won the Best Industry Paper Award at the IEEE Conference on Prognostics and Health Management</title><link href="http://localhost:4000/conscious-phmc-award" rel="alternate" type="text/html" title="Our team won the Best Industry Paper Award at the IEEE Conference on Prognostics and Health Management" /><published>2023-06-23T00:00:00+02:00</published><updated>2023-06-23T00:00:00+02:00</updated><id>http://localhost:4000/CONSCIOUS_PHMC_Award</id><content type="html" xml:base="http://localhost:4000/conscious-phmc-award"><![CDATA[<p><h3>A team of researchers from our EluciDATA Lab wins Best Industry Paper Award at IEEE Conference on Prognostics and Health Management (Montreal, Québec, June 5 - June 7, 2023)</h3>
+<i>Investigating the performance of industrial assets poses a challenge due to the complex dynamic operating environment that machines typically are exposed to under in real-world conditions. In order to avoid unplanned and expensive downtime it is crucial to properly assess the asset’s health status. Our award-winning paper, titled "Multi-view Contextual Performance Profiling in Rotating Machinery," addresses this challenge by introducing an innovative unsupervised approach. As part of AI-ICON CONSCIOUS project, and in collaboration with <b>I-Care</b> and <b>Engie</b>, our research confronts the task of accurately estimating an asset's performance by considering the varying contexts to which industrial assets are exposed during operation. Our work emphasizes the importance of understanding the factors that shape these contexts and account for them during asset condition monitoring and profiling. We validated the approach on a real-world dataset of feedwater pumps, demonstrating its tangible applicability to industrial problems. In this article we will sketch how our insightful approach can enhance asset management strategies.</i></p>
+<p>&lt;img alt="Multi-view representation for performance profiling" src="../img/blogs/conscious_phmc_award2b.png" style="float:right;width:400px;""/&gt;
+The proposed methodology leverages a <b>multi-view representation</b> and matrix decomposition to derive specific vibration fingerprints characterizing the asset’s behavior in a context-sensitive fashion. The approach processes data in two separate views: the process view and the vibration view.</p>
+
+<p>In the <b>process view</b>, variables related to the asset's internal workings are analyzed and partitioned, with each measurement point associated with a specific label representing the operating modes of the asset.
+On the other hand, the <b>vibration view</b> focuses on extracting vibration profiles through non-negative matrix decomposition. By linking these two views together, the researchers can derive characteristic fingerprints using a suitable contextual representation and performance-related indicators.
+This methodology was validated using real-world industrial data from feedwater pumps, comprising vibration and operational sensor measurements. The results obtained from the validation demonstrate the efficacy of the profiling methodology in delivering meaningful risk assessment estimations associated with different operating contexts. At the 2023 IEEE Conference on Prognostics and Health Management our paper was awarded with the Best Industry Paper Award recognizing the continuous effort we put in our day-to-day work at the EluciDATA Lab to bridge the gap between AI research and practical applications for the industry.</p>
+
+<p>The results obtained from the validation demonstrate the efficacy of the profiling methodology in delivering meaningful risk assessment estimations associated with different operating contexts.
+This award can be seen as an affirmation of our day-to-day work at the EluciDATA Lab to bridge the gap between AI research and practical applications for the industry.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[Our award-winning paper, titled "Multi-view Contextual Performance Profiling in Rotating Machinery," introduces an innovative unsupervised approach for asset performance profiling. The proposed methodology addresses the challenge of accurately estimating an asset's performance by considering the varying contexts to which industrial assets are exposed during operation.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/src/assets/conscious_phmc_award1.jpg" /><media:content medium="image" url="http://localhost:4000/src/assets/conscious_phmc_award1.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Sir Adas’ series The invisible war against women</title><link href="http://localhost:4000/the-invisible-war-against-women" rel="alternate" type="text/html" title="Sir Adas’ series The invisible war against women" /><published>2022-05-24T00:00:00+02:00</published><updated>2022-05-24T00:00:00+02:00</updated><id>http://localhost:4000/the_invisible_war_against_women</id><content type="html" xml:base="http://localhost:4000/the-invisible-war-against-women"><![CDATA[<p>We have not done a lot of SirAdas blogging recently. The workload has taken the upper hand in our daily lives and then there was the insane war in Ukraine. History repeating again … few machos showing off with power and weapons. And as always, the victims are mostly women and children. However, there is another war which has been ongoing for centuries, namely the invisible violence against women. Occasionally we get reminded of it, either via some horrible news in the media or being confronted with it in our own lives. This time it was a regular post from Katrien Van Geystelen, the best voice coach I ever had. Typically, her posts are very cheerful, full of interesting insights and useful tips about how to best use your voice. Not this one! You can read the original post in Dutch here: https://www.linkedin.com/feed/update/urn:li:activity:6929768751680643072/
+For those of you not speaking Dutch, here a very short summary of Katrien’s post. She described how after attending a very inspirational evening event (as she brilliantly puts it, an event with very high “we can” content) for entrepreneurs, she and another female participant had to run scared through an underground parking being chased by 3 young men. Luckily, they managed to reach safely their cars on time.
+Katrien’s story is so recognisable. I’m sure almost every woman has experienced something similar at least once in her life. I had to think about the last time I experienced something like this, about 4-5 years ago. I was at an offsite with my team somewhere in Limburg. In the late afternoon of the second day, my teammates were busy with some team building activities in the gardens of the domain where we were staying.</p>
+
+<p>I decided to go running. It was a warm summer day and I headed towards the forest bordering the domain dressed in jogging shorts. I was just entering the forest when I heard behind me the irritating noise of a motorcycle, which obviously had some problems with its exhaust. Very characteristic! The motorcycle overtook me and the guy driving it gave me some strange feeling. While passing me he turned his head back several times to look at me. A woman knows when it doesn’t feel right!</p>
+
+<p>I continued running for several minutes somewhat alert and anxious. We had a walk in the forest the evening before when we arrived. Thus I knew that the black road through it was about a kilometre long and completely surrounded by very densely grown tall trees. So once inside the forest, nobody outside could see nor hear you anymore.
+All of a sudden I realised that something changed. What? I didn’t hear anymore the irritating noise of badly working motorcycle exhaust. I thought this was strange. He didn’t seem to drive very fast to so quickly disappear, but I could not see far enough since the road was turning. I took the turn and there some 200 meters ahead I could see the guy with the motorcycle standing still (waiting for me?) and looking towards me.</p>
+
+<p>It felt immediately as I needed to make the most important decision of my life. I had to admit that only for some very tiny split second I contemplated to just carry on with running. Then I just turned back sprinting faster and faster as I was hearing somewhere behind me the noise of badly working exhaust approaching …
+In despair, not being able to further increase my pace from exhaustion, I approached the end of the forest seeing through the trees my teammates far away fully occupied with their activities, without any awareness of my struggle. I started jumping (to be seen above the fence) and shouting as crazy. First they ignored me thinking I am just being funny, but at the end one of them run towards me from the other side of the fence. I was safe! At that moment the motorcycle passed next to me, and the guy turned back his head examining carefully my scarcely dressed in jogging shorts body …
+There I was, a successful professional woman, mature and assertive, leading a team of talented people often looking up to me for advice and support, transferred into a humiliated and scared child. Mother of 2 children, but not being able to even have a short running session in the countryside on my own. We had a team dinner that evening. I was still shaken by the afternoon incident, but when I tried to share my state of mind with my, predominantly male, teammates I was shocked by their indifference and disinterest.</p>
+
+<p>They wanted just to have fun, teasing and sharing jokes with each other. I felt as a paranoid female, overdramatising the facts. I started doubting myself, maybe it was not really dangerous. I just over-exaggerated it, I imagined it, …. Did I? No, I didn’t! I was really very lucky! However, many women have been and will be much less lucky as described by Rebecca Solnit in her essay “The longest war” published in https://en.wikipedia.org/wiki/Men_Explain_Things_to_Me.</p>
+
+<p>I do not actually know how to finish my blog. I shared my story with Katrien in response to her post. This is what she wrote back to me: “Yesterday my colleague and I went to the police office to report what happened. To be honest I can write a new story about that… We were not stimulated to report it at all. It’s a shame!”</p>
+
+<p>It is indeed a shame!  The end of the longest war, as Rebecca Solnit defined it, is unfortunately not yet in sight …</p>]]></content><author><name>Elena Tsiporkova</name></author><summary type="html"><![CDATA[We have not done a lot of SirAdas blogging recently. The workload has taken the upper hand in our daily lives and then there was the insane war in Ukraine. History repeating again … few machos showing off with power and weapons. And as always, the victims are mostly women and children. However, there is another war which has been ongoing for centuries, namely the invisible violence against women. Occasionally we get reminded of it, either via some horrible news in the media or being confronted with it in our own lives. This time it was a regular post from Katrien Van Geystelen, the best voice coach I ever had. Typically, her posts are very cheerful, full of interesting insights and useful tips about how to best use your voice. Not this one! You can read the original post in Dutch here: https://www.linkedin.com/feed/update/urn:li:activity:6929768751680643072/ For those of you not speaking Dutch, here a very short summary of Katrien’s post. She described how after attending a very inspirational evening event (as she brilliantly puts it, an event with very high “we can” content) for entrepreneurs, she and another female participant had to run scared through an underground parking being chased by 3 young men. Luckily, they managed to reach safely their cars on time. Katrien’s story is so recognisable. I’m sure almost every woman has experienced something similar at least once in her life. I had to think about the last time I experienced something like this, about 4-5 years ago. I was at an offsite with my team somewhere in Limburg. In the late afternoon of the second day, my teammates were busy with some team building activities in the gardens of the domain where we were staying.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/src/assets/sir_adas_invisible_war.jpg" /><media:content medium="image" url="http://localhost:4000/src/assets/sir_adas_invisible_war.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Giving circular economy a boost by improving refurbishment process of household appliances</title><link href="http://localhost:4000/giving-circular-economy-a-boost" rel="alternate" type="text/html" title="Giving circular economy a boost by improving refurbishment process of household appliances" /><published>2021-11-17T00:00:00+01:00</published><updated>2021-11-17T00:00:00+01:00</updated><id>http://localhost:4000/giving_circular_economy_a_boost</id><content type="html" xml:base="http://localhost:4000/giving-circular-economy-a-boost"><![CDATA[<div class="text-xl text-gray-700 font-semibold">
+A small part of discarded household appliances that are now shredded could be reused or refurbished, or their components reused in the refurbishing process. Refurnished household appliances can offer people in energy poverty an alternative to energy-consuming appliances. Through advanced data analytics and cognitive and assistive operator support the efficiency of the refurbishing process can be increased.
+
+97% of the household appliances are shredded after return or recycled as raw material. In most cases these devices are relatively recent, and up to 10% can be reused or refurbished in an ecologically and economically responsible manner. Moreover, between 15% and 30% of these machines contain functioning components that can be resold as spare parts or reused in the refurbishing process. Providing more refurnished appliances helps families in energy poverty to replace energy-consuming household appliances.<em>&nbsp;</em>
+
+<strong>BrefurbiSH: Increasing efficiency of refurbishing process</strong>
+
+With the support of Innoviris, Sirris, Circular.Brussels and BSH started in 2021 the BrefurbiSH project for increasing the efficiency of the refurbishing process of household appliances through advanced data analytics and cognitive and assistive operator support.
+
+The refurbishing sector is still a very manual labour-intensive sector where target group employees perform a very repetitive sequence of instructions or tasks. In the BrefubiSH project we would increase the efficiency of household refurbishment by providing extra support to the employees. We will gather appliance-specific data before, during and after the refurbishment to extract insights on which appliances are more prone to faults and what type of error is most common. These insights can be fed back to the design process of the same type of appliances as such that design choices can be made to facilitate the refurbishing of household appliances in the future.
+
+Data extracted during the refurbishment can be used to automatically build a refurbishing guideline that is needed to train new target group employees. The traditional refurbishing infrastructure will be enhanced using advanced data analytics and cognitive and assistive operator support. The efficiency will be validated through a pilot infrastructure installed at Circular.Brussels targeting two representative appliances of the BSH appliances, namely washing machines and dishwashers.
+
+<p><em>More information can be found&nbsp;<a href="https://elucidatalab.be/projects/increasing-efficiency-refurbishing-process-household-appliances-through-advanced-data-0" rel="noopener" target="_blank">here</a>.&nbsp;</em></p>
+
+<p><img alt="BrefurbiSH_0.png" src="src/assets/BrefurbiSH_0.png" /></p>
+
+<h3>With the support of&nbsp;</h3>
+
+<p>&nbsp;</p>
+
+<p><img alt="RGB_innoviris_we fund your future_MAIN LOGO.jpg" src="src/assets/RGB_innoviris_we fund your future_MAIN LOGO.jpg" /></p>
+</div>]]></content><author><name></name></author><summary type="html"><![CDATA[A small part of discarded household appliances that are now shredded could be reused or refurbished, or their components reused in the refurbishing process. Refurnished household appliances can offer people in energy poverty an alternative to energy-consuming appliances. Through advanced data analytics and cognitive and assistive operator support the efficiency of the refurbishing process can be increased.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/src/assets/Brefurbish_washer.jpg" /><media:content medium="image" url="http://localhost:4000/src/assets/Brefurbish_washer.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Interview 3E and EluciDATA Lab in the framework of the campaign “AI to boost your SME” by the FPS Economie</title><link href="http://localhost:4000/interview-3e-and-elucidata-lab" rel="alternate" type="text/html" title="Interview 3E and EluciDATA Lab in the framework of the campaign “AI to boost your SME” by the FPS Economie" /><published>2021-08-21T00:00:00+02:00</published><updated>2021-08-21T00:00:00+02:00</updated><id>http://localhost:4000/interview_3e_and_elucidata_lab</id><content type="html" xml:base="http://localhost:4000/interview-3e-and-elucidata-lab"><![CDATA[<div class="text-xl text-gray-700 font-semibold">
+
+In the framework of the campaign "Artificial Intelligence to boost your SME" by the FPS Economie, the EluciDATA Lab shared its experience with the company 3E in an interview.&nbsp;
+
+More information: <a href="https://www.intelligenceartificiellepourpme.be/temoignages/interview-croisee-de-3e-pme-et-sirris-accompagnateur-en-ia?newsletter=1#newsletter">here</a>.&nbsp;
+
+</div>]]></content><author><name></name></author><category term="Algorithms" /><summary type="html"><![CDATA[In the framework of the campaign "Artificial Intelligence to boost your SME" by the FPS Economie, the EluciDATA Lab shared its experience with the company 3E in an interview.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/src/assets/default_news_image.jpg" /><media:content medium="image" url="http://localhost:4000/src/assets/default_news_image.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Today, as a Woman, You Can Do Anything, But You Must Not Do Anything!</title><link href="http://localhost:4000/today-as-a-woman-you-can-do-anything" rel="alternate" type="text/html" title="Today, as a Woman, You Can Do Anything, But You Must Not Do Anything!" /><published>2021-06-16T00:00:00+02:00</published><updated>2021-06-16T00:00:00+02:00</updated><id>http://localhost:4000/today_as_a_woman_you_can_do_anything</id><content type="html" xml:base="http://localhost:4000/today-as-a-woman-you-can-do-anything"><![CDATA[<div class="text-xl text-gray-700 font-semibold">
+
+June 16th, 1963: Vostok 6, with Valentina (Valia) Tereshkova on board, was launched in space. The first, the youngest (only 26) and the only woman who has ever flown in space on a solo mission. Whau!
+
+At that time, me and my identical twin sister were still in the belly of my mother, fighting who will be the first one out to discover the world …. Well, in case you are curious, I kicked her out on an exploration mission.
+
+Tereshkova volunteered in 1961 for the cosmonaut program and was accepted although she had no pilot training. However, she was already an accomplished amateur parachutist. Her Vostok 6 mission lasted just under three days (two days, 23 hours, and 12 minutes). With a single flight, she had logged more flight time than all the US Mercury astronauts who had flown to that date combined. [1,3]
+
+Nevertheless, it cannot be that a woman achieves greatness without the world doubting the genuineness of her achievements. Tereshkova’s flight was for a long time surrounded with some mystery e.g., insinuations that she had been too ill to conduct the planned tests and even hinting that she had challenged orders. There is no evidence suggesting that she was more ill than anybody else (a man) could be expected to be in the given circumstances. She maintained a flight log and performed various tests to collect data on her body’s reaction to spaceflight. Her photographs of Earth and the horizon were later used to identify aerosol layers within the atmosphere. [2]
+
+However, she did challenge orders and she had a very good reason to do so. She discovered very soon after lift-off that the settings for re-entry were incorrect, to the point where she would have sped into outer space, rather than back to Earth. She was eventually sent new settings but had to keep this a secret for 30 years, until the man who made the mistake was dead. [2]
+
+Some months ago, I came across an interesting article mentioning Tereshkova to support the claim that Soviet Russia had a better record of training women in STEM than America does today. The article (based on Roshanna Sylvester contribution at the Russian History Blog) is citing a letter from a girl from Ukraine to Yuri Gagarin. Inspired by Tereshkova’s flight, the girl is confident that even she (as she puts it “a simple village girl”) will be able to fly to the cosmos if receiving the same training as Valia Tereshkova did from Gagarin. In contrast to this, in a letter to John Glenn, an American girl wrote that she would very much like to become an astronaut, but since she is a 15-year-old girl, she fears it would be impossible.[4]
+
+When reading this, I had to think about something Fintje Moerman (Flemish Minister of Economy, Innovation, and Science 2004-2007) said some years ago in a magazine interview: “If I were a man, I would live in a society that was written to my size. Men still set the standard. As a result, they also must face greater social pressure. Today, as a woman, you can do anything, but you must not do anything. The disadvantage is that you must find the drive in yourself. I sometimes miss that in young women. Legally, there is no longer any obstacle and yet they do not seize all opportunities” (free translation from Dutch). [5]
+
+Growing up in the Communist Eastern Europe, I never understood why women here in the Democratic West are often putting limits to themselves and their own professional choices. Women have been for too long pictured and praised only as the perfect mothers and household wives. I guess it was just very convenient (and economically beneficial) to let women do most of the unpaid household work and children and parents’ care. I doubt it really proved very beneficial in the long term to lose the talents of 50% of the population.
+
+It is not that there was no sexism in the Communist Eastern Europe at the time. My mother still did most of the cooking and cleaning, while my father was reading the newspaper. There was of course quite some “mansplaining” too [6]. However, all the mothers were working. My mother could travel for meetings and conferences abroad, while my father was taking care of us. In fact, I did not know anybody whose mother did not work. I never felt that, as a woman, I was limited in my study and career choices and certainly, I did not feel that “hard sciences” and technology are not for me but only for men. My father encouraged me and my sister to study mathematics since he believed this would open many doors for us professionally. It did, indeed!
+
+Tereshkova’s father was a tractor driver and her mother worked in a textile factory. Interested in parachuting from a young age, Tereshkova began skydiving at a local flying club, making her first jump at the age of 22 in May 1959. At the time of her selection as a cosmonaut, she was working as a textile worker in a local factory [1], but this did not stop her to pursue her dream! And it did not stop her to be a mother either!
+
+**Sources:**
+
+* [ESA - First woman in space - Valentina Tereshkova](http://www.esa.int/About_Us/ESA_history/50_years_of_humans_in_space/First_woman_in_space_Valentina) ([1])
+* [Valentina Tereshkova: 'People waste money on wars'](https://www.theguardian.com/global-development-professionals-network/2017/mar/29/valentina-tereshkova-first-woman-in-space-people-waste-money-on-wars) ([2])
+* [Valentina Tereshkova](https://www.britannica.com/biography/Valentina-Tereshkova) ([3])
+* [Soviet Russia Had a Better Record of Training Women in STEM Than America Does Today](https://www.smithsonianmag.com/smart-news/soviet-russia-had-a-better-record-of-training-women-in-stem-than-america-does-today-180948141/) ([4])
+* [Wat als ik een man was geweest?](https://www.knack.be/nieuws/wereld/wat-als-ik-een-man-was-geweest/article-normal-89077.html) ([5])
+* [Mansplaining](https://en.wikipedia.org/wiki/Mansplaining) ([6])
+
+
+</div>]]></content><author><name>Elena Tsiporkova</name></author><summary type="html"><![CDATA[June 16th, 1963; Vostok 6, with Valentina (Valia) Tereshkova on board, was launched in space. The first, the youngest (only 26) and the only woman who has ever flown in space on a solo mission. Whau!]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/src/assets/sir_adas_you_can_do_anything.jpg" /><media:content medium="image" url="http://localhost:4000/src/assets/sir_adas_you_can_do_anything.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

@@ -1,20 +1,19 @@
 <footer class="bg-sky-900 dark:bg-slate-700 p-4 border-t-4 border-gray-200 overflow-hidden flex-shrink-0 sticky top-[100vh]">
-    <!-- Your footer content here -->
     <div class="flex flex-col md:flex-row justify-between items-center h-full">
         <!-- Left Section -->
         <div class="flex flex-col items-center mb-4 md:mb-0">
             <img class="w-full h-full mr-0 flex p-4 md:p-10" src="src/assets/PoweredBySirris_negatif 1.png" alt="Logo">
             <div class="flex items-center space-x-2">
-                <a href="https://www.facebook.com/Sirris.be" class="text-slate-100 hover:text-blue-500 p-2 md:p-4 text-xl md:text-3xl"><i class="fab fa-facebook"></i></a>
-                <a href="https://twitter.com/Sirris_be" class="text-slate-100 hover:text-blue-500 p-2 md:p-4 text-xl md:text-3xl"><i class="fab fa-twitter"></i></a>
-                <a href="https://be.linkedin.com/company/sirris" class="text-slate-100 hover:text-blue-500 p-2 md:p-4 text-xl md:text-3xl"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.facebook.com/Sirris.be" alt="facebook logo" class="text-slate-100 hover:text-blue-500 p-2 md:p-4 text-xl md:text-3xl"><i class="fab fa-facebook"></i> Facebook</a>
+                <a href="https://twitter.com/Sirris_be" alt="twitter logo" class="text-slate-100 hover:text-blue-500 p-2 md:p-4 text-xl md:text-3xl"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="https://be.linkedin.com/company/sirris" alt="linkedin logo" class="text-slate-100 hover:text-blue-500 p-2 md:p-4 text-xl md:text-3xl"><i class="fab fa-linkedin"></i> LinkedIn</a>
             </div>
         </div>
 
         <!-- Middle Section -->
         <div class="w-full md:w-auto mb-4 md:mb-0 flex justify-center">
-            <a href="/jekyll-elucidata/" class="block">
-            <img class="w-60 md:w-72 cursor-pointer flex items-center" src="src/assets/logo.png" alt="EluciDATA Logo">
+            <a href="/" class="block">
+                <img class="w-60 md:w-72 cursor-pointer flex items-center" src="src/assets/logo.png" alt="EluciDATA Logo">
             </a>
         </div>
 
@@ -45,14 +44,14 @@
                     </li>
                     {% assign blog_posts = site.posts | where: "layout", "post" | sort: 'date' | reverse %}
                     {% for post in blog_posts limit:4 %}
-                        <li class="mb-2">
-                            <a href="{{ site.baseurl }}{{ post.url }}" class="text-slate-100 hover:underline block">{{ post.title }}</a>
-                        </li>
+                    <li class="mb-2">
+                        {% assign words = post.title | split: ' ' %}
+                        {% assign truncated_title = words | slice: 0, 3 | join: ' ' %}
+                        <a href="{{ site.baseurl }}{{ post.url }}" class="text-slate-100 hover:underline block">{{ truncated_title | append: '...' }}</a>
+                    </li>
                     {% endfor %}
                 </ul>
             </div>
-            
-            
 
             <div class="flex flex-col items-center p-4 md:p-10">
                 <ul class="list-none text-center">
@@ -66,7 +65,6 @@
                         <a href="community#contact" class="text-slate-100 hover:underline block">Contact Us</a>
                         <a href="community#advantages" class="text-slate-100 hover:underline block">Advantages</a>
                         <a href="community#members" class="text-slate-100 hover:underline block">Our Members</a>
-                   
                     </li>
                 </ul>
             </div>
@@ -87,7 +85,10 @@
         </div>
     </div>
 
+    <!-- Footer Links -->
     <div class="text-xs text-slate-100 mt-4 text-center">
-        &copy; 2024 EluciDATA. All rights reserved. | <a href="#" class="text-white dark:text-slate-50">User Agreement</a> | <a href="#" class="text-white dark:text-slate-50">Privacy Policy</a>
+        &copy; 2024 EluciDATA. All rights reserved. | 
+        <a href="https://www.sirris.be/en/legal-notice" class="text-white dark:text-slate-50 underline">User Agreement</a> | 
+        <a href="https://www.sirris.be/en/accessibility-statement" class="text-white dark:text-slate-50 underline">Accessibility statement</a>
     </div>
 </footer>

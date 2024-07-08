@@ -5,6 +5,7 @@ module.exports = {
       '_includes/**/*.html',
       '_layouts/**/*.html',
       '_posts/*.md',
+      '_posts/**/*.md',
       '*.md',
       '*.html',
       '*.markdown',
@@ -15,4 +16,3 @@ module.exports = {
       },
     plugins: [],
   }
-  
