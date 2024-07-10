@@ -1,10 +1,10 @@
 ---
-excerpt: In the framework of the campaign "Artificial Intelligence to boost your SME" by the FPS Economie, the EluciDATA Lab shared its experience with the company 3E in an interview.
+layout: post
 title: Interview 3E and EluciDATA Lab in the framework of the campaign "AI to boost your SME" by the FPS Economie
 date: 2021-08-21
 image: src/assets/default_news_image.jpg
-categories: Algorithms
-layout: post
+categories: Events
+excerpt: In the framework of the campaign "Artificial Intelligence to boost your SME" by the FPS Economie, the EluciDATA Lab shared its experience with the company 3E in an interview.
 ---
 
 <div class="text-xl text-gray-700 font-semibold">

@@ -1,10 +1,11 @@
 ---
+layout: post
 title: Insightful blueprints of Brussels traffic emerge in times of covid-19
+author: Michiel Dhont and Elena Tsiporkova
 date: 2020-04-29
 image: src/assets/cover photo - blog 1_0.jpg
-summary: In the context of the MISTic project, the EluciDATA Lab of Sirris started in the beginning of 2020 to gather publicly available data of the traffic in Brussels. At that moment, we did not have the slightest suspicion that the escalation of the corona epidemic will deliver a unique real-world dataset for our research. We are happy to share some of our very preliminary findings in this blog. More to follow in the upcoming weeks.
-author: Michiel Dhont and Elena Tsiporkova
-layout: post
+categories: Projects
+excerpt: In the context of the MISTic project, the EluciDATA Lab of Sirris started in the beginning of 2020 to gather publicly available data of the traffic in Brussels. At that moment, we did not have the slightest suspicion that the escalation of the corona epidemic will deliver a unique real-world dataset for our research. We are happy to share some of our very preliminary findings in this blog. More to follow in the upcoming weeks.
 ---
 
 In the context of an industrial PhD project sponsored by Innoviris, the EluciDATA Lab of Sirris joined forces with Macq and VUB to contribute to better traffic management solutions for the city of Brussels. To this end, we aim for developing an advanced trend analytics engine that facilitates understanding traffic situations in an accurate and situation-aware way.
@@ -114,7 +115,7 @@ Another interesting measure for studying Brussels traffic is of course speed. Th
 
 <p><img alt="speeds map.png" src="../img/blogs/speeds map.png" /></p>
 
-It is normal to expect, considering the traffic in Brussels is very saturated, that for many locations the average speed has increased since the start of the covid-19 restrictions. For instance, during a regular workday, the Troontunnel is often clogged with traffic and the maximum allowed speed of 50km/h is hardly possible. It is interesting to observe that, although the morning and evening peaks of traffic volume in the Troontunnel have been reduced with only 21% in the lockdown, the average speed has increased to the legal maximum. Thus, it seems that the modest reduction of traffic volume is already sufficient to permit fluent traffic flow. 
+It is normal to expect, considering the traffic in Brussels is very saturated, that for many locations the average speed has increased since the start of the covid-19 restrictions. For instance, during a regular workday, the Troontunnel is often clogged with traffic and the maximum allowed speed of 50km/h is hardly possible. It is interesting to observe that, although the morning and evening peaks of traffic volume in the Troontunnel have been reduced with only 21% in the lockdown, the average speed has increased to the legal maximum. Thus, it seems that the modest reduction of traffic volume is already sufficient to permit fluent traffic flow.
 
 <p><img alt="Speed_troontunnel.png" src="/sites/default/files/projects/MISTic/Speed_troontunnel.png" /><img alt="Speed_georges.png" src="../img/blogs/Speed_georges.png" /></p>
 

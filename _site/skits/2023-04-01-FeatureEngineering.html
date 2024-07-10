@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Elucidata - Powered By Sirris">
+    <title>Elucidata - Feature Engineering</title>
+    <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/site/feed.xml" title="Elucidata - Your AI experience" />
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Feature Engineering | Elucidata - Your AI experience</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Feature Engineering" />
+<meta name="author" content="EluciDATALab" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Feature engineering for AI" />
+<meta property="og:description" content="Feature engineering for AI" />
+<link rel="canonical" href="http://localhost:4000/site/skits/2023-04-01-FeatureEngineering" />
+<meta property="og:url" content="http://localhost:4000/site/skits/2023-04-01-FeatureEngineering" />
+<meta property="og:site_name" content="Elucidata - Your AI experience" />
+<meta property="og:image" content="http://localhost:4000/src/assets/FE_figure1.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-04-01T00:00:00+02:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/src/assets/FE_figure1.png" />
+<meta property="twitter:title" content="Feature Engineering" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"EluciDATALab"},"dateModified":"2023-04-01T00:00:00+02:00","datePublished":"2023-04-01T00:00:00+02:00","description":"Feature engineering for AI","headline":"Feature Engineering","image":"http://localhost:4000/src/assets/FE_figure1.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/site/skits/2023-04-01-FeatureEngineering"},"url":"http://localhost:4000/site/skits/2023-04-01-FeatureEngineering"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/site/src/assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/site/src/assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/site/src/assets/favicon.ico">
+
+    <!-- Google font  -->
+    <link href="https://fonts.googleapis.com/css2?family=Comme:wght@500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+    <!-- Tailwind cascade styling sheet -->
+    <link rel="stylesheet" href="/site/src/styles/output.css" type="text/css">
+
+    <!-- Icons and small favicons -->
+    <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XT2V9XL90H"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XT2V9XL90H');
+    </script>
+</head>
+<body><html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <nav class="p-5 bg-sky-900 dark:bg-slate-700 shadow md:flex md:items-center md:justify-between z-50">
+      <div class="flex justify-between items-center ">
+        <a href="/" class="text-2xl font-[Poppins] cursor-pointer">
+            <img class="h-10 inline" src="/site/src/assets/logo.png" alt="Logo">
+        </a>
+
+
+        <span class="text-3xl cursor-pointer mx-2 md:hidden block text-slate-100">
+          <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+        </span>
+      </div>
+
+      <ul class="md:flex md:items-center z-50 md:z-auto md:static absolute bg-sky-900 dark:bg-slate-700 w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
+        <li class="mx-4 my-6 md:my-0">
+          <a href="/site/skits" class="text-xl text-slate-100 hover:underline duration-500">Starter Kits</a>
+        </li>
+        <li class="mx-4 my-6 md:my-0">
+          <a href="/site/blog" class="text-xl text-slate-100 hover:underline duration-500">Blog</a>
+        </li>
+        <li class="mx-4 my-6 md:my-0">
+          <a href="/site/community" class="text-xl text-slate-100 hover:underline duration-500">Community</a>
+        </li>
+        <li class="mx-4 my-6 md:my-0">
+          <a href="/site/about" class="text-xl text-slate-100 hover:underline duration-500">About</a>
+        </li>
+
+  <h2 class=""></h2>
+      </ul>
+    </nav>
+
+
+    <script>
+      function Menu(e){
+        let list = document.querySelector('ul');
+        e.name === 'menu' ? (e.name = "close",list.classList.add('top-[80px]') , list.classList.add('opacity-100')) :( e.name = "menu" ,list.classList.remove('top-[80px]'),list.classList.remove('opacity-100'))
+      }
+    </script>
+  </body>
+  </html>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div id="breadcrumbs" class="bg-slate-50 text-black p-8 m-8 rounded-lg shadow-md">
+    <a href="/" class="text-black hover:underline">Home</a>/ <a href="/skits" class="text-blue-600 hover:underline">Starter Kits</a> / <span>Feature Engineering</span>
+  </div>
+<button id="backToTopBtn" class="text-slate-50 bg-slate-700 p-4 fixed bottom-4 right-4 focus:outline-none rounded-full items-center justify-center shadow-md hover:shadow-lg transition duration-300 ease-in-out hidden">
+  Back to top
+</button>
+
+  <script>
+    const backToTopBtn = document.getElementById('backToTopBtn');
+  
+    window.addEventListener('scroll', () => {
+      const scrollPosition = window.scrollY || window.pageYOffset;
+      
+      // Show button after scrolling down 100px
+      if (scrollPosition > 100) {
+        backToTopBtn.classList.remove('hidden');
+      } else {
+        backToTopBtn.classList.add('hidden');
+      }
+    });
+  
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+<style>
+  @media (max-width: 1024px) {
+    #backToTopBtn {
+      display: block !important;
+    }
+  }
+</style><!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feature Engineering</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="font-[Poppins] bg-gradient-to-br from-gray-50 via-sky-200 to-blue-300 min-h-screen">
+    <div class="mt-16 lg:px-30 xl:px-48">
+        <h1 class="font-bold flex justify-center text-4xl pt-16 m-4 text-gray-700">Feature Engineering</h1>
+        <img src="../src/assets/FE_figure1.png" alt="Feature Engineering - Featured Image" class="w-full h-72 object-cover rounded-2xl" />
+        <div class="flex justify-between pt-8 p-8">
+            <!-- Left side -->
+            <div class="flex items-center space-x-4">
+                <!-- Dummy image -->
+                <div class="w-12 h-12 flex items-center justify-center border border-gray-300 rounded-full">
+                    <img src="/site/src/assets/author-icon.png" alt="Author face image" class="w-10 h-10 rounded-full">
+                </div>
+
+                <!-- Author name and post date -->
+                <div class="text-sm">
+                    <div class="font-semibold">Written by
+                        
+                          EluciDATALab
+                        
+                    </div>
+                    <div class="text-gray-500">On 01 Apr 2023</div>
+                </div>
+            </div>
+            <!-- Right side -->
+            <div class="flex items-center space-x-4">
+                <!-- Twitter sharing icon -->
+                <a href="https://twitter.com/intent/tweet?url=http://localhost:4000%2Fskits%2F2023-04-01-FeatureEngineering" target="_blank" rel="noopener noreferrer" class="w-8 h-8 flex items-center justify-center bg-blue-500 rounded-full">
+                    <i class="fab fa-twitter text-white"></i>
+                </a>
+                <!-- Facebook sharing icon -->
+                <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000%2Fskits%2F2023-04-01-FeatureEngineering" target="_blank" rel="noopener noreferrer" class="w-8 h-8 flex items-center justify-center bg-blue-800 rounded-full">
+                    <i class="fab fa-facebook-f text-white"></i>
+                </a>
+                <!-- Link icon (copy link) -->
+                <button onclick="copyToClipboard('http://localhost:4000/skits/2023-04-01-FeatureEngineering')" class="w-8 h-8 flex items-center justify-center bg-gray-300 rounded-full cursor-pointer">
+                    <i class="fas fa-link"></i>
+                </button>
+            </div>
+        </div>
+        <section class="flex flex-col md:flex-row p-8">
+            
+            <!-- <div class="content mt-4">
+                <h2 id="introduction">Introduction</h2>
+<!-- <br/>
+<p align="center"><iframe src="https://player.vim
+            </div> -->
+            
+            <!-- Table of Contents -->
+            <div class="md:w-1/4 p-4">
+                <h2 class="mb-4 font-bold text-3xl text-gray-700">Table of Contents</h2>
+                <ul class='list-disc pl-12'>
+<li><a href="#introduction" class="text-blue-500 hover:underline">Introduction</a></li></ul>
+            </div>
+
+            <!-- Content section -->
+            <div class="md:w-3/4 p-4 lg:px-4">
+                <article class="mb-16 flex flex-col space-y-4 px-8 bg-slate-50 rounded-lg mt-16 p-8" id="">
+                    <!-- <header class="mb-4">
+                        <h2 class="text-3xl font-bold text-gray-700">Feature Engineering</h2>
+                        <h3 class="text-xl font-medium text-gray-500">By EluciDATALab</h3>
+                    </header> -->
+
+                    <div class="content mt-4">
+                        
+                <h2 id='introduction' class='text-3xl font-bold text-gray-700'>Introduction</h2>
+<!-- <br/>
+<p align="center"><iframe src="https://player.vimeo.com/video/612907452?h=1c07951c12&color=e700ef" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+<br/></p>
+<br/> -->
+<h3 id="description">Description</h3>
+
+<p>Most data mining and machine learning algorithms do not work well if you just feed them your raw data: such data often contains noise and the most relevant distinguishing information is often implicit. For example, raw sensor data just contains a timestamp and a corresponding value, while interesting aspects of it might be the trends contained within or the number of times a threshold is exceeded.</p>
+
+<p>Feature engineering is the process of extracting from the raw data the most relevant distinguishing characteristics that will be presented to the algorithm during modeling. It is a way of deriving new information from the existing data, so that its characteristics are more explicitly represented. The resulting features are eventually feed to the AI/ML algorithm of the model. In practice, the feature engineering step is achieved by the selection of the most appropriate parameters, or the composition of new features by manipulation, transformation and combination of the raw data.</p>
+
+<p>Feature engineering is one of the most important and creative steps in the data science workflow. However, there is no clearly-defined formal process for engineering features and, consequently, this requires a lot of creativity, a good understanding of the domain and of the available data, some trial-and-error, etc. It is also desirable to have upfront an idea of the modeling and analysis task for which you want to use the resulting features, as this might help you to identify relevant features.</p>
+
+<h3 id="business-goal">Business goal</h3>
+
+<p>The overall goal of this Starter Kit is to present some <strong>advanced feature engineering steps</strong> related to <strong>feature construction</strong> and <strong>extraction</strong>. By keeping in mind <strong>what is your business question</strong> and <strong>what is the corresponding data science task</strong>, you will be able to derive <strong>valuable features</strong> that can be used in the next stage of your analysis.</p>
+
+<h3 id="application-context">Application context</h3>
+
+<p>Feature engineering is one of the steps in the data science workflow with the most decisive impact on the accuracy of the model you want to develop. It is the final step before actually training the model and it defines how the input data will be fed to the model.</p>
+
+<h3 id="starter-kit-outline">Starter Kit outline</h3>
+
+<p>In this Starter Kit we use a dataset from the Regional Rail System of Pennsylvania. Before starting the feature extraction <em>per se</em>, we will first apply some basic preprocessing to the dataset and have a high-level overview of the data. We will then derive several interesting features from the dataset that can be used to characterise train rides and delays.</p>
+
+            
+                    </div>
+                    <div class="flex justify-center pb-16">
+                        
+                            <a href="https://colab.research.google.com/github/EluciDATALab/elucidatalab.starterkits/blob/main/notebooks/SK_3_3_Feature_Engineering/elucidata_demonstrator_3_3.ipynb" target="_blank" class="mt-4 text-white bg-gradient-to-br from-purple-500 to-blue-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-3xl text-lg px-6 py-3">Access notebook</a>
+                        
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            const dummy = document.createElement('textarea');
+            document.body.appendChild(dummy);
+            dummy.value = text;
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
+
+            const messageElement = document.getElementById('copy-message');
+            messageElement.classList.remove('hidden');
+            setTimeout(() => {
+                messageElement.classList.add('hidden');
+            }, 2000); // Hide the message after 2 seconds
+        }
+    </script>
+</body>
+</html>
+
+      </div>
+    </main><footer class="bg-sky-900 dark:bg-slate-700 p-4 border-t-4 border-gray-200 overflow-hidden flex-shrink-0 sticky top-[100vh]">
+    <div class="flex flex-col md:flex-row justify-between items-center h-full">
+        <!-- Left Section -->
+        <div class="flex flex-col items-center mb-4 md:mb-0">
+            <img class="w-full h-full mr-0 flex p-4 md:p-10" src="/site/src/assets/PoweredBySirris_negatif 1.png" alt="Logo">
+            <div class="flex items-center space-x-2">
+                <a href="https://www.facebook.com/Sirris.be" alt="facebook logo" class="text-slate-100 hover:text-blue-500 p-2 md:p-4 text-xl md:text-3xl"><i class="fab fa-facebook"></i> Facebook</a>
+                <a href="https://twitter.com/Sirris_be" alt="twitter logo" class="text-slate-100 hover:text-blue-500 p-2 md:p-4 text-xl md:text-3xl"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="https://be.linkedin.com/company/sirris" alt="linkedin logo" class="text-slate-100 hover:text-blue-500 p-2 md:p-4 text-xl md:text-3xl"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+
+        <!-- Middle Section -->
+        <div class="w-full md:w-auto mb-4 md:mb-0 flex justify-center">
+            <a href="/" class="block">
+                <img class="w-60 md:w-72 cursor-pointer flex items-center" src="/site/src/assets/logo.png" alt="EluciDATA Logo">
+            </a>
+        </div>
+
+        <!-- Right Section -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-center md:text-left mx-4 md:mx-0">
+            <div class="flex flex-col items-center p-4 md:p-10">
+                <ul class="list-none text-center">
+                    <li class="mb-2">
+                        <a href="skits" class="text-slate-100 hover:underline block">
+                            <div class="font-bold pb-2 text-xl">Starter kits</div>
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+
+            <div class="flex justify-center items-center p-4 md:p-10">
+                <ul class="list-none text-center">
+                    <li class="mb-2">
+                        <a href="blog" class="text-slate-100 hover:underline block">
+                            <div class="font-bold pb-2 text-xl">Blog</div>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="mb-2">
+                        
+                        
+                        <a href="/site/samuel-itea-excellence-award" class="text-slate-100 hover:underline block">Collaboration with Materialise...</a>
+                    </li>
+                    
+                    <li class="mb-2">
+                        
+                        
+                        <a href="/site/conscious-phmc-award" class="text-slate-100 hover:underline block">Our team won...</a>
+                    </li>
+                    
+                    <li class="mb-2">
+                        
+                        
+                        <a href="/site/the-invisible-war-against-women" class="text-slate-100 hover:underline block">Sir Adas' series...</a>
+                    </li>
+                    
+                    <li class="mb-2">
+                        
+                        
+                        <a href="/site/giving-circular-economy-a-boost" class="text-slate-100 hover:underline block">Giving circular economy...</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div class="flex flex-col items-center p-4 md:p-10">
+                <ul class="list-none text-center">
+                    <li class="mb-2">
+                        <a href="community" class="text-slate-100 hover:underline block">
+                            <div class="font-bold pb-2 text-xl">Community</div>
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="community#membership" class="text-slate-100 hover:underline block">Membership</a>
+                        <a href="community#contact" class="text-slate-100 hover:underline block">Contact Us</a>
+                        <a href="community#advantages" class="text-slate-100 hover:underline block">Advantages</a>
+                        <a href="community#members" class="text-slate-100 hover:underline block">Our Members</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col items-center p-4 md:p-10">
+                <ul class="list-none text-center">
+                    <li class="mb-2">
+                        <a href="about" class="text-slate-100 hover:underline block">
+                            <div class="font-bold pb-2 text-xl">About Us</div>
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="about#team" class="text-slate-100 hover:underline block">EluciDATA Team</a>
+                        <a href="about#insights" class="text-slate-100 hover:underline block">Our Insights</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Links -->
+    <div class="text-xs text-slate-100 mt-4 text-center">
+        &copy; 2024 EluciDATA. All rights reserved. |
+        <a href="https://www.sirris.be/en/legal-notice" class="text-white dark:text-slate-50 underline">User Agreement</a> |
+        <a href="https://www.sirris.be/en/accessibility-statement" class="text-white dark:text-slate-50 underline">Accessibility statement</a>
+    </div>
+</footer>
+</body>
+
+</html>

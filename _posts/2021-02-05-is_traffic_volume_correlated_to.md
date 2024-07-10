@@ -1,10 +1,11 @@
 ---
+layout: post
 title: Is traffic volume correlated to Covid-19 infections?
+author: Michiel Dhont, Elena Tsiporkova and Tom Tourwé
 date: 2021-02-05
 image: src/assets/cover photo - blog 5_1.jpg
-summary: This blog is inspired by a quote of virologist Steven Van Gucht in Het Journaal on December 9; “... what is striking is that we move more often... and we know that that is a pretty good prediction of the future number of new infections." Since vehicle counts data is closely connected to people’s movements, it is worthwhile to investigate whether Steven Van Gucht’s statement is valid, i.e., how well traffic intensity correlates with Covid-19 infections.
-author: Michiel Dhont, Elena Tsiporkova and Tom Tourwé
-layout: post
+categories: Intelligent transportation systems
+excerpt: This blog is inspired by a quote of virologist Steven Van Gucht in Het Journaal on December 9; “... what is striking is that we move more often... and we know that that is a pretty good prediction of the future number of new infections." Since vehicle counts data is closely connected to people’s movements, it is worthwhile to investigate whether Steven Van Gucht’s statement is valid, i.e., how well traffic intensity correlates with Covid-19 infections.
 ---
 This is the fifth blog in a series of blogs concerning the traffic situation in Brussels in times of Covid-19 restrictions. This work has been realized in the context of the MISTic project, executed by the EluciDATA Lab of Sirris with Macq and VUB as partners.
 
@@ -18,9 +19,9 @@ Steven Van Gucht
 
 Since vehicle counts data is closely connected to people’s movements, it is worthwhile to investigate whether Steven Van Gucht’s statement is valid, i.e., how well traffic intensity correlates with, or even more predicts peaks in Covid-19 infections.
 
-The blog reveals three main insights: 
-1. a certain threshold in traffic load needs to be exceeded in order to observe an effect on the number of Covid-19 related hospitalisations; 
-2. there is a clear difference in effect on traffic between residential areas and more business strategic locations; 
+The blog reveals three main insights:
+1. a certain threshold in traffic load needs to be exceeded in order to observe an effect on the number of Covid-19 related hospitalisations;
+2. there is a clear difference in effect on traffic between residential areas and more business strategic locations;
 3. peaks in Covid-19 hospitalisations follow peaks in traffic volumes with a very variable time offset depending on the time of the year.
 Less than 16 000 vehicles a day in Brussels controls the pandemic
 

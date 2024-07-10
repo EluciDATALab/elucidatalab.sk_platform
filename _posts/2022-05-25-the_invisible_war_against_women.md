@@ -1,11 +1,12 @@
 ---
-summary: We have not done a lot of SirAdas blogging recently. The workload has taken the upper hand in our daily lives and then there was the insane war in Ukraine. History repeating again … few machos showing off with power and weapons. And as always, the victims are mostly women and children. However, there is another war which has been ongoing for centuries, namely the invisible violence against women.
+layout: post
 title: Sir Adas' series The invisible war against women
 date: 2022-05-24
 image: src/assets/sir_adas_invisible_war.jpg
 author: Elena Tsiporkova
+categories: Sir Adas' series
+excerpt: We have not done a lot of SirAdas blogging recently. The workload has taken the upper hand in our daily lives and then there was the insane war in Ukraine. History repeating again … few machos showing off with power and weapons. And as always, the victims are mostly women and children. However, there is another war which has been ongoing for centuries, namely the invisible violence against women.
 permanent_url: https://www.linkedin.com/pulse/invisible-war-against-women-elena-tsiporkova/?trackingId=dU1x6gAeQ8%2BS9AjSVSkDyw%3D%3D
-layout: post
 ---
 
 
@@ -17,7 +18,7 @@ Katrien’s story is so recognisable. I’m sure almost every woman has experien
 
  I decided to go running. It was a warm summer day and I headed towards the forest bordering the domain dressed in jogging shorts. I was just entering the forest when I heard behind me the irritating noise of a motorcycle, which obviously had some problems with its exhaust. Very characteristic! The motorcycle overtook me and the guy driving it gave me some strange feeling. While passing me he turned his head back several times to look at me. A woman knows when it doesn’t feel right!
 
- 
+
 I continued running for several minutes somewhat alert and anxious. We had a walk in the forest the evening before when we arrived. Thus I knew that the black road through it was about a kilometre long and completely surrounded by very densely grown tall trees. So once inside the forest, nobody outside could see nor hear you anymore.
 All of a sudden I realised that something changed. What? I didn’t hear anymore the irritating noise of badly working motorcycle exhaust. I thought this was strange. He didn’t seem to drive very fast to so quickly disappear, but I could not see far enough since the road was turning. I took the turn and there some 200 meters ahead I could see the guy with the motorcycle standing still (waiting for me?) and looking towards me.
 

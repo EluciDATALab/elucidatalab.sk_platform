@@ -1,0 +1,27 @@
+/* assets/css/styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#breadcrumbs {
+  background-color: #f8fafc; /* Tailwind's slate-50 */
+  color: #000000; /* black */
+  padding: 2rem; /* Tailwind's p-8 */
+  margin: 2rem; /* Tailwind's m-8 */
+  border-radius: 0.5rem; /* Tailwind's rounded-lg */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tailwind's shadow-md */
+}
+
+.text-red-600 {
+  color: #dc2626; /* Tailwind's red-600 */
+}
+
+.text-blue-600 {
+  color: #2563eb; /* Tailwind's blue-600 */
+}
+
+.hover\:underline:hover {
+  text-decoration: underline;
+}

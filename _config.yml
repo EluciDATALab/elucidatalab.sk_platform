@@ -33,7 +33,7 @@ permalink: /:slug
 postcss:
   plugins:
     - jekyll-postcss
-    - jekyll-paginate
+    # - jekyll-paginate
     - jekyll-sitemap
     - autoprefixer
     - postcss-import
@@ -42,10 +42,12 @@ postcss:
         autoprefixer: false
         safe: true
 
-
-paginate: 10
-paginate_path: "/page:num"
+# plugins:
+#   - jekyll-paginate
+# paginate: 10
+# paginate_path: "/page:num"
 baseurl: "/site"
+incremental: true
 
 # Documentation settings
 collections:

@@ -1,11 +1,11 @@
 ---
-summary: It is Corona times and there is not much to do in the evenings. Thus, we bought a Netflix subscription some months ago and The Queen’s Gambit was one of the first things we enjoyed. The celebrated drama series is telling the story of the genius female chess player, wining all games against men - not many women in the game in the 1960s.  Of course, she could only do this thanks to her drug and alcohol dependency. No woman can beat a man in an intellectual game without some help from outside, right!
+layout: post
 title: Sir Adas' series; Women cannot play chess!
 date: 2021-06-04
 image: src/assets/sir_adas_women_cannot_play_chess.jpeg
 author: Elena Tsiporkova
-permanent_url: https://www.linkedin.com/pulse/women-cannot-play-chess-elena-tsiporkova/
-layout: post
+categories: Sir Adas' series
+excerpt: It is Corona times and there is not much to do in the evenings. Thus, we bought a Netflix subscription some months ago and The Queen’s Gambit was one of the first things we enjoyed. The celebrated drama series is telling the story of the genius female chess player, wining all games against men - not many women in the game in the 1960s.  Of course, she could only do this thanks to her drug and alcohol dependency. No woman can beat a man in an intellectual game without some help from outside, right!
 ---
 
 
