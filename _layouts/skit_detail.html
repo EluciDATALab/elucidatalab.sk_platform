@@ -4,6 +4,8 @@ layout: default
 
 {% include breadcrumbs.html %}
 
+{%- include scrolltotop.html -%}
+
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}" class="scroll-smooth">
 <head>
@@ -53,38 +55,14 @@ layout: default
             </div>
         </div>
         <div class="flex">
+            {% capture html_content %}
+                {{ content | markdownify}}
+            {% endcapture %}
+            {% assign content_with_ids = html_content | add_id_to_h2 %}
             <!-- Table of Contents -->
-            <div class="md:w-1/4 p-4">
+            <div class="toc">
                 <h2 class="mb-4 font-bold text-3xl text-gray-700">Table of Contents</h2>
-                <ul class="list-disc pl-4 mb-8 text-2xl">
-                    {% capture headings %}
-                        {{ content | markdownify}}
-                    {% endcapture %}
-                    {% assign headings_list = headings | split: '<h2' %}
-                    {% for heading in headings_list %}
-                        <h2 class="text-3xl font-bold text-gray-700">{{ heading }}</h2>
-                        <h1 class="text-3xl font-bold text-gray-700">'---- DONE ----'</h1>
-                        {% if forloop.first %}
-                          <!-- Skip the first section which comes before the first <h2> -->
-                          {% continue %}
-                        {% endif %}
-                        <!-- {% assign heading_text = heading | split: "\n" | first %}
-                        {% assign heading_id = heading_text | slugify %}\
-                        <li class="mb-2">
-                            <a href="page.url#{{ heading_id }}" class="text-blue-500 hover:underline">{{ heading_text }}</a>
-                        </li> -->
-                    {% endfor %}
-
-                    <!-- {% for heading in headings_list %}
-                        {% if heading contains '</h2>' %}
-                            {% assign heading_text = heading | split: '</h2>' | first | strip_html | strip %}
-                            {% assign heading_id = heading_text | slugify %}
-                            <li class="mb-2">
-                                <a href="#{{ heading_id }}" class="text-blue-500 hover:underline">{{ heading_text }}</a>
-                            </li>
-                        {% endif %}
-                    {% endfor %} -->
-                </ul>
+                {{ content_with_ids | generate_toc }}
             </div>
 
             <!-- Content section -->
@@ -96,7 +74,7 @@ layout: default
                     </header>
 
                     <div class="content mt-4">
-                        {{ content | replace: '## ', '<h2 id="' | replace: '##', '</h2>' | replace: "\n", '<br>' | replace: '</h2>', '"> </h2>' }}
+                        {{ content_with_ids }}
                     </div>
                     <div class="flex justify-center pb-16">
                         {% if page.notebook %}
