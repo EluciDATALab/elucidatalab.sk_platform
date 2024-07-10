@@ -23,10 +23,10 @@ layout: default
                 <div class="w-12 h-12 flex items-center justify-center border border-gray-300 rounded-full">
                     <img src="src/assets/author-icon.png" alt="Author face image" class="w-10 h-10 rounded-full">
                 </div>
-                
+
                 <!-- Author name and post date -->
                 <div class="text-sm">
-                    <div class="font-semibold">Written by  
+                    <div class="font-semibold">Written by
                         {% if page.author %}
                           {{ page.author }}
                         {% else %}
@@ -50,18 +50,18 @@ layout: default
                 <button onclick="copyToClipboard('{{ site.url }}{{ page.url }}')" class="w-8 h-8 flex items-center justify-center bg-gray-300 rounded-full cursor-pointer">
                     <i class="fas fa-link"></i>
                 </button>
-            </div>  
+            </div>
         </div>
 
         <!-- Content section -->
         <div class="prose max-w-none p-8 bg-white rounded-lg shadow-lg">
             <img src="{{ page.image }}" alt="{{ page.title }} - Featured Image" class="rounded-xl shadow-lg mb-8">
-            <a href="{{ page.image }}" target="_blank" class="text-center text-blue-600 text-md font-medium pb-8 block hover:underline">Image Link</a>
+            <!-- <a href="{{ page.image }}" target="_blank" class="text-center text-blue-600 text-md font-medium pb-8 block hover:underline">Image Link</a> -->
             <div class="text-lg leading-relaxed mb-8">
                 {{ content }}
             </div>
             <hr class="h-0.5 my-8 bg-gray-500 border-0">
-        
+
             <p class="mb-4 font-semibold italic text-xl text-gray-700">
                 Let us know what you think about this article. Submit a letter to the editor at
                 {% assign defaultEmail = 'elucidatalab@sirris.be' %}
@@ -75,7 +75,7 @@ layout: default
                 <a href="{{ site.baseurl }}{{ post.url }}" class="text-blue-500 hover:underline">{{ post.title }}</a>
             </li>
             {% endfor %}
-            </ul> 
+            </ul>
 
             <hr class="h-0.5 my-8 bg-gray-500 border-0">
 
@@ -91,7 +91,7 @@ layout: default
             <hr class="h-px my-8 bg-gray-400 border-0">
         </div>
     </div>
-        
+
     <script>
         function copyToClipboard(text) {
             const dummy = document.createElement('textarea');

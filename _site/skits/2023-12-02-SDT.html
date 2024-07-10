@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Elucidata - Powered By Sirris">
+    <title>Elucidata - Swinging Door Trending</title>
+    <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/site/feed.xml" title="Elucidata - Your AI experience" />
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Swinging Door Trending | Elucidata - Your AI experience</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Swinging Door Trending" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="In this Starter Kit we take a closer look at one particular state-of-the-art technique for intelligent data retention, called Swinging Door Trending (or SDT). Before applying it on our dataset, we first provide an explanation of how it works conceptually below." />
+<meta property="og:description" content="In this Starter Kit we take a closer look at one particular state-of-the-art technique for intelligent data retention, called Swinging Door Trending (or SDT). Before applying it on our dataset, we first provide an explanation of how it works conceptually below." />
+<link rel="canonical" href="http://localhost:4000/site/skits/2023-12-02-SDT" />
+<meta property="og:url" content="http://localhost:4000/site/skits/2023-12-02-SDT" />
+<meta property="og:site_name" content="Elucidata - Your AI experience" />
+<meta property="og:image" content="http://localhost:4000/src/assets/SDT_compression.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-12-02T00:00:00+01:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/src/assets/SDT_compression.png" />
+<meta property="twitter:title" content="Swinging Door Trending" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-12-02T00:00:00+01:00","datePublished":"2023-12-02T00:00:00+01:00","description":"In this Starter Kit we take a closer look at one particular state-of-the-art technique for intelligent data retention, called Swinging Door Trending (or SDT). Before applying it on our dataset, we first provide an explanation of how it works conceptually below.","headline":"Swinging Door Trending","image":"http://localhost:4000/src/assets/SDT_compression.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/site/skits/2023-12-02-SDT"},"url":"http://localhost:4000/site/skits/2023-12-02-SDT"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/site/src/assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/site/src/assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/site/src/assets/favicon.ico">
+
+    <!-- Google font  -->
+    <link href="https://fonts.googleapis.com/css2?family=Comme:wght@500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+    <!-- Tailwind cascade styling sheet -->
+    <link rel="stylesheet" href="/site/src/styles/output.css" type="text/css">
+
+    <!-- Icons and small favicons -->
+    <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XT2V9XL90H"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XT2V9XL90H');
+    </script>
+</head>
+<body><html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <nav class="p-5 bg-sky-900 dark:bg-slate-700 shadow md:flex md:items-center md:justify-between z-50">
+      <div class="flex justify-between items-center ">
+        <a href="/" class="text-2xl font-[Poppins] cursor-pointer">
+            <img class="h-10 inline" src="/site/src/assets/logo.png" alt="Logo">
+        </a>
+
+
+        <span class="text-3xl cursor-pointer mx-2 md:hidden block text-slate-100">
+          <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+        </span>
+      </div>
+
+      <ul class="md:flex md:items-center z-50 md:z-auto md:static absolute bg-sky-900 dark:bg-slate-700 w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
+        <li class="mx-4 my-6 md:my-0">
+          <a href="/site/skits" class="text-xl text-slate-100 hover:underline duration-500">Starter Kits</a>
+        </li>
+        <li class="mx-4 my-6 md:my-0">
+          <a href="/site/blog" class="text-xl text-slate-100 hover:underline duration-500">Blog</a>
+        </li>
+        <li class="mx-4 my-6 md:my-0">
+          <a href="/site/community" class="text-xl text-slate-100 hover:underline duration-500">Community</a>
+        </li>
+        <li class="mx-4 my-6 md:my-0">
+          <a href="/site/about" class="text-xl text-slate-100 hover:underline duration-500">About</a>
+        </li>
+
+  <h2 class=""></h2>
+      </ul>
+    </nav>
+
+
+    <script>
+      function Menu(e){
+        let list = document.querySelector('ul');
+        e.name === 'menu' ? (e.name = "close",list.classList.add('top-[80px]') , list.classList.add('opacity-100')) :( e.name = "menu" ,list.classList.remove('top-[80px]'),list.classList.remove('opacity-100'))
+      }
+    </script>
+  </body>
+  </html>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div id="breadcrumbs" class="bg-slate-50 text-black p-8 m-8 rounded-lg shadow-md">
+    
+    <a href="/" class="text-black hover:underline">Home</a>
+    
+      
+        / <a href="/skits/" class="text-white hover:underline">Skits</a>
+      
+    
+      
+        / <span>Swinging Door Trending</span>
+      
+    
+  </div>
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swinging Door Trending</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="font-[Poppins] bg-gradient-to-br from-gray-50 via-sky-200 to-blue-300 min-h-screen">
+    <div class="mx-auto px-4 lg:px-60 xl:px-96 pt-32">
+        <h1 class="font-bold flex justify-center text-4xl pt-16 m-4 text-gray-700">Swinging Door Trending</h1>
+        <div class="flex justify-between pt-8 p-8">
+            <!-- Left side -->
+            <div class="flex items-center space-x-4">
+                <!-- Dummy image -->
+                <div class="w-12 h-12 flex items-center justify-center border border-gray-300 rounded-full">
+                    <img src="/site/src/assets/author-icon.png" alt="Author face image" class="w-10 h-10 rounded-full">
+                </div>
+
+                <!-- Author name and post date -->
+                <div class="text-sm">
+                    <div class="font-semibold">Written by
+                        
+                          eluciDATA
+                        
+                    </div>
+                    <div class="text-gray-500">On 02 Dec 2023</div>
+                </div>
+            </div>
+            <!-- Right side -->
+            <div class="flex items-center space-x-4">
+                <!-- Twitter sharing icon -->
+                <a href="https://twitter.com/intent/tweet?url=http://localhost:4000%2Fskits%2F2023-12-02-SDT" target="_blank" rel="noopener noreferrer" class="w-8 h-8 flex items-center justify-center bg-blue-500 rounded-full">
+                    <i class="fab fa-twitter text-white"></i>
+                </a>
+                <!-- Facebook sharing icon -->
+                <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000%2Fskits%2F2023-12-02-SDT" target="_blank" rel="noopener noreferrer" class="w-8 h-8 flex items-center justify-center bg-blue-800 rounded-full">
+                    <i class="fab fa-facebook-f text-white"></i>
+                </a>
+                <!-- Link icon (copy link) -->
+                <button onclick="copyToClipboard('http://localhost:4000/skits/2023-12-02-SDT')" class="w-8 h-8 flex items-center justify-center bg-gray-300 rounded-full cursor-pointer">
+                    <i class="fas fa-link"></i>
+                </button>
+            </div>
+        </div>
+        <div class="flex">
+            <!-- Table of Contents -->
+            <div class="md:w-1/4 p-4">
+                <h2 class="mb-4 font-bold text-3xl text-gray-700">Table of Contents</h2>
+                <ul class="list-disc pl-4 mb-8 text-2xl">
+                    
+                    
+                    
+                        <h2 class="text-3xl font-bold text-gray-700">
+                        <p>In this Starter Kit we take a closer look at one particular state-of-the-art technique for intelligent data retention, called Swinging Door Trending (or SDT). Before applying it on our dataset, we first provide an  explanation of how it works conceptually below.</p>
+
+<p>The SDT technique compresses a sequence of data points by using a simplified linear representation. It is computationally simple, so it can run on low-resource devices without significant overhead.</p>
+
+<p>The technique considers an error deviation parameter Δy, which determines the error between the original signal and the compressed signal that one is willing to tolerate. The technique passes through the time series data sequentially, starting with the first two points. The first point is retained, a line is drawn between this point and the second point, and a so-called tolerance band is defined by computing the upper and lower bound, based on the deviation parameter.</p>
+
+<p>An iterative process is started, where the technique considers the next point in the time series and verifies whether that point falls within the tolerance band. If this is the case, the point does not need to be retained and the next data point is considered. This continues until a point is reached that does not fall within the tolerance band, meaning this point cannot be represented by a linear representation between the point last retained and the current point. This last point is then also retained, and a new iterative process starts.</p>
+
+<p>At each step, the tolerance band is also updated. When a next point is considered, its upper and lower bounds are reconsidered. The upper or lower bounds will be updated if the bounds of the next point fall below or above the previous ones, respectively, i.e. if the upper bound of the new point is lower than the previous upper bound, the upper bound is updated, and vice versa for the lower bound.  This ensures that the tolerance band will always become smaller when new points are added, since the more points, the less precise the linear representation will become.</p>
+
+<p>The process can be illustrated by means of an example as follows.</p>
+
+<ul>
+  <li>In a first phase, the technique starts with the first point in the time series, the potential tolerance band starts with the whole area after the point. When the second point is considered, a linear interpolation is constructed between these two points and the tolerance band is updated using the deviation parameter Δy.</li>
+</ul>
+
+<table><tr><td><img src="src/assets/SDTPhase1.png" /></td><td><img src="src/assets/SDTPhase2.png" /></td></tr></table>
+
+<ul>
+  <li>In a second phase, a next point is selected, the new linear representation is constructed between the last point that was retained and the next point, and the new tolerance band is defined. If the next point, i.e. point 4, has the new lower bound lower than the previous lower bound, the tolerance band is not updated (the purple area will not be used as a tolerance band update), similar for the upper bound.</li>
+</ul>
+
+<table><tr><td><img src="src/assets/SK_specific.png" /></td><td><img src="src/assets/SDTPhase4.png" /></td></tr></table>
+
+<ul>
+  <li>As long as there are new points that fall in the tolerance band, they can be represented by the linear representation. Once a new point is considered that falls outside the tolerance band, e.g. point 6, the last point of the linear representation, e.g. point 5, will be retained as the compressed version of points 1 to 5. Starting from point 5 a new linear representation will be constructed with point 6 as the first point to consider.</li>
+</ul>
+
+<table><tr><td><img src="src/assets/SDTPhase5.png" /></td><td><img src="src/assets/SDTPhase6.png" /></td></tr></table>
+
+<p>In this example, the first 5 points will be compressed by a linear representation that is defined by point 1 and point 5, i.e. removing points 2, 3 and 4.</p>
+
+                    </h2>
+                        <h1 class="text-3xl font-bold text-gray-700">'---- DONE ----'</h1>
+                        
+                          <!-- Skip the first section which comes before the first <h2> -->
+                          
+
+                    <!-- 
+                        
+                     -->
+                </ul>
+            </div>
+
+            <!-- Content section -->
+            <div class="md:w-3/4 p-4 lg:px-4">
+                <article class="mb-16 flex flex-col space-y-4 px-8 bg-slate-50 rounded-lg mt-16 p-8" id="">
+                    <header class="mb-4">
+                        <h2 class="text-3xl font-bold text-gray-700">Swinging Door Trending</h2>
+                        <h3 class="text-xl font-medium text-gray-500">By eluciDATA</h3>
+                    </header>
+
+                    <div class="content mt-4">
+                        <p>In this Starter Kit we take a closer look at one particular state-of-the-art technique for intelligent data retention, called Swinging Door Trending (or SDT). Before applying it on our dataset, we first provide an  explanation of how it works conceptually below.</p>
+
+<p>The SDT technique compresses a sequence of data points by using a simplified linear representation. It is computationally simple, so it can run on low-resource devices without significant overhead.</p>
+
+<p>The technique considers an error deviation parameter Δy, which determines the error between the original signal and the compressed signal that one is willing to tolerate. The technique passes through the time series data sequentially, starting with the first two points. The first point is retained, a line is drawn between this point and the second point, and a so-called tolerance band is defined by computing the upper and lower bound, based on the deviation parameter.</p>
+
+<p>An iterative process is started, where the technique considers the next point in the time series and verifies whether that point falls within the tolerance band. If this is the case, the point does not need to be retained and the next data point is considered. This continues until a point is reached that does not fall within the tolerance band, meaning this point cannot be represented by a linear representation between the point last retained and the current point. This last point is then also retained, and a new iterative process starts.</p>
+
+<p>At each step, the tolerance band is also updated. When a next point is considered, its upper and lower bounds are reconsidered. The upper or lower bounds will be updated if the bounds of the next point fall below or above the previous ones, respectively, i.e. if the upper bound of the new point is lower than the previous upper bound, the upper bound is updated, and vice versa for the lower bound.  This ensures that the tolerance band will always become smaller when new points are added, since the more points, the less precise the linear representation will become.</p>
+
+<p>The process can be illustrated by means of an example as follows.</p>
+
+<ul>
+  <li>In a first phase, the technique starts with the first point in the time series, the potential tolerance band starts with the whole area after the point. When the second point is considered, a linear interpolation is constructed between these two points and the tolerance band is updated using the deviation parameter Δy.</li>
+</ul>
+
+<table><tr><td><img src="src/assets/SDTPhase1.png" /></td><td><img src="src/assets/SDTPhase2.png" /></td></tr></table>
+
+<ul>
+  <li>In a second phase, a next point is selected, the new linear representation is constructed between the last point that was retained and the next point, and the new tolerance band is defined. If the next point, i.e. point 4, has the new lower bound lower than the previous lower bound, the tolerance band is not updated (the purple area will not be used as a tolerance band update), similar for the upper bound.</li>
+</ul>
+
+<table><tr><td><img src="src/assets/SK_specific.png" /></td><td><img src="src/assets/SDTPhase4.png" /></td></tr></table>
+
+<ul>
+  <li>As long as there are new points that fall in the tolerance band, they can be represented by the linear representation. Once a new point is considered that falls outside the tolerance band, e.g. point 6, the last point of the linear representation, e.g. point 5, will be retained as the compressed version of points 1 to 5. Starting from point 5 a new linear representation will be constructed with point 6 as the first point to consider.</li>
+</ul>
+
+<table><tr><td><img src="src/assets/SDTPhase5.png" /></td><td><img src="src/assets/SDTPhase6.png" /></td></tr></table>
+
+<p>In this example, the first 5 points will be compressed by a linear representation that is defined by point 1 and point 5, i.e. removing points 2, 3 and 4.</p>
+
+                    </div>
+                    <div class="flex justify-center pb-16">
+                        
+                            <a href="https://colab.research.google.com/github/EluciDATALab/elucidatalab.starterkits/blob/main/notebooks/SK_4_1_Intelligent_Data_Retention/elucidata_demonstrator_4_1.ipynb" target="_blank" class="mt-4 text-white bg-gradient-to-br from-purple-500 to-blue-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-3xl text-lg px-6 py-3">Access notebook</a>
+                        
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            const dummy = document.createElement('textarea');
+            document.body.appendChild(dummy);
+            dummy.value = text;
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
+
+            const messageElement = document.getElementById('copy-message');
+            messageElement.classList.remove('hidden');
+            setTimeout(() => {
+                messageElement.classList.add('hidden');
+            }, 2000); // Hide the message after 2 seconds
+        }
+    </script>
+</body>
+</html>
+
+      </div>
+    </main><footer class="bg-sky-900 dark:bg-slate-700 p-4 border-t-4 border-gray-200 overflow-hidden flex-shrink-0 sticky top-[100vh]">
+    <div class="flex flex-col md:flex-row justify-between items-center h-full">
+        <!-- Left Section -->
+        <div class="flex flex-col items-center mb-4 md:mb-0">
+            <img class="w-full h-full mr-0 flex p-4 md:p-10" src="/site/src/assets/PoweredBySirris_negatif 1.png" alt="Logo">
+            <div class="flex items-center space-x-2">
+                <a href="https://www.facebook.com/Sirris.be" alt="facebook logo" class="text-slate-100 hover:text-blue-500 p-2 md:p-4 text-xl md:text-3xl"><i class="fab fa-facebook"></i> Facebook</a>
+                <a href="https://twitter.com/Sirris_be" alt="twitter logo" class="text-slate-100 hover:text-blue-500 p-2 md:p-4 text-xl md:text-3xl"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="https://be.linkedin.com/company/sirris" alt="linkedin logo" class="text-slate-100 hover:text-blue-500 p-2 md:p-4 text-xl md:text-3xl"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+
+        <!-- Middle Section -->
+        <div class="w-full md:w-auto mb-4 md:mb-0 flex justify-center">
+            <a href="/" class="block">
+                <img class="w-60 md:w-72 cursor-pointer flex items-center" src="/site/src/assets/logo.png" alt="EluciDATA Logo">
+            </a>
+        </div>
+
+        <!-- Right Section -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-center md:text-left mx-4 md:mx-0">
+            <div class="flex flex-col items-center p-4 md:p-10">
+                <ul class="list-none text-center">
+                    <li class="mb-2">
+                        <a href="skits" class="text-slate-100 hover:underline block">
+                            <div class="font-bold pb-2 text-xl">Starter kits</div>
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+
+            <div class="flex justify-center items-center p-4 md:p-10">
+                <ul class="list-none text-center">
+                    <li class="mb-2">
+                        <a href="blog" class="text-slate-100 hover:underline block">
+                            <div class="font-bold pb-2 text-xl">Blog</div>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="mb-2">
+                        
+                        
+                        <a href="/site/samuel-itea-excellence-award" class="text-slate-100 hover:underline block">Collaboration with Materialise...</a>
+                    </li>
+                    
+                    <li class="mb-2">
+                        
+                        
+                        <a href="/site/conscious-phmc-award" class="text-slate-100 hover:underline block">Our team won...</a>
+                    </li>
+                    
+                    <li class="mb-2">
+                        
+                        
+                        <a href="/site/the-invisible-war-against-women" class="text-slate-100 hover:underline block">Sir Adas' series...</a>
+                    </li>
+                    
+                    <li class="mb-2">
+                        
+                        
+                        <a href="/site/giving-circular-economy-a-boost" class="text-slate-100 hover:underline block">Giving circular economy...</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div class="flex flex-col items-center p-4 md:p-10">
+                <ul class="list-none text-center">
+                    <li class="mb-2">
+                        <a href="community" class="text-slate-100 hover:underline block">
+                            <div class="font-bold pb-2 text-xl">Community</div>
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="community#membership" class="text-slate-100 hover:underline block">Membership</a>
+                        <a href="community#contact" class="text-slate-100 hover:underline block">Contact Us</a>
+                        <a href="community#advantages" class="text-slate-100 hover:underline block">Advantages</a>
+                        <a href="community#members" class="text-slate-100 hover:underline block">Our Members</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col items-center p-4 md:p-10">
+                <ul class="list-none text-center">
+                    <li class="mb-2">
+                        <a href="about" class="text-slate-100 hover:underline block">
+                            <div class="font-bold pb-2 text-xl">About Us</div>
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="about#team" class="text-slate-100 hover:underline block">EluciDATA Team</a>
+                        <a href="about#insights" class="text-slate-100 hover:underline block">Our Insights</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Links -->
+    <div class="text-xs text-slate-100 mt-4 text-center">
+        &copy; 2024 EluciDATA. All rights reserved. |
+        <a href="https://www.sirris.be/en/legal-notice" class="text-white dark:text-slate-50 underline">User Agreement</a> |
+        <a href="https://www.sirris.be/en/accessibility-statement" class="text-white dark:text-slate-50 underline">Accessibility statement</a>
+    </div>
+</footer>
+</body>
+
+</html>

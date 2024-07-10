@@ -11,34 +11,34 @@
     <nav class="p-5 bg-sky-900 dark:bg-slate-700 shadow md:flex md:items-center md:justify-between z-50">
       <div class="flex justify-between items-center ">
         <a href="/" class="text-2xl font-[Poppins] cursor-pointer">
-            <img class="h-10 inline" src="src/assets/logo.png" alt="Logo">
+            <img class="h-10 inline" src="{{ site.baseurl }}/src/assets/logo.png" alt="Logo">
         </a>
-        
-  
+
+
         <span class="text-3xl cursor-pointer mx-2 md:hidden block text-slate-100">
           <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
         </span>
       </div>
-  
+
       <ul class="md:flex md:items-center z-50 md:z-auto md:static absolute bg-sky-900 dark:bg-slate-700 w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
         <li class="mx-4 my-6 md:my-0">
-          <a href="skits" class="text-xl text-slate-100 hover:underline duration-500">Starter Kits</a>
+          <a href="{{ site.baseurl }}/skits" class="text-xl text-slate-100 hover:underline duration-500">Starter Kits</a>
         </li>
         <li class="mx-4 my-6 md:my-0">
-          <a href="blog" class="text-xl text-slate-100 hover:underline duration-500">Blog</a>
+          <a href="{{ site.baseurl }}/blog" class="text-xl text-slate-100 hover:underline duration-500">Blog</a>
         </li>
         <li class="mx-4 my-6 md:my-0">
-          <a href="community" class="text-xl text-slate-100 hover:underline duration-500">Community</a>
+          <a href="{{ site.baseurl }}/community" class="text-xl text-slate-100 hover:underline duration-500">Community</a>
         </li>
         <li class="mx-4 my-6 md:my-0">
-          <a href="about" class="text-xl text-slate-100 hover:underline duration-500">About</a>
+          <a href="{{ site.baseurl }}/about" class="text-xl text-slate-100 hover:underline duration-500">About</a>
         </li>
-  
+
   <h2 class=""></h2>
       </ul>
     </nav>
-  
-  
+
+
     <script>
       function Menu(e){
         let list = document.querySelector('ul');

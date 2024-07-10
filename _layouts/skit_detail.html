@@ -1,0 +1,128 @@
+---
+layout: default
+---
+
+{% include breadcrumbs.html %}
+
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="font-[Poppins] bg-gradient-to-br from-gray-50 via-sky-200 to-blue-300 min-h-screen">
+    <div class="mx-auto px-4 lg:px-60 xl:px-96 pt-32">
+        <h1 class="font-bold flex justify-center text-4xl pt-16 m-4 text-gray-700">{{ page.title }}</h1>
+        <div class="flex justify-between pt-8 p-8">
+            <!-- Left side -->
+            <div class="flex items-center space-x-4">
+                <!-- Dummy image -->
+                <div class="w-12 h-12 flex items-center justify-center border border-gray-300 rounded-full">
+                    <img src="{{ site.baseurl }}/src/assets/author-icon.png" alt="Author face image" class="w-10 h-10 rounded-full">
+                </div>
+
+                <!-- Author name and post date -->
+                <div class="text-sm">
+                    <div class="font-semibold">Written by
+                        {% if page.author %}
+                          {{ page.author }}
+                        {% else %}
+                          eluciDATA
+                        {% endif %}
+                    </div>
+                    <div class="text-gray-500">On {{ page.date | date_to_string }}</div>
+                </div>
+            </div>
+            <!-- Right side -->
+            <div class="flex items-center space-x-4">
+                <!-- Twitter sharing icon -->
+                <a href="https://twitter.com/intent/tweet?url={{ site.url }}{{ page.url | url_encode }}" target="_blank" rel="noopener noreferrer" class="w-8 h-8 flex items-center justify-center bg-blue-500 rounded-full">
+                    <i class="fab fa-twitter text-white"></i>
+                </a>
+                <!-- Facebook sharing icon -->
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url | url_encode }}" target="_blank" rel="noopener noreferrer" class="w-8 h-8 flex items-center justify-center bg-blue-800 rounded-full">
+                    <i class="fab fa-facebook-f text-white"></i>
+                </a>
+                <!-- Link icon (copy link) -->
+                <button onclick="copyToClipboard('{{ site.url }}{{ page.url }}')" class="w-8 h-8 flex items-center justify-center bg-gray-300 rounded-full cursor-pointer">
+                    <i class="fas fa-link"></i>
+                </button>
+            </div>
+        </div>
+        <div class="flex">
+            <!-- Table of Contents -->
+            <div class="md:w-1/4 p-4">
+                <h2 class="mb-4 font-bold text-3xl text-gray-700">Table of Contents</h2>
+                <ul class="list-disc pl-4 mb-8 text-2xl">
+                    {% capture headings %}
+                        {{ content | markdownify}}
+                    {% endcapture %}
+                    {% assign headings_list = headings | split: '<h2' %}
+                    {% for heading in headings_list %}
+                        <h2 class="text-3xl font-bold text-gray-700">{{ heading }}</h2>
+                        <h1 class="text-3xl font-bold text-gray-700">'---- DONE ----'</h1>
+                        {% if forloop.first %}
+                          <!-- Skip the first section which comes before the first <h2> -->
+                          {% continue %}
+                        {% endif %}
+                        <!-- {% assign heading_text = heading | split: "\n" | first %}
+                        {% assign heading_id = heading_text | slugify %}\
+                        <li class="mb-2">
+                            <a href="page.url#{{ heading_id }}" class="text-blue-500 hover:underline">{{ heading_text }}</a>
+                        </li> -->
+                    {% endfor %}
+
+                    <!-- {% for heading in headings_list %}
+                        {% if heading contains '</h2>' %}
+                            {% assign heading_text = heading | split: '</h2>' | first | strip_html | strip %}
+                            {% assign heading_id = heading_text | slugify %}
+                            <li class="mb-2">
+                                <a href="#{{ heading_id }}" class="text-blue-500 hover:underline">{{ heading_text }}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %} -->
+                </ul>
+            </div>
+
+            <!-- Content section -->
+            <div class="md:w-3/4 p-4 lg:px-4">
+                <article class="mb-16 flex flex-col space-y-4 px-8 bg-slate-50 rounded-lg mt-16 p-8" id="{{ post.title }}">
+                    <header class="mb-4">
+                        <h2 class="text-3xl font-bold text-gray-700">{{ page.title }}</h2>
+                        <h3 class="text-xl font-medium text-gray-500">By {% if page.author %}{{ page.author }}{% else %}eluciDATA{% endif %}</h3>
+                    </header>
+
+                    <div class="content mt-4">
+                        {{ content | replace: '## ', '<h2 id="' | replace: '##', '</h2>' | replace: "\n", '<br>' | replace: '</h2>', '"> </h2>' }}
+                    </div>
+                    <div class="flex justify-center pb-16">
+                        {% if page.notebook %}
+                            <a href="{{ page.notebook }}" target="_blank" class="mt-4 text-white bg-gradient-to-br from-purple-500 to-blue-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-3xl text-lg px-6 py-3">Access notebook</a>
+                        {% endif %}
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            const dummy = document.createElement('textarea');
+            document.body.appendChild(dummy);
+            dummy.value = text;
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
+
+            const messageElement = document.getElementById('copy-message');
+            messageElement.classList.remove('hidden');
+            setTimeout(() => {
+                messageElement.classList.add('hidden');
+            }, 2000); // Hide the message after 2 seconds
+        }
+    </script>
+</body>
+</html>

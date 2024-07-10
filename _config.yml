@@ -45,11 +45,14 @@ postcss:
 
 paginate: 10
 paginate_path: "/page:num"
+baseurl: "/site"
 
+# Documentation settings
 collections:
   skits:
     output: true
-    permalink: /skit/:title.html
+    # permalink: /skit/:name
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

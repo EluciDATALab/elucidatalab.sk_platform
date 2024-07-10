@@ -31,7 +31,7 @@
         {% endfor %}
       </div>
     </div>
-    
+
     <!-- Blog Posts Section -->
     <section class="blog-cards w-full md:w-4/5 flex flex-wrap justify-center">
       {% assign blog_posts = site.posts | where: "layout", "post" %}
@@ -50,7 +50,7 @@
                 {% endfor %}
                 <p class="text-gray-700">{{ limited_words }} ...</p>
                 <div class="flex justify-between flex-wrap md:flex-row">
-                  <p class="text-gray-600 py-2 font-medium">Author: 
+                  <p class="text-gray-600 py-2 font-medium">Author:
                     {% if post.author %}
                       {% assign normalized_authors = post.author | replace: " and ", ", " %}
                       {% assign authors = normalized_authors | split: ", " %}
@@ -77,5 +77,5 @@
       </div>
     </section>
   </section>
-  
+
 </main>
