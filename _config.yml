@@ -46,7 +46,7 @@ postcss:
 #   - jekyll-paginate
 # paginate: 10
 # paginate_path: "/page:num"
-baseurl: "/site"
+# baseurl: "/site"
 incremental: true
 
 # Documentation settings

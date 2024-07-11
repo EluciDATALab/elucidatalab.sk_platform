@@ -27,7 +27,7 @@ Precisely forecasting the demand of a given resource can be beneficial for sever
 
 Especially in the later field, the demand is influenced by a mixture of external factors such as the weather conditions. For energy suppliers it is more beneficial to buy electricity on the day-ahead market than on the spot market. Consequently, the more accurate the energy consumption can be predicted, the lower the cost. Given that more and more houses and appliances are enabled with a smart meter, an increasing amount of data becomes available that can enable and improve this prediction. Furthermore, these kinds of predictions also allow energy suppliers to better balance demand and supply and helps them to ensure proper grid operation, but also to avoid negative prices, for example in times of high solar irradiation.
 
-<center><img src="./img/SK_specific/RDF_figure1.png" width="800" class="center" /></center>
+<center><img src="../src/assets/RDF_figure1.png" width="800" class="center" /></center>
 
 In this example we see the active power of a single household near Paris shown in green. In orange, the outside temperature is given. The two are strongly correlated – the demand increases with decreasing temperatures since most French households use electrical heating. Therefore, particularly in winter times, the grid has to be stable when facing high demands.
 
@@ -44,7 +44,7 @@ Welcome to the second video of the tutorial for the AI Starter Kit on resource d
 
 In this AI Starter Kit, we will work with a publicly available energy consumption dataset from the UCI repository. This dataset contains measurements of electric power consumption in one household, located near Paris, with a one-minute sampling rate over a period of almost 4 years. Different electrical quantities and sub-metering values are available, as you can see in the table.
 
-<center><img src="./img/SK_specific/RDF_figure2.png" width="800" class="center" /></center>
+<center><img src="../src/assets/RDF_figure2.png" width="800" class="center" /></center>
 
 Let us first have a look at the single variables given in the table:
 First of all, and most importantly, the global active and reactive powers are given. The active power specifies the amount of energy the single electric receivers transform into mechanical work and heat. This useful effect is called 'active energy'. On the contrary, several receivers, such as motors, transformer, or inductive cookers need magnetic fields in order to work. This amount is called reactive power as these receivers are generally inductive: This means, they absorb energy from the network in order to create magnetic fields and return it while they disappear. This results in an additional electrical consumption that is not useful for the receivers.
@@ -53,11 +53,11 @@ Finally, the submeterings provide us a more detailed insights where the power is
 
 As mentioned before, we will also take weather measurements into account. For this, we use measurements recorded close to the city of Paris, where the household is located, provided by the Wunderground website. It contains information on climate conditions on a 30-minutes base.
 
-<center><img src="./img/SK_specific/RDF_figure3.png" width="600" class="center" /></center>
+<center><img src="../src/assets/RDF_figure3.png" width="600" class="center" /></center>
 
 The dataset contains the outside temperature and the dew point in degrees Celsius, the air humidity in percentage, the pressure at sea level in hPa, the visibility in km and the wind direction expressed in degrees. The weather data is measured by a set of connected sensors. For these, it is rare that the data availability is uninterrupted for such a long period.
 
-<center><img src="./img/SK_specific/RDF_figure4.png" width="600" class="center" /></center>
+<center><img src="../src/assets/RDF_figure4.png" width="600" class="center" /></center>
 
 For this reason, we first check the general statistics for the data set. For most variables, the minimal value is -9999, which indicates missing values as also specified in the documentation of the data. We will replace these with so-called 'Not a Number' values or NaNs such that they will not interfere too much during data modelling.
 
@@ -65,20 +65,20 @@ In a next step, we fuse the electricity data and the weather data. Note, that th
 
 Two options are possible: we can either upsample the weather data or downsample the household data. That means that we either linearly interpolate the information from weather data on a one-minute interval or aggregate the power data on bigger intervals. In this use case, the latter is more reasonable, as otherwise, we would need to find a way to impute missing data in the climate dataset.
 
-<center><img src="./img/SK_specific/RDF_figure5.png" width="800" class="center" /></center>
+<center><img src="../src/assets/RDF_figure5.png" width="800" class="center" /></center>
 
 Let us first analyze the effect of downsampling the power data. Therefore, we calculate the rolling mean values of the original power over a given time window. You can choose between a sampling rate of 30 or 60 minutes, or 4 hours. The light blue time series shows the original data, the dark blue one the downsampled one. In all cases, the data looks smoother as the original data, as taking the mean value smooths out the major short-time power peaks but at the same time results in some loss of information. With the larger window size of 60 minutes this effect is stronger than for the smaller one. A window size of 4 hours arguably removes too much variation. Note that the weather data is available every 30 minutes such that in case of an hourly time window for the power data also the weather data has to be resampled. Since the information loss for the 60-minute interval is reasonable, we decide to proceed with this sampling rate. This also allows us to reduce the size of the dataset, which will reduce the computation time required for the analysis.
 
-<center><img src="./img/SK_specific/RDF_figure6.png" width="400" class="center" /></center>
+<center><img src="../src/assets/RDF_figure6.png" width="400" class="center" /></center>
 
 In order to merge the two data sets, we transform the active power from a minutes-based power measurement given in kW to an hourly consumption given in Wh. Therefore, we sum the power over one hour and divide it by 60 to get the actual energy. By additionally multiplying by a factor of 1000, we change units from kWh to Wh.
 
-<center><img src="./img/SK_specific/RDF_figure7.png" width="300" class="center" /></center>
+<center><img src="../src/assets/RDF_figure7.png" width="300" class="center" /></center>
 
 For the weather data, we proceed similarly by taking the mean temperature over one hour.
 With this, we can join the two data sets. For future analysis, we will only take the global consumption and temperature into account.
 
-<center><img src="./img/SK_specific/RDF_figure8.png" width="400" class="center" /></center>
+<center><img src="../src/assets/RDF_figure8.png" width="400" class="center" /></center>
 
 Now that we have preprocessed the dataset, we will illustrate how to gain deeper insights in the data through both visual and statistical data exploration. In the next video, we will start with the visual exploration by means of time plots.
 
@@ -95,17 +95,17 @@ We start with a yearly plot, which allows us to identify global patterns.
 Then, a monthly plot allows us to zoom in and understand relationships between energy consumption in different weeks and days along the year.
 And finally, a weekly plot allows us to zoom in even further and identify daily and hourly patterns.
 
-<center><img src="./img/SK_specific/RDF_figure9.png" width="800" class="center" /></center>
+<center><img src="../src/assets/RDF_figure9.png" width="800" class="center" /></center>
 
 We start with the yearly plot. The data ranges from January 2007 to end of 2010. We can easily see the yearly pattern for the global active power with peaks in winter and valleys in summer. With these settings though, we see the temperature values only as a flat line because they are about two magnitudes smaller. When only displaying the temperature, we see a similar pattern with high values in summer and low values in winter, as expected.
 In order to make the two-time series comparable, we normalize the data, such that the maximal value of each time series corresponds to 1 and the lowest one corresponds to zero.
 Like this, we can see that the two show an opposite evolution over the year.
 
-<center><img src="./img/SK_specific/RDF_figure10.png" width="800" class="center" /></center>
+<center><img src="../src/assets/RDF_figure10.png" width="800" class="center" /></center>
 
 For the monthly data, we progress analogously. While we can again clearly see the annual effect, there is no clear pattern recurring every month. One interesting thing that can be observed is that strong dips in power consumption tend to happen at the same time in February and November in 2007 and 2008. Most likely, these are holidays which tend to happen at the same time for the household under investigation. This can be best seen when the sampling rate is changed. Instead of showing the data per day, we can have a look at the rolling mean of the active power over three days to see the pattern more clearly.
 
-<center><img src="./img/SK_specific/RDF_figure11.png" width="800" class="center" /></center>
+<center><img src="../src/assets/RDF_figure11.png" width="800" class="center" /></center>
 
 We further explore the evolution of the energy consumption in a shorter time frame. We want to verify whether during a week, the energy consumption exhibits the same patterns.
 
@@ -113,7 +113,7 @@ In the following plot, the user can inspect and compare the energy consumption i
 
 Exactly, the mean consumption is higher on the weekends. The reason might be that more members of the household are at home during the weekends. Comparing the week around Christmas 2008 and 2009 shows interesting patterns. While the household was obviously at home and maybe even with guests in 2009, it looks like they were not around in 2008 for several days.
 
-<center><img src="./img/SK_specific/RDF_figure12.png" width="800" class="center" /></center>
+<center><img src="../src/assets/RDF_figure12.png" width="800" class="center" /></center>
 
 Finally, we analyze the daily pattern. For this, rather than showing the resampled dataset, we use the original dataset, which provides consumption with a sampling rate of 1 minute and which can show more detailed patterns. Note that this means we are using the original units of kW. In the figure, we see how the power consumption follows a daily recurring pattern, with peaks in the morning and evening and troughs at night and noon – on weekdays. The 5th of December was a Saturday, and we can clearly see how the curve of that day deviates from the weekdays.
 
@@ -128,17 +128,17 @@ In the former video, we performed a visual data exploration. We could already ga
 <p align="center"><iframe src="https://player.vimeo.com/video/600082684?h=acc8ffd39c" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 <br/></p>
 
-<center><img src="./img/SK_specific/RDF_figure13.png" width="800" class="center" /></center>
+<center><img src="../src/assets/RDF_figure13.png" width="800" class="center" /></center>
 
 In order to find repetitive patterns in time series data, we can use autocorrelation. It provides the correlation between the time series and a delayed copy of itself. In case of a perfect periodicity as shown in the figure, the autocorrelation equals 1 if we delay one copy by the periodicity.
 
-<center><img src="./img/SK_specific/RDF_figure14.png" width="800" class="center" /></center>
+<center><img src="../src/assets/RDF_figure14.png" width="800" class="center" /></center>
 
 In order to investigate the autocorrelation in case of the global active power, we visualize the autocorrelation with time lags of 1 day, 2 days, and so on. Note that we do not show the results of a delay of 0 days, since the correlation with the exact same day would trivially be 1.  For bigger delays, a clear peak occurs after 1 day, indicating the consumption of a day is highly correlated with the consumption of the previous day. And more obviously, several peaks occur every 7 days, which confirms the existence of a weekly pattern. That means that the consumption of a day is highly correlated with the consumption of the same day one or several weeks earlier.
 
 In the data exploration video, we further saw that the temperature and the global active power show an opposite trend. In order to verify the strength of this relationship, we can compute the correlation between these two variables. For this purpose, we compute Pearson's correlation.
 
-<center><img src="./img/SK_specific/RDF_figure15.png" width="800" class="center" /></center>
+<center><img src="../src/assets/RDF_figure15.png" width="800" class="center" /></center>
 
 The Starter Kit allows to calculate the correlation between the temperature and the global active power for different resampling rates. Why is this important? One reason is the time scale for changes. The temperature typically changes less drastically over time than energy consumption does.
 In the figure, on the diagonal, we see the correlation of the two time series with each other, resulting in a perfect correlation of 1 as expected. On the opposite, along the antidiagonal, we see the correlation between the global active power and the outside temperature. In case of a sampling rate of 1 hour, the negative correlation is weak with roughly -0.2. With an increased resampling rate of 1 week, the negative correlation is more evident with a value of -0.75. This confirms our insight from the visual inspection. With a larger sampling rate, the short-term fluctuations – for example from your washing machine – are smoothed out and leaves us with the seasonal pattern.
@@ -153,7 +153,7 @@ From these insights, we can now start extracting features from the extended data
 * the month of the year, which will allow to distinguish between yearly seasons; and finally,
 * the temperature.
 
-<center><img src="./img/SK_specific/RDF_figure16.png" width="800" class="center" /></center>
+<center><img src="../src/assets/RDF_figure16.png" width="800" class="center" /></center>
 
 That results in the final dataset that will be used as input for the machine learning algorithm to learn the model.
 
@@ -166,7 +166,7 @@ Before deciding on the most appropriate algorithm to solve a particular data sci
 <p align="center"><iframe src="https://player.vimeo.com/video/609878568?h=47ea9f96b2" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 <br/></p>
 
-<center><img src="./img/SK_specific/RDF_figure17.png" width="800" class="center" /></center>
+<center><img src="../src/assets/RDF_figure17.png" width="800" class="center" /></center>
 
 A first question to answer in that respect is which type of outcome is expected from the use case owner.
 
@@ -202,7 +202,7 @@ There is a bunch of regression algorithms that can be used in various contexts. 
 
 We start with Random Forest Regression. The base to build a random forest is a decision tree – which works similarly to the one we just used to determine which class of algorithms is suitable for the electricity forecasting. Since in a random forest, the model is defined by a combination of trees, it is a so-called ensemble method. Ensemble methods help improve machine learning results by combining several models. This approach allows the production of better predictive performance compared to a single model. From each decision tree a value is predicted, and the final prediction will be a weighted function of all predictions.
 
-<center><img src="./img/SK_specific/RDF_figure18.png" width="800" class="center" /></center>
+<center><img src="../src/assets/RDF_figure18.png" width="800" class="center" /></center>
 
 Here we see a very simplistic version of a random forest regressor with only three decision trees. All trees are trained in parallel and each one will predict a value for a given set of input variables. The final prediction in this case would be the mean value of all predictions, ergo 10,67.
 
@@ -212,7 +212,7 @@ In order to improve the performance of a model, you need to tune the algorithm�
 
 Another type of regression approach is support vector regression. While support vectors are mainly used in the field of classification, with some adaptions, it also works for regression tasks. It works similarly to an ordinary least squares regression where the linear regression line is targeted with the smallest overall deviation from the data points. This is very handy in case of linear dependencies and for clean data. But as soon as there are several outliers in the data set or the relation between the data points is non-linear, the quality of the model can decrease significantly. Especially in the context of industrial data, this can never be fully avoided. For Support Vector Regression a band of width epsilon ε is defined. We call that band the *hyperplane*. The aim is to search the hyperplane that includes most points while at the same time the sum of the distance of the outlying points may not exceed a given threshold. The training instances closest to the hyperplane that help define the margins are called *Support Vectors*.
 
-<center><img src="./img/SK_specific/RDF_figure19.png" width="800" class="center" /></center>
+<center><img src="../src/assets/RDF_figure19.png" width="800" class="center" /></center>
 
 As for random forest regression, also support vector regression has a number of important hyperparameters that can be adjusted to optimize the performance. A first important hyperparameter is the choice for the type of kernel to use. A kernel is a set of mathematical functions that takes data as input and transform it into the required form. This kernel is used for finding a hyperplane in a higher dimensional space. The most widely used kernels include Linear, Non-Linear, Polynomial, Radial Basis Function (RBF) and Sigmoid. The selection of the type of kernel typically depends on the characteristics of the dataset. The cost parameter C tells the SVR optimization how much you want to avoid a wrong regression for each of the training examples. For large values of C, the optimization will choose a smaller-margin hyperplane if that hyperplane does a better job of getting all the training points predicted correctly, and vice versa. The size of this margin can be set by epsilon, which specifies the band within which no penalty is associated in the training loss function with points predicted within a distance epsilon from the actual value.
 
@@ -247,7 +247,7 @@ As already introduced in the former video, we will train two different types of 
 
 Finally, a short note on normalization. We saw already in the video on data understanding that the scale for the outside temperature and global active power are quite different. This is also true for the remaining features that we introduced. Therefore, it might be necessary to normalize the data, that is, rescale it such that all input and output values are between 0 and 1. This is indeed a requirement for the correct training of some machine learning models. We will test in the Starter Kit whether it makes a difference for the models suggested.
 
-<center><img src="./img/SK_specific/RDF_figure20.png" width="500" class="center" /></center>
+<center><img src="../src/assets/RDF_figure20.png" width="500" class="center" /></center>
 
 At first, let us run the baseline model as we will later on compare all model results to these results. The mean absolute error is 604.45. Putting this number into relation with the mean global active power of 1118, the error is comparably high. For reasons of comparability, each result will be shown in the table just below the interface.
 

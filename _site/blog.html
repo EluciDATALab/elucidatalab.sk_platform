@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Elucidata - Powered By Sirris">
     <title>Elucidata - Blog Posts</title>
-    <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/site/feed.xml" title="Elucidata - Your AI experience" />
+    <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Elucidata - Your AI experience" />
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Blog Posts | Elucidata - Your AI experience</title>
 <meta name="generator" content="Jekyll v4.3.3" />
@@ -12,27 +12,27 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Elucidata - AI Starter kits Experience. AI Starter Kits with complementary video tutorials, Interactive Experience, Bring Your Own Data workshops." />
 <meta property="og:description" content="Elucidata - AI Starter kits Experience. AI Starter Kits with complementary video tutorials, Interactive Experience, Bring Your Own Data workshops." />
-<link rel="canonical" href="http://localhost:4000/site/blog" />
-<meta property="og:url" content="http://localhost:4000/site/blog" />
+<link rel="canonical" href="http://localhost:4000/blog" />
+<meta property="og:url" content="http://localhost:4000/blog" />
 <meta property="og:site_name" content="Elucidata - Your AI experience" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Blog Posts" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Elucidata - AI Starter kits Experience. AI Starter Kits with complementary video tutorials, Interactive Experience, Bring Your Own Data workshops.","headline":"Blog Posts","url":"http://localhost:4000/site/blog"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Elucidata - AI Starter kits Experience. AI Starter Kits with complementary video tutorials, Interactive Experience, Bring Your Own Data workshops.","headline":"Blog Posts","url":"http://localhost:4000/blog"}</script>
 <!-- End Jekyll SEO tag -->
 
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/site/src/assets/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/site/src/assets/favicon.ico">
-    <link rel="icon" type="image/png" sizes="16x16" href="/site/src/assets/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/src/assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/src/assets/favicon.ico">
 
     <!-- Google font  -->
     <link href="https://fonts.googleapis.com/css2?family=Comme:wght@500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:wght@500&display=swap" rel="stylesheet">
 
     <!-- Tailwind cascade styling sheet -->
-    <link rel="stylesheet" href="/site/src/styles/output.css" type="text/css">
+    <link rel="stylesheet" href="/src/styles/output.css" type="text/css">
 
     <!-- Icons and small favicons -->
     <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
@@ -61,7 +61,7 @@
     <nav class="p-5 bg-sky-900 dark:bg-slate-700 shadow md:flex md:items-center md:justify-between z-50">
       <div class="flex justify-between items-center ">
         <a href="/" class="text-2xl font-[Poppins] cursor-pointer">
-            <img class="h-10 inline" src="/site/src/assets/logo.png" alt="Logo">
+            <img class="h-10 inline" src="/src/assets/logo.png" alt="Logo">
         </a>
 
 
@@ -72,16 +72,16 @@
 
       <ul class="md:flex md:items-center z-50 md:z-auto md:static absolute bg-sky-900 dark:bg-slate-700 w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
         <li class="mx-4 my-6 md:my-0">
-          <a href="/site/skits" class="text-xl text-slate-100 hover:underline duration-500">Starter Kits</a>
+          <a href="/skits" class="text-xl text-slate-100 hover:underline duration-500">Starter Kits</a>
         </li>
         <li class="mx-4 my-6 md:my-0">
-          <a href="/site/blog" class="text-xl text-slate-100 hover:underline duration-500">Blog</a>
+          <a href="/blog" class="text-xl text-slate-100 hover:underline duration-500">Blog</a>
         </li>
         <li class="mx-4 my-6 md:my-0">
-          <a href="/site/community" class="text-xl text-slate-100 hover:underline duration-500">Community</a>
+          <a href="/community" class="text-xl text-slate-100 hover:underline duration-500">Community</a>
         </li>
         <li class="mx-4 my-6 md:my-0">
-          <a href="/site/about" class="text-xl text-slate-100 hover:underline duration-500">About</a>
+          <a href="/about" class="text-xl text-slate-100 hover:underline duration-500">About</a>
         </li>
 
   <h2 class=""></h2>
@@ -110,346 +110,40 @@
   </section>
 
 
-  <section class="flex flex-col md:flex-row justify-center  lg:px-4">
+  <section class="flex flex-col md:flex-row justify-center lg:px-4">
     <!-- Categories Section -->
     <div class="w-full md:w-1/5 mb-8 md:mb-0 lg:w-1/6 lg:px-8 px-8">
       <h2 class="font-bold text-3xl mb-4 text-gray-700">Categories</h2>
       <div id="archives">
-        
+        <select id="categoryDropdown" class="w-full p-2 border rounded">
+          <option value="all">All Categories</option>
           
-          <div class="archive-group">
-            
-            
-              <h3 class="category-head font-semibold text-2xl mb-2 text-gray-600 pl-4">Events</h3>
-              <ul class="list-disc pl-12">
-                
-                  <li>
-                    <a href="/site/interview-3e-and-elucidata-lab" class="text-blue-500 hover:underline">Interview 3E and EluciDATA Lab in the framework of the campaign "AI to boost your SME" by the FPS Economie</a>
-                  </li>
-                
-                  <li>
-                    <a href="/site/flanders-ai-forum-on-23012020" class="text-blue-500 hover:underline">Flanders AI Forum on 23/01/2020</a>
-                  </li>
-                
-              </ul>
-            
-          </div>
-        
+            <option value="Events">Events</option>
           
-          <div class="archive-group">
-            
-            
-              <h3 class="category-head font-semibold text-2xl mb-2 text-gray-600 pl-4">Funding</h3>
-              <ul class="list-disc pl-12">
-                
-                  <li>
-                    <a href="/site/three-new-thematic-icon-projects" class="text-blue-500 hover:underline">Three new thematic ICON projects on AI.</a>
-                  </li>
-                
-                  <li>
-                    <a href="/site/flanders-ai-forum-on-23012020" class="text-blue-500 hover:underline">Flanders AI Forum on 23/01/2020</a>
-                  </li>
-                
-              </ul>
-            
-          </div>
-        
+            <option value="Funding">Funding</option>
           
-          <div class="archive-group">
-            
-            
-              <h3 class="category-head font-semibold text-2xl mb-2 text-gray-600 pl-4">Projects</h3>
-              <ul class="list-disc pl-12">
-                
-                  <li>
-                    <a href="/site/samuel-itea-excellence-award" class="text-blue-500 hover:underline">Collaboration with Materialise and Cr3do selected for the ITEA Award of Excellence for Innovation</a>
-                  </li>
-                
-                  <li>
-                    <a href="/site/elucidata-lab-involved-in" class="text-blue-500 hover:underline">EluciDATA Lab  involved in TRAIL (Trusted AI Labs) – Walloon initiative to foster research and collaboration around AI</a>
-                  </li>
-                
-                  <li>
-                    <a href="/site/insightful-blueprints-of-brussels-traffic" class="text-blue-500 hover:underline">Insightful blueprints of Brussels traffic emerge in times of covid-19</a>
-                  </li>
-                
-              </ul>
-            
-          </div>
-        
+            <option value="Projects">Projects</option>
           
-          <div class="archive-group">
-            
-            
-              <h3 class="category-head font-semibold text-2xl mb-2 text-gray-600 pl-4">Intelligent</h3>
-              <ul class="list-disc pl-12">
-                
-                  <li>
-                    <a href="/site/is-traffic-volume-correlated-to" class="text-blue-500 hover:underline">Is traffic volume correlated to Covid-19 infections?</a>
-                  </li>
-                
-                  <li>
-                    <a href="/site/runup-in-brussels-traffic-towards" class="text-blue-500 hover:underline">Run-up in Brussels Traffic Towards the 2nd Covid-19 Peak</a>
-                  </li>
-                
-                  <li>
-                    <a href="/site/the-small-ring-of-brussels" class="text-blue-500 hover:underline">The Small Ring of Brussels is Getting Gradually Cured (i.e. back to normal stagnated traffic) from Covid-19</a>
-                  </li>
-                
-                  <li>
-                    <a href="/site/unravelling-volume-patterns-of-brussels" class="text-blue-500 hover:underline">Unravelling volume patterns of Brussels traffic in times of Covid-19</a>
-                  </li>
-                
-              </ul>
-            
-          </div>
-        
+            <option value="Intelligent transportation systems">Intelligent transportation systems</option>
           
-          <div class="archive-group">
-            
-            
-              <h3 class="category-head font-semibold text-2xl mb-2 text-gray-600 pl-4">transportation</h3>
-              <ul class="list-disc pl-12">
-                
-                  <li>
-                    <a href="/site/is-traffic-volume-correlated-to" class="text-blue-500 hover:underline">Is traffic volume correlated to Covid-19 infections?</a>
-                  </li>
-                
-                  <li>
-                    <a href="/site/runup-in-brussels-traffic-towards" class="text-blue-500 hover:underline">Run-up in Brussels Traffic Towards the 2nd Covid-19 Peak</a>
-                  </li>
-                
-                  <li>
-                    <a href="/site/the-small-ring-of-brussels" class="text-blue-500 hover:underline">The Small Ring of Brussels is Getting Gradually Cured (i.e. back to normal stagnated traffic) from Covid-19</a>
-                  </li>
-                
-                  <li>
-                    <a href="/site/unravelling-volume-patterns-of-brussels" class="text-blue-500 hover:underline">Unravelling volume patterns of Brussels traffic in times of Covid-19</a>
-                  </li>
-                
-              </ul>
-            
-          </div>
-        
+            <option value="Trainings">Trainings</option>
           
-          <div class="archive-group">
-            
-            
-              <h3 class="category-head font-semibold text-2xl mb-2 text-gray-600 pl-4">systems</h3>
-              <ul class="list-disc pl-12">
-                
-                  <li>
-                    <a href="/site/is-traffic-volume-correlated-to" class="text-blue-500 hover:underline">Is traffic volume correlated to Covid-19 infections?</a>
-                  </li>
-                
-                  <li>
-                    <a href="/site/runup-in-brussels-traffic-towards" class="text-blue-500 hover:underline">Run-up in Brussels Traffic Towards the 2nd Covid-19 Peak</a>
-                  </li>
-                
-                  <li>
-                    <a href="/site/the-small-ring-of-brussels" class="text-blue-500 hover:underline">The Small Ring of Brussels is Getting Gradually Cured (i.e. back to normal stagnated traffic) from Covid-19</a>
-                  </li>
-                
-                  <li>
-                    <a href="/site/unravelling-volume-patterns-of-brussels" class="text-blue-500 hover:underline">Unravelling volume patterns of Brussels traffic in times of Covid-19</a>
-                  </li>
-                
-              </ul>
-            
-          </div>
-        
+            <option value="Sir Adas' series">Sir Adas' series</option>
           
-          <div class="archive-group">
-            
-            
-              <h3 class="category-head font-semibold text-2xl mb-2 text-gray-600 pl-4">Trainings</h3>
-              <ul class="list-disc pl-12">
-                
-                  <li>
-                    <a href="/site/how-process-modelling-data" class="text-blue-500 hover:underline">How process modelling & data science will enhance your food processing business</a>
-                  </li>
-                
-              </ul>
-            
-          </div>
-        
+            <option value="Circular economy">Circular economy</option>
           
-          <div class="archive-group">
-            
-            
-              <h3 class="category-head font-semibold text-2xl mb-2 text-gray-600 pl-4">Sir</h3>
-              <ul class="list-disc pl-12">
-                
-                  <li>
-                    <a href="/site/the-invisible-war-against-women" class="text-blue-500 hover:underline">Sir Adas' series The invisible war against women</a>
-                  </li>
-                
-                  <li>
-                    <a href="/site/today-as-a-woman-you-can-do-anything" class="text-blue-500 hover:underline">Today, as a Woman, You Can Do Anything, But You Must Not Do Anything!</a>
-                  </li>
-                
-                  <li>
-                    <a href="/site/women-cannot-play-chess" class="text-blue-500 hover:underline">Sir Adas' series; Women cannot play chess!</a>
-                  </li>
-                
-                  <li>
-                    <a href="/site/ada-lovelace-the-first-programmer" class="text-blue-500 hover:underline">Sir Adas' series; Ada Lovelace, the first programmer</a>
-                  </li>
-                
-                  <li>
-                    <a href="/site/sir-adas-empower-women" class="text-blue-500 hover:underline">Sir Adas' series; No laws can empower women career-wise without an adequate social system!</a>
-                  </li>
-                
-              </ul>
-            
-          </div>
-        
+            <option value="Awards">Awards</option>
           
-          <div class="archive-group">
-            
-            
-              <h3 class="category-head font-semibold text-2xl mb-2 text-gray-600 pl-4">Adas'</h3>
-              <ul class="list-disc pl-12">
-                
-                  <li>
-                    <a href="/site/the-invisible-war-against-women" class="text-blue-500 hover:underline">Sir Adas' series The invisible war against women</a>
-                  </li>
-                
-                  <li>
-                    <a href="/site/today-as-a-woman-you-can-do-anything" class="text-blue-500 hover:underline">Today, as a Woman, You Can Do Anything, But You Must Not Do Anything!</a>
-                  </li>
-                
-                  <li>
-                    <a href="/site/women-cannot-play-chess" class="text-blue-500 hover:underline">Sir Adas' series; Women cannot play chess!</a>
-                  </li>
-                
-                  <li>
-                    <a href="/site/ada-lovelace-the-first-programmer" class="text-blue-500 hover:underline">Sir Adas' series; Ada Lovelace, the first programmer</a>
-                  </li>
-                
-                  <li>
-                    <a href="/site/sir-adas-empower-women" class="text-blue-500 hover:underline">Sir Adas' series; No laws can empower women career-wise without an adequate social system!</a>
-                  </li>
-                
-              </ul>
-            
-          </div>
-        
-          
-          <div class="archive-group">
-            
-            
-              <h3 class="category-head font-semibold text-2xl mb-2 text-gray-600 pl-4">series</h3>
-              <ul class="list-disc pl-12">
-                
-                  <li>
-                    <a href="/site/the-invisible-war-against-women" class="text-blue-500 hover:underline">Sir Adas' series The invisible war against women</a>
-                  </li>
-                
-                  <li>
-                    <a href="/site/today-as-a-woman-you-can-do-anything" class="text-blue-500 hover:underline">Today, as a Woman, You Can Do Anything, But You Must Not Do Anything!</a>
-                  </li>
-                
-                  <li>
-                    <a href="/site/women-cannot-play-chess" class="text-blue-500 hover:underline">Sir Adas' series; Women cannot play chess!</a>
-                  </li>
-                
-                  <li>
-                    <a href="/site/ada-lovelace-the-first-programmer" class="text-blue-500 hover:underline">Sir Adas' series; Ada Lovelace, the first programmer</a>
-                  </li>
-                
-                  <li>
-                    <a href="/site/sir-adas-empower-women" class="text-blue-500 hover:underline">Sir Adas' series; No laws can empower women career-wise without an adequate social system!</a>
-                  </li>
-                
-              </ul>
-            
-          </div>
-        
-          
-          <div class="archive-group">
-            
-            
-              <h3 class="category-head font-semibold text-2xl mb-2 text-gray-600 pl-4">Circular</h3>
-              <ul class="list-disc pl-12">
-                
-                  <li>
-                    <a href="/site/giving-circular-economy-a-boost" class="text-blue-500 hover:underline">Giving circular economy a boost by improving refurbishment process of household appliances</a>
-                  </li>
-                
-              </ul>
-            
-          </div>
-        
-          
-          <div class="archive-group">
-            
-            
-              <h3 class="category-head font-semibold text-2xl mb-2 text-gray-600 pl-4">economy</h3>
-              <ul class="list-disc pl-12">
-                
-                  <li>
-                    <a href="/site/giving-circular-economy-a-boost" class="text-blue-500 hover:underline">Giving circular economy a boost by improving refurbishment process of household appliances</a>
-                  </li>
-                
-              </ul>
-            
-          </div>
-        
-          
-          <div class="archive-group">
-            
-            
-              <h3 class="category-head font-semibold text-2xl mb-2 text-gray-600 pl-4">Projects,</h3>
-              <ul class="list-disc pl-12">
-                
-                  <li>
-                    <a href="/site/conscious-phmc-award" class="text-blue-500 hover:underline">Our team won the Best Industry Paper Award at the IEEE Conference on Prognostics and Health Management</a>
-                  </li>
-                
-              </ul>
-            
-          </div>
-        
-          
-          <div class="archive-group">
-            
-            
-              <h3 class="category-head font-semibold text-2xl mb-2 text-gray-600 pl-4">Awards</h3>
-              <ul class="list-disc pl-12">
-                
-                  <li>
-                    <a href="/site/conscious-phmc-award" class="text-blue-500 hover:underline">Our team won the Best Industry Paper Award at the IEEE Conference on Prognostics and Health Management</a>
-                  </li>
-                
-              </ul>
-            
-          </div>
-        
-          
-          <div class="archive-group">
-            
-            
-              <h3 class="category-head font-semibold text-2xl mb-2 text-gray-600 pl-4">Awards,</h3>
-              <ul class="list-disc pl-12">
-                
-                  <li>
-                    <a href="/site/samuel-itea-excellence-award" class="text-blue-500 hover:underline">Collaboration with Materialise and Cr3do selected for the ITEA Award of Excellence for Innovation</a>
-                  </li>
-                
-              </ul>
-            
-          </div>
-        
+        </select>
       </div>
     </div>
 
     <!-- Blog Posts Section -->
     <section class="blog-cards w-full md:w-4/5 flex flex-wrap justify-center">
-      
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+      <div id="postsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
         
-          <a href="/site/samuel-itea-excellence-award" class="w-full sm:w-3/4 md:w-full p-8">
+        
+          <a href="/samuel-itea-excellence-award" class="w-full sm:w-3/4 md:w-full p-8 post-card" data-categories="Awards Projects">
             <div class="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-700 transform hover:scale-105">
               <div class="p-6">
                 <img src="src/assets/samuel_itea_award1_piqsels.com-id-zmdsp.jpg" alt="Collaboration with Materialise and Cr3do selected for the ITEA Award of Excellence for Innovation - Featured Image" class="w-full h-72 object-cover rounded-2xl" />
@@ -470,7 +164,7 @@
                   <p class="text-gray-600 py-2 font-medium">Read Time: 6 min</p>
                   <p class="bg-blue-200 rounded-2xl py-2 text-center border-gray-700 border-2 p-2 text-gray-700 font-medium">
                     
-                      Awards,, Projects
+                      Awards, Projects
                     
                   </p>
                 </div>
@@ -478,7 +172,7 @@
             </div>
           </a>
         
-          <a href="/site/conscious-phmc-award" class="w-full sm:w-3/4 md:w-full p-8">
+          <a href="/conscious-phmc-award" class="w-full sm:w-3/4 md:w-full p-8 post-card" data-categories="Projects Awards">
             <div class="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-700 transform hover:scale-105">
               <div class="p-6">
                 <img src="src/assets/conscious_phmc_award1.jpg" alt="Our team won the Best Industry Paper Award at the IEEE Conference on Prognostics and Health Management - Featured Image" class="w-full h-72 object-cover rounded-2xl" />
@@ -499,7 +193,7 @@
                   <p class="text-gray-600 py-2 font-medium">Read Time: 4 min</p>
                   <p class="bg-blue-200 rounded-2xl py-2 text-center border-gray-700 border-2 p-2 text-gray-700 font-medium">
                     
-                      Projects,, Awards
+                      Projects, Awards
                     
                   </p>
                 </div>
@@ -507,7 +201,7 @@
             </div>
           </a>
         
-          <a href="/site/the-invisible-war-against-women" class="w-full sm:w-3/4 md:w-full p-8">
+          <a href="/the-invisible-war-against-women" class="w-full sm:w-3/4 md:w-full p-8 post-card" data-categories="Sir Adas' series">
             <div class="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-700 transform hover:scale-105">
               <div class="p-6">
                 <img src="src/assets/sir_adas_invisible_war.jpg" alt="Sir Adas' series The invisible war against women - Featured Image" class="w-full h-72 object-cover rounded-2xl" />
@@ -530,7 +224,7 @@
                   <p class="text-gray-600 py-2 font-medium">Read Time: 9 min</p>
                   <p class="bg-blue-200 rounded-2xl py-2 text-center border-gray-700 border-2 p-2 text-gray-700 font-medium">
                     
-                      Sir, Adas', series
+                      Sir Adas' series
                     
                   </p>
                 </div>
@@ -538,7 +232,7 @@
             </div>
           </a>
         
-          <a href="/site/giving-circular-economy-a-boost" class="w-full sm:w-3/4 md:w-full p-8">
+          <a href="/giving-circular-economy-a-boost" class="w-full sm:w-3/4 md:w-full p-8 post-card" data-categories="Circular economy">
             <div class="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-700 transform hover:scale-105">
               <div class="p-6">
                 <img src="src/assets/Brefurbish_washer.jpg" alt="Giving circular economy a boost by improving refurbishment process of household appliances - Featured Image" class="w-full h-72 object-cover rounded-2xl" />
@@ -559,7 +253,7 @@
                   <p class="text-gray-600 py-2 font-medium">Read Time: 3 min</p>
                   <p class="bg-blue-200 rounded-2xl py-2 text-center border-gray-700 border-2 p-2 text-gray-700 font-medium">
                     
-                      Circular, economy
+                      Circular economy
                     
                   </p>
                 </div>
@@ -567,7 +261,7 @@
             </div>
           </a>
         
-          <a href="/site/interview-3e-and-elucidata-lab" class="w-full sm:w-3/4 md:w-full p-8">
+          <a href="/interview-3e-and-elucidata-lab" class="w-full sm:w-3/4 md:w-full p-8 post-card" data-categories="Events">
             <div class="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-700 transform hover:scale-105">
               <div class="p-6">
                 <img src="src/assets/default_news_image.jpg" alt="Interview 3E and EluciDATA Lab in the framework of the campaign "AI to boost your SME" by the FPS Economie - Featured Image" class="w-full h-72 object-cover rounded-2xl" />
@@ -596,7 +290,7 @@
             </div>
           </a>
         
-          <a href="/site/today-as-a-woman-you-can-do-anything" class="w-full sm:w-3/4 md:w-full p-8">
+          <a href="/today-as-a-woman-you-can-do-anything" class="w-full sm:w-3/4 md:w-full p-8 post-card" data-categories="Sir Adas' series">
             <div class="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-700 transform hover:scale-105">
               <div class="p-6">
                 <img src="src/assets/sir_adas_you_can_do_anything.jpg" alt="Today, as a Woman, You Can Do Anything, But You Must Not Do Anything! - Featured Image" class="w-full h-72 object-cover rounded-2xl" />
@@ -619,7 +313,7 @@
                   <p class="text-gray-600 py-2 font-medium">Read Time: 9 min</p>
                   <p class="bg-blue-200 rounded-2xl py-2 text-center border-gray-700 border-2 p-2 text-gray-700 font-medium">
                     
-                      Sir, Adas', series
+                      Sir Adas' series
                     
                   </p>
                 </div>
@@ -627,7 +321,7 @@
             </div>
           </a>
         
-          <a href="/site/women-cannot-play-chess" class="w-full sm:w-3/4 md:w-full p-8">
+          <a href="/women-cannot-play-chess" class="w-full sm:w-3/4 md:w-full p-8 post-card" data-categories="Sir Adas' series">
             <div class="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-700 transform hover:scale-105">
               <div class="p-6">
                 <img src="src/assets/sir_adas_women_cannot_play_chess.jpeg" alt="Sir Adas' series; Women cannot play chess! - Featured Image" class="w-full h-72 object-cover rounded-2xl" />
@@ -650,7 +344,7 @@
                   <p class="text-gray-600 py-2 font-medium">Read Time: 5 min</p>
                   <p class="bg-blue-200 rounded-2xl py-2 text-center border-gray-700 border-2 p-2 text-gray-700 font-medium">
                     
-                      Sir, Adas', series
+                      Sir Adas' series
                     
                   </p>
                 </div>
@@ -658,7 +352,7 @@
             </div>
           </a>
         
-          <a href="/site/ada-lovelace-the-first-programmer" class="w-full sm:w-3/4 md:w-full p-8">
+          <a href="/ada-lovelace-the-first-programmer" class="w-full sm:w-3/4 md:w-full p-8 post-card" data-categories="Sir Adas' series">
             <div class="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-700 transform hover:scale-105">
               <div class="p-6">
                 <img src="src/assets/ada-lovelace-1068x653-1.jpg" alt="Sir Adas' series; Ada Lovelace, the first programmer - Featured Image" class="w-full h-72 object-cover rounded-2xl" />
@@ -679,7 +373,7 @@
                   <p class="text-gray-600 py-2 font-medium">Read Time: 2 min</p>
                   <p class="bg-blue-200 rounded-2xl py-2 text-center border-gray-700 border-2 p-2 text-gray-700 font-medium">
                     
-                      Sir, Adas', series
+                      Sir Adas' series
                     
                   </p>
                 </div>
@@ -687,7 +381,7 @@
             </div>
           </a>
         
-          <a href="/site/is-traffic-volume-correlated-to" class="w-full sm:w-3/4 md:w-full p-8">
+          <a href="/is-traffic-volume-correlated-to" class="w-full sm:w-3/4 md:w-full p-8 post-card" data-categories="Intelligent transportation systems">
             <div class="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-700 transform hover:scale-105">
               <div class="p-6">
                 <img src="src/assets/cover photo - blog 5_1.jpg" alt="Is traffic volume correlated to Covid-19 infections? - Featured Image" class="w-full h-72 object-cover rounded-2xl" />
@@ -710,7 +404,7 @@
                   <p class="text-gray-600 py-2 font-medium">Read Time: 9 min</p>
                   <p class="bg-blue-200 rounded-2xl py-2 text-center border-gray-700 border-2 p-2 text-gray-700 font-medium">
                     
-                      Intelligent, transportation, systems
+                      Intelligent transportation systems
                     
                   </p>
                 </div>
@@ -718,7 +412,7 @@
             </div>
           </a>
         
-          <a href="/site/three-new-thematic-icon-projects" class="w-full sm:w-3/4 md:w-full p-8">
+          <a href="/three-new-thematic-icon-projects" class="w-full sm:w-3/4 md:w-full p-8 post-card" data-categories="Funding">
             <div class="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-700 transform hover:scale-105">
               <div class="p-6">
                 <img src="src/assets/vlaio-agentschap-innoveren-ondernemen.png" alt="Three new thematic ICON projects on AI. - Featured Image" class="w-full h-72 object-cover rounded-2xl" />
@@ -747,7 +441,7 @@
             </div>
           </a>
         
-          <a href="/site/runup-in-brussels-traffic-towards" class="w-full sm:w-3/4 md:w-full p-8">
+          <a href="/runup-in-brussels-traffic-towards" class="w-full sm:w-3/4 md:w-full p-8 post-card" data-categories="Intelligent transportation systems">
             <div class="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-700 transform hover:scale-105">
               <div class="p-6">
                 <img src="src/assets/cover photo - blog 4.jpg" alt="Run-up in Brussels Traffic Towards the 2nd Covid-19 Peak - Featured Image" class="w-full h-72 object-cover rounded-2xl" />
@@ -770,7 +464,7 @@
                   <p class="text-gray-600 py-2 font-medium">Read Time: 8 min</p>
                   <p class="bg-blue-200 rounded-2xl py-2 text-center border-gray-700 border-2 p-2 text-gray-700 font-medium">
                     
-                      Intelligent, transportation, systems
+                      Intelligent transportation systems
                     
                   </p>
                 </div>
@@ -778,7 +472,7 @@
             </div>
           </a>
         
-          <a href="/site/sir-adas-empower-women" class="w-full sm:w-3/4 md:w-full p-8">
+          <a href="/sir-adas-empower-women" class="w-full sm:w-3/4 md:w-full p-8 post-card" data-categories="Sir Adas' series">
             <div class="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-700 transform hover:scale-105">
               <div class="p-6">
                 <img src="src/assets/sir_adas_empower_woman.jpg" alt="Sir Adas' series; No laws can empower women career-wise without an adequate social system! - Featured Image" class="w-full h-72 object-cover rounded-2xl" />
@@ -801,7 +495,7 @@
                   <p class="text-gray-600 py-2 font-medium">Read Time: 9 min</p>
                   <p class="bg-blue-200 rounded-2xl py-2 text-center border-gray-700 border-2 p-2 text-gray-700 font-medium">
                     
-                      Sir, Adas', series
+                      Sir Adas' series
                     
                   </p>
                 </div>
@@ -809,7 +503,7 @@
             </div>
           </a>
         
-          <a href="/site/elucidata-lab-involved-in" class="w-full sm:w-3/4 md:w-full p-8">
+          <a href="/elucidata-lab-involved-in" class="w-full sm:w-3/4 md:w-full p-8 post-card" data-categories="Projects">
             <div class="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-700 transform hover:scale-105">
               <div class="p-6">
                 <img src="src/assets/SKAIDive.jpg" alt="EluciDATA Lab  involved in TRAIL (Trusted AI Labs) – Walloon initiative to foster research and collaboration around AI - Featured Image" class="w-full h-72 object-cover rounded-2xl" />
@@ -838,7 +532,7 @@
             </div>
           </a>
         
-          <a href="/site/the-small-ring-of-brussels" class="w-full sm:w-3/4 md:w-full p-8">
+          <a href="/the-small-ring-of-brussels" class="w-full sm:w-3/4 md:w-full p-8 post-card" data-categories="Intelligent transportation systems">
             <div class="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-700 transform hover:scale-105">
               <div class="p-6">
                 <img src="src/assets/cover photo - blog 3.jpg" alt="The Small Ring of Brussels is Getting Gradually Cured (i.e. back to normal stagnated traffic) from Covid-19 - Featured Image" class="w-full h-72 object-cover rounded-2xl" />
@@ -861,7 +555,7 @@
                   <p class="text-gray-600 py-2 font-medium">Read Time: 12 min</p>
                   <p class="bg-blue-200 rounded-2xl py-2 text-center border-gray-700 border-2 p-2 text-gray-700 font-medium">
                     
-                      Intelligent, transportation, systems
+                      Intelligent transportation systems
                     
                   </p>
                 </div>
@@ -869,7 +563,7 @@
             </div>
           </a>
         
-          <a href="/site/how-process-modelling-data" class="w-full sm:w-3/4 md:w-full p-8">
+          <a href="/how-process-modelling-data" class="w-full sm:w-3/4 md:w-full p-8 post-card" data-categories="Trainings">
             <div class="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-700 transform hover:scale-105">
               <div class="p-6">
                 <img src="src/assets/piqsels.com-id-zjiks.jpg" alt="How process modelling & data science will enhance your food processing business - Featured Image" class="w-full h-72 object-cover rounded-2xl" />
@@ -898,7 +592,7 @@
             </div>
           </a>
         
-          <a href="/site/unravelling-volume-patterns-of-brussels" class="w-full sm:w-3/4 md:w-full p-8">
+          <a href="/unravelling-volume-patterns-of-brussels" class="w-full sm:w-3/4 md:w-full p-8 post-card" data-categories="Intelligent transportation systems">
             <div class="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-700 transform hover:scale-105">
               <div class="p-6">
                 <img src="src/assets/cover-photo-blog2_0.jpg" alt="Unravelling volume patterns of Brussels traffic in times of Covid-19 - Featured Image" class="w-full h-72 object-cover rounded-2xl" />
@@ -921,7 +615,7 @@
                   <p class="text-gray-600 py-2 font-medium">Read Time: 8 min</p>
                   <p class="bg-blue-200 rounded-2xl py-2 text-center border-gray-700 border-2 p-2 text-gray-700 font-medium">
                     
-                      Intelligent, transportation, systems
+                      Intelligent transportation systems
                     
                   </p>
                 </div>
@@ -929,7 +623,7 @@
             </div>
           </a>
         
-          <a href="/site/insightful-blueprints-of-brussels-traffic" class="w-full sm:w-3/4 md:w-full p-8">
+          <a href="/insightful-blueprints-of-brussels-traffic" class="w-full sm:w-3/4 md:w-full p-8 post-card" data-categories="Projects">
             <div class="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-700 transform hover:scale-105">
               <div class="p-6">
                 <img src="src/assets/cover photo - blog 1_0.jpg" alt="Insightful blueprints of Brussels traffic emerge in times of covid-19 - Featured Image" class="w-full h-72 object-cover rounded-2xl" />
@@ -960,7 +654,7 @@
             </div>
           </a>
         
-          <a href="/site/flanders-ai-forum-on-23012020" class="w-full sm:w-3/4 md:w-full p-8">
+          <a href="/flanders-ai-forum-on-23012020" class="w-full sm:w-3/4 md:w-full p-8 post-card" data-categories="Events Funding">
             <div class="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-700 transform hover:scale-105">
               <div class="p-6">
                 <img src="src/assets/IMG_5919.JPG" alt="Flanders AI Forum on 23/01/2020 - Featured Image" class="w-full h-72 object-cover rounded-2xl" />
@@ -994,11 +688,28 @@
   </section>
 
 </main>
+
+<script>
+document.getElementById('categoryDropdown').addEventListener('change', function() {
+  var selectedCategory = this.value;
+  var posts = document.querySelectorAll('.post-card');
+
+  posts.forEach(function(post) {
+    var postCategories = post.getAttribute('data-categories').split(' ');
+
+    if (selectedCategory === 'all' || postCategories.includes(selectedCategory)) {
+      post.style.display = 'block';
+    } else {
+      post.style.display = 'none';
+    }
+  });
+});
+</script>
 <footer class="bg-sky-900 dark:bg-slate-700 p-4 border-t-4 border-gray-200 overflow-hidden flex-shrink-0 sticky top-[100vh]">
     <div class="flex flex-col md:flex-row justify-between items-center h-full">
         <!-- Left Section -->
         <div class="flex flex-col items-center mb-4 md:mb-0">
-            <img class="w-full h-full mr-0 flex p-4 md:p-10" src="/site/src/assets/PoweredBySirris_negatif 1.png" alt="Logo">
+            <img class="w-full h-full mr-0 flex p-4 md:p-10" src="/src/assets/PoweredBySirris_negatif 1.png" alt="Logo">
             <div class="flex items-center space-x-2">
                 <a href="https://www.facebook.com/Sirris.be" alt="facebook logo" class="text-slate-100 hover:text-blue-500 p-2 md:p-4 text-xl md:text-3xl"><i class="fab fa-facebook"></i> Facebook</a>
                 <a href="https://twitter.com/Sirris_be" alt="twitter logo" class="text-slate-100 hover:text-blue-500 p-2 md:p-4 text-xl md:text-3xl"><i class="fab fa-twitter"></i> Twitter</a>
@@ -1009,7 +720,7 @@
         <!-- Middle Section -->
         <div class="w-full md:w-auto mb-4 md:mb-0 flex justify-center">
             <a href="/" class="block">
-                <img class="w-60 md:w-72 cursor-pointer flex items-center" src="/site/src/assets/logo.png" alt="EluciDATA Logo">
+                <img class="w-60 md:w-72 cursor-pointer flex items-center" src="/src/assets/logo.png" alt="EluciDATA Logo">
             </a>
         </div>
 
@@ -1039,25 +750,25 @@
                     <li class="mb-2">
                         
                         
-                        <a href="/site/samuel-itea-excellence-award" class="text-slate-100 hover:underline block">Collaboration with Materialise...</a>
+                        <a href="/samuel-itea-excellence-award" class="text-slate-100 hover:underline block">Collaboration with Materialise...</a>
                     </li>
                     
                     <li class="mb-2">
                         
                         
-                        <a href="/site/conscious-phmc-award" class="text-slate-100 hover:underline block">Our team won...</a>
+                        <a href="/conscious-phmc-award" class="text-slate-100 hover:underline block">Our team won...</a>
                     </li>
                     
                     <li class="mb-2">
                         
                         
-                        <a href="/site/the-invisible-war-against-women" class="text-slate-100 hover:underline block">Sir Adas' series...</a>
+                        <a href="/the-invisible-war-against-women" class="text-slate-100 hover:underline block">Sir Adas' series...</a>
                     </li>
                     
                     <li class="mb-2">
                         
                         
-                        <a href="/site/giving-circular-economy-a-boost" class="text-slate-100 hover:underline block">Giving circular economy...</a>
+                        <a href="/giving-circular-economy-a-boost" class="text-slate-100 hover:underline block">Giving circular economy...</a>
                     </li>
                     
                 </ul>

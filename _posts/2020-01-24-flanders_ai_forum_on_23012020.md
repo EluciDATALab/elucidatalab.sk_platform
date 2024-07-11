@@ -13,10 +13,10 @@ excerpt: On January 23rd, Agoria, Voka, imec and Sirris with the support of VLAI
 
 <p>The SKAIDive project, which aims at creating an interactive Starter Kit Platform for the adoption of industrial AI and Data Science competencies by companies.&nbsp;</p>
 
-<p><img alt="Screenshot 2020-01-24 at 15.07.24.png" src="../img/blogs/Screenshot 2020-01-24 at 15.07.24.png" /></p>
+<p><img alt="Screenshot 2020-01-24 at 15.07.24.png" src="src/assets/Screenshot 2020-01-24 at 15.07.24.png" /></p>
 
 <p>The AI4DETAIL project aiming at building up and transfering knowledge related to gathering and exploiting in-the-field asset usage data.&nbsp;</p>
 
-<p><img alt="Screenshot 2020-01-24 at 15.07.42_0.png" src="../img/blogs/Screenshot 2020-01-24 at 15.07.42_0.png" /></p>
+<p><img alt="Screenshot 2020-01-24 at 15.07.42_0.png" src="src/assets/Screenshot 2020-01-24 at 15.07.42_0.png" /></p>
 
 <p>Interested in one of the initiatives? Get in touch with <a href="mailto:elucidatalab@sirris.be">us</a>!</p>

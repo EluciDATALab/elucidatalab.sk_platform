@@ -4,7 +4,7 @@ title: Today, as a Woman, You Can Do Anything, But You Must Not Do Anything!
 date: 2021-06-16  
 author: Elena Tsiporkova
 image: src/assets/sir_adas_you_can_do_anything.jpg  
-categories: Sir Adas' series
+categories: [Sir Adas' series]
 excerpt: June 16th, 1963; Vostok 6, with Valentina (Valia) Tereshkova on board, was launched in space. The first, the youngest (only 26) and the only woman who has ever flown in space on a solo mission. Whau!
 ---
 

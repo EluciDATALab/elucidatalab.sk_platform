@@ -4,7 +4,7 @@ title: Sir Adas' series The invisible war against women
 date: 2022-05-24
 image: src/assets/sir_adas_invisible_war.jpg
 author: Elena Tsiporkova
-categories: Sir Adas' series
+categories: [Sir Adas' series]
 excerpt: We have not done a lot of SirAdas blogging recently. The workload has taken the upper hand in our daily lives and then there was the insane war in Ukraine. History repeating again … few machos showing off with power and weapons. And as always, the victims are mostly women and children. However, there is another war which has been ongoing for centuries, namely the invisible violence against women.
 permanent_url: https://www.linkedin.com/pulse/invisible-war-against-women-elena-tsiporkova/?trackingId=dU1x6gAeQ8%2BS9AjSVSkDyw%3D%3D
 ---

@@ -4,7 +4,7 @@ author: Michiel Dhont, Elena Tsiporkova, Tom Tourwé and Nicolás González-Dele
 title: Unravelling volume patterns of Brussels traffic in times of Covid-19
 date: 2020-05-19
 image: src/assets/cover-photo-blog2_0.jpg
-categories: Intelligent transportation systems
+categories: [Intelligent transportation systems]
 excerpt: This is the second in a series of blogs, in the context of the MISTic project. In this second blog, we focus on the evolution of traffic during the relaxations of the restrictions, and on providing answers to questions such as “What is the effect from each relaxation of the restrictions on the Brussels traffic?” and “Do people consistently obey the restrictions?”.
 ---
 

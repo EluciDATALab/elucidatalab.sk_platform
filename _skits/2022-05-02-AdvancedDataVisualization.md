@@ -46,22 +46,22 @@ Welcome to the second video of the tutorial for the AI Starter Kit on advanced v
 
 The data we use is publicly-available data from the City of Seattle. The dataset contains information about bike rides at specific places in the city. At each spot, the number of bikes going in each direction per hour is counted.
 
-<center><img src="./img/SK_specific/AV_figure1.png" width="400" class="center" /></center>
+<center><img src="../src/assets/AV_figure1.png" width="400" class="center" /></center>
 
 In the table, you see a random sample of the data. The variable 'Node' refers to the single locations at which the bikes are counted, which is done in two directions. In a first step, we will add some additional variables to the table that will help us later on for the visualisations. From the timestamp column, we extract the date and time, respectively, the hour and the day of the week.
 
-<center><img src="./img/SK_specific/AV_figure2.png" width="800" class="center" /></center>
+<center><img src="../src/assets/AV_figure2.png" width="800" class="center" /></center>
 
 Additionally, we replace all possible missing measurements, hence where the variable 'Total' is not set, with zeros.
 
 Now, we can extract some basic statistics from the data.
 
-<center><img src="./img/SK_specific/AV_figure3.png" width="300" class="center" /></center>
+<center><img src="../src/assets/AV_figure3.png" width="300" class="center" /></center>
 
 For all locations, we have data for at least three and a half years. For one of the locations,
 Fremont Bridge, the data spans even over 6 years. We can also see that Spokane Street seems to be very popular with more than 1 million bike crossings in 4 and a half years while others only reach about 300.000 counts in the same time span.
 
-<center><img src="./img/SK_specific/AV_figure4.png" width="800" class="center" /></center>
+<center><img src="../src/assets/AV_figure4.png" width="800" class="center" /></center>
 
 Before we start with the advanced visualisations, let’s briefly check the location of the single nodes on the map. This allows us to verify whether they are close to important areas, like for example tourist or business areas, points-of-interest, etc. In our interactive Starter Kit, you can click on the red circles to see where the single nodes are located. Can you guess which marker is Spokane Street?
 
@@ -80,7 +80,7 @@ Welcome to the third video of of the tutorial for the AI Starter Kit on advanced
 
 Since we are dealing with time series data, we can first use a timeline visualisation and plot the average number of crossings per hour and node over time. Such visualisations are on the one hand useful to observe abrupt changes in the data but on the other hand, also to identify time-sensitive trends, such as seasonal variation, increasing or decreasing trends, etc. Further, they make it easy to recognize periods with missing data.
 
-<center><img src="./img/SK_specific/AV_figure5.png" width="800" class="center" /></center>
+<center><img src="../src/assets/AV_figure5.png" width="800" class="center" /></center>
 
 The visualisation on the right just plots the total number of crossings per hour for each node. However, plotting the available data in this way results in a visualisation containing an excessive amount of information. Note for example that data of some nodes hides data of other nodes, a phenomenon called occlusion. The massive amount of information makes it difficult to identify interesting observations in the data such as possible seasonal patterns.
 
@@ -113,11 +113,11 @@ Sequential color maps that continuously change from one color to another like Yl
 Similarly to the calendar heatmap over the full year, we can drill down further and look at whether we can observe some hourly patterns. Let's first investigate a single node, for example Fremont Bridge,
 and use a matrix heatmap in which each day of the week is represented as a row and each hour of the day is represented as a column. As before, the colour intensity indicates the amount of traffic for that day and hour. Note that such a heatmap requires summing the total traffic for each day per hour.
 
-<center><img src="./img/SK_specific/AV_figure6.png" width="600" class="center" /></center>
+<center><img src="../src/assets/AV_figure6.png" width="600" class="center" /></center>
 
 This plot reveals the following insights: first of all, it confirms the different daily patterns for weekdays and weekends. For this, please have a look at the last two rows of the plot representing Saturdays and Sundays. They are quite different from the top 5 rows representing Monday to Friday. There is a clear bimodal pattern for weekdays, with heavier traffic in the morning and evening. This is not visible for weekend days but rather some increase in the midday hours. This bipolar pattern probably relates to people using their bikes to get to work and back home. This is in contrast to the weekend pattern, corresponding to recreational traffic, that is people biking for pleasure in their free time.
 
-<center><img src="./img/SK_specific/AV_figure7.png" width="800" class="center" /></center>
+<center><img src="../src/assets/AV_figure7.png" width="800" class="center" /></center>
 
 In order to check whether we can see this commute pattern for all nodes, we can use the small multiples technique. A small multiple is a series of graphs of the same type, using the same scale, presented together at a small size with minimal details.
 
@@ -127,7 +127,7 @@ We can distinguish the commute pattern that we discovered previously, - though w
 
 We can investigate the commute pattern even further by taking the direction of the cyclists into consideration. For this, we will use a variant of an area plot - called a streamgraph – in which data is displayed around a central axis. In the present case, we will display the average number of crossings per hour at a node around the X axis, in order to discriminate traffic between the two directions. We will plot one direction above the X axis and the other direction below. The X axis itself will represent the time expressed as hours in a day.
 
-<center><img src="./img/SK_specific/AV_figure8.png" width="800" class="center" /></center>
+<center><img src="../src/assets/AV_figure8.png" width="800" class="center" /></center>
 
 The plot presents streamgraph plots using the small multiples technique for the different days of the week. In the interactive Starter Kit, it is possible to select the different nodes, as well as to select the month for which to show the data.
 
@@ -148,7 +148,7 @@ Welcome to the fourth video in the tutorial on advanced visualisation. In this v
 
 The visualisations presented in the former videos already allowed us to identify outliers. We saw for example that the traffic at NorthWest 58th Street seems to follow other rules than the other nodes in the network. In this video, we will perform a more detailed analysis of outliers in order to identify them more precisely.
 
-<center><img src="./img/SK_specific/AV_figure9.png" width="600" class="center" /></center>
+<center><img src="../src/assets/AV_figure9.png" width="600" class="center" /></center>
 
 This table presents another way of looking at the data. For each node we have 24 observations per day,
 corresponding to the hourly total number of bike passings through that node. As humans, we cannot easily interpret such a table by just staring at it. However, it is also difficult to visualise such data because it is multi-dimensional meaning that it has 24 values for 6 nodes for thousands of days.
@@ -157,11 +157,11 @@ However, we can still visualise that data by first performing a so-called dimens
 
 More concretely, PCA is a statistical procedure that transforms the multidimensional data provided as input into a reduced set of orthogonal - and with that uncorrelated - dimensions. These dimensions are called principal components. By using PCA, we can reduce the dimensionality of the data in the above table to two dimensions and plot the result using a scatterplot, as shown here.
 
-<center><img src="./img/SK_specific/AV_figure10.png" width="400" class="center" /></center>
+<center><img src="../src/assets/AV_figure10.png" width="400" class="center" /></center>
 
 Scatterplots typically visualise two variables of a dataset along the X and Y axis, respectively. Additional information can also be visualised by changing the colour or size of the dots though. Scatterplots are useful to identify relationships between two variables, such as correlation, and to identify separate groups in the data which can be useful for subsequent clustering. The scatterplot shown here has the shape of an 'L' and seems thus to indicate that there are roughly two groups in the data, corresponding to the two line segments forming the shape of that letter.
 
-<center><img src="./img/SK_specific/AV_figure11.png" width="800" class="center" /></center>
+<center><img src="../src/assets/AV_figure11.png" width="800" class="center" /></center>
 
 We can now check in the interactive Starter Kit whether these two groups are present for all nodes. From the above analyses, we might suspect different results for NorthWest 58th Street and 26th Avenue  compared to the other nodes.
 
@@ -178,11 +178,11 @@ When we select the data from NorthWest 58th Street, we get a significantly diffe
 
 Getting back to Fremont Bridge, also here a couple of weekdays seem to behave like weekend days. We can observe some of these dots in the upper left part of the plot for all nodes. We suspect these latter dots to be outliers. We can automatically identify them by first applying a clustering algorithm for grouping the datapoints in both of the arms together. Then, we can check that the points in each of these two categories correspond to weekend days or weekdays, respectively. Those which do not follow this pattern can be considered outliers. To cluster and hence separate these points we use a Gaussian Mixture Model. It is a clustering technique particularly suited to oval-like shapes like those corresponding to the two categories we would like to separate. As training data, we only consider a single node at a time, but in general, the model can be trained on the data for all the nodes that exhibit the commute pattern. We only do this for those nodes where the two distinct groups could be identified, so not for NW 58th Street and 26th Avenue.
 
-<center><img src="./img/SK_specific/AV_figure12.png" width="400" class="center" /></center>
+<center><img src="../src/assets/AV_figure12.png" width="400" class="center" /></center>
 
 As can be seen from the plot, the Gaussian mixture model is quite good in separating the two groups. With the colours indicating the cluster, we can easily identify the outliers, that is those days that are actually weekdays but that are assigned to the weekend day cluster.
 
-<center><img src="./img/SK_specific/AV_figure13.png" width="600" class="center" /></center>
+<center><img src="../src/assets/AV_figure13.png" width="600" class="center" /></center>
 
 The heatmap plot shows the date corresponding to those outliers. By further checking the US federal holiday calendar, we can see whether the resulting dates corresponded to a holiday, in which case the name of the holiday is indicated on the Y axis.
 
