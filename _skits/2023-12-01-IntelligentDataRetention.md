@@ -77,14 +77,14 @@ The process can be illustrated by means of an example as follows.
 
 - In a first phase, the technique starts with the first point in the time series, the potential tolerance band starts with the whole area after the point. When the second point is considered, a linear interpolation is constructed between these two points and the tolerance band is updated using the deviation parameter Δy.
 
-<table><tr><td><img src='img/SK_specific/SDTPhase1.png'></td><td><img src='img/SK_specific/SDTPhase2.png'></td></tr></table>
+<table><tr><td><img src='../src/assets/SDTPhase1.png'></td><td><img src='../src/assets/SDTPhase2.png'></td></tr></table>
 
 - In a second phase, a next point is selected, the new linear representation is constructed between the last point that was retained and the next point, and the new tolerance band is defined. If the next point, i.e. point 4, has the new lower bound lower than the previous lower bound, the tolerance band is not updated (the purple area will not be used as a tolerance band update), similar for the upper bound.
 
-<table><tr><td><img src='img/SK_specific/SK_specific.png'></td><td><img src='img/SK_specific/SDTPhase4.png'></td></tr></table>
+<table><tr><td><img src='../src/assets/SK_specific.png'></td><td><img src='../src/assets/SDTPhase4.png'></td></tr></table>
 
 - As long as there are new points that fall in the tolerance band, they can be represented by the linear representation. Once a new point is considered that falls outside the tolerance band, e.g. point 6, the last point of the linear representation, e.g. point 5, will be retained as the compressed version of points 1 to 5. Starting from point 5 a new linear representation will be constructed with point 6 as the first point to consider.  
 
-<table><tr><td><img src='img/SK_specific/SDTPhase5.png'></td><td><img src='img/SK_specific/SDTPhase6.png'></td></tr></table>
+<table><tr><td><img src='../src/assets/SDTPhase5.png'></td><td><img src='../src/assets/SDTPhase6.png'></td></tr></table>
 
 In this example, the first 5 points will be compressed by a linear representation that is defined by point 1 and point 5, i.e. removing points 2, 3 and 4.

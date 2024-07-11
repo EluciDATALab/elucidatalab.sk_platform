@@ -1,0 +1,2 @@
+docker build --build-arg UID=1000 --build-arg GID=1000 -t custom-jekyll .
+
