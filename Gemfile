@@ -12,7 +12,7 @@ gem "jekyll-postcss-v2"
 gem 'jekyll-paginate-v2', '~> 3.0'
 gem 'jekyll-paginate'
 gem 'jekyll-sass-converter', '~> 3.0.0'
-gem 'sass-embedded', '~> 1.58.3'
+gem 'sass-embedded', '~> 1.58.3', platforms: [:ruby]
 # gem 'fix', '~> 5.0.4'
 gem 'public_suffix', '5.0.4'
 
