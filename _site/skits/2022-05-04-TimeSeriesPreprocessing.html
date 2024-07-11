@@ -16,14 +16,14 @@
 <link rel="canonical" href="http://localhost:4000/skits/2022-05-04-TimeSeriesPreprocessing" />
 <meta property="og:url" content="http://localhost:4000/skits/2022-05-04-TimeSeriesPreprocessing" />
 <meta property="og:site_name" content="Elucidata - Your AI experience" />
-<meta property="og:image" content="http://localhost:4000/src/assets/SDTPhase5.png" />
+<meta property="og:image" content="http://localhost:4000/src/assets/TSP_figure7_introduction.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-12-01T00:00:00+01:00" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="http://localhost:4000/src/assets/SDTPhase5.png" />
+<meta property="twitter:image" content="http://localhost:4000/src/assets/TSP_figure7_introduction.png" />
 <meta property="twitter:title" content="Time Series Preprocessing" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"EluciDATALab"},"dateModified":"2023-12-01T00:00:00+01:00","datePublished":"2023-12-01T00:00:00+01:00","description":"Time Series Preprocessing","headline":"Time Series Preprocessing","image":"http://localhost:4000/src/assets/SDTPhase5.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/skits/2022-05-04-TimeSeriesPreprocessing"},"url":"http://localhost:4000/skits/2022-05-04-TimeSeriesPreprocessing"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"EluciDATALab"},"dateModified":"2023-12-01T00:00:00+01:00","datePublished":"2023-12-01T00:00:00+01:00","description":"Time Series Preprocessing","headline":"Time Series Preprocessing","image":"http://localhost:4000/src/assets/TSP_figure7_introduction.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/skits/2022-05-04-TimeSeriesPreprocessing"},"url":"http://localhost:4000/skits/2022-05-04-TimeSeriesPreprocessing"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -143,11 +143,12 @@
     <title>Time Series Preprocessing</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body class="font-[Poppins] bg-gradient-to-br from-gray-50 via-sky-200 to-blue-300 min-h-screen">
     <div class="mt-16 lg:px-30 xl:px-48">
         <h1 class="font-bold flex justify-center text-4xl pt-16 m-4 text-gray-700">Time Series Preprocessing</h1>
-        <img src="../src/assets/SDTPhase5.png" alt="Time Series Preprocessing - Featured Image" class="w-full h-72 object-cover rounded-2xl" />
+        <img src="../src/assets/TSP_figure7_introduction.png" alt="Time Series Preprocessing - Featured Image" class="w-full h-72 object-cover rounded-2xl" />
         <div class="flex justify-between pt-8 p-8">
             <!-- Left side -->
             <div class="flex items-center space-x-4">
@@ -200,6 +201,21 @@
 <li><a href="#outlier-detection" class="text-blue-500 hover:underline">Outlier Detection</a></li>
 <li><a href="#handling-missing-data" class="text-blue-500 hover:underline">Handling Missing Data</a></li>
 <li><a href="#key-take-away-messages" class="text-blue-500 hover:underline">Key Take Away Messages</a></li></ul>
+                
+                
+                    <div class="flex justify-center pb-16">
+                      
+                        <a href="https://colab.research.google.com/github/EluciDATALab/elucidatalab.starterkits/blob/main/notebooks/SK_3_4_Time_Series_Preprocessing/elucidata_starterkit_3_4.ipynb" target="_blank" class="mt-4 text-white bg-gradient-to-br from-purple-500 to-blue-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-3xl text-lg px-6 py-3 flex flex-col items-center">
+                          <span>Access notebook</span>
+                          <div class="flex items-center mt-1">
+                            <img src="../src/assets/colab_favicon.png" alt="Icon" class="w-16 h-8 mr-1">
+                            <span class="icon"><i class="fas fa-external-link-alt"></i></span>
+                          </div>
+                        </a>
+                      
+                    </div>
+                
+
             </div>
 
             <!-- Content section -->
@@ -237,6 +253,7 @@
 
 <p>In the next video, we will perform some initial exploration on the dataset in order to gain some basic understanding of the data.</p>
 
+<p><br /></p>
 <h2 id='data-understanding' class='text-3xl font-bold text-gray-700'>Data Understanding</h2>
 <p><br /></p>
 <p align="center"><iframe src="https://player.vimeo.com/video/596619454?h=55827a6e24&amp;color=e700ef" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>
@@ -286,6 +303,7 @@ this is the <em>circular</em> average, which takes into account the circular nat
 
 <p>In the next video, we will first concentrate on the smoothening and so-called resampling of the data points. See you there.</p>
 
+<p><br /></p>
 <h2 id='resampling-smoothing-and-seasonal-patterns' class='text-3xl font-bold text-gray-700'>Resampling, Smoothing and Seasonal Patterns</h2>
 <p><br /></p>
 <p align="center"><iframe src="https://player.vimeo.com/video/596614654?h=9d042bc6d5&amp;color=e700ef" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>
@@ -352,6 +370,7 @@ we can clearly observe the yearly temperature pattern, with higher temperatures 
 
 <p>In the next video, we will discuss how outliers can be detected in seasonal data with stochastic fluctuations.</p>
 
+<p><br /></p>
 <h2 id='outlier-detection' class='text-3xl font-bold text-gray-700'>Outlier Detection</h2>
 <p><br /></p>
 <p align="center"><iframe src="https://player.vimeo.com/video/596616333?h=bb150f1b93&amp;color=e700ef" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>
@@ -416,6 +435,7 @@ meaning rescaled in order to make different variables with different ranges comp
 
 <p>In the next video, we will discuss how we can impute missing data in the dataset and therewith improve the quality of the data.</p>
 
+<p><br /></p>
 <h2 id='handling-missing-data' class='text-3xl font-bold text-gray-700'>Handling Missing Data</h2>
 <p><br /></p>
 <p align="center"><iframe src="https://player.vimeo.com/video/596617563?h=1e5b81dc2c&amp;color=e700ef" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>
@@ -466,6 +486,7 @@ nonetheless will improve the forecasting and avoid the aforementioned shortcomin
 
 <p>Therefore, keep in mind that it is important to understand the data before choosing an interpolation method.</p>
 
+<p><br /></p>
 <h2 id='key-take-away-messages' class='text-3xl font-bold text-gray-700'>Key Take Away Messages</h2>
 <p><br /></p>
 <p align="center"><iframe src="https://player.vimeo.com/video/596618633?h=a324567dda&amp;color=e700ef" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>
@@ -486,11 +507,19 @@ nonetheless will improve the forecasting and avoid the aforementioned shortcomin
 
             
                     </div>
+                    
                     <div class="flex justify-center pb-16">
-                        
-                            <a href="https://colab.research.google.com/github/EluciDATALab/elucidatalab.starterkits/blob/main/notebooks/SK_3_4_Time_Series_Preprocessing/elucidata_starterkit_3_4.ipynb" target="_blank" class="mt-4 text-white bg-gradient-to-br from-purple-500 to-blue-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-3xl text-lg px-6 py-3">Access notebook</a>
-                        
+                      
+                        <a href="https://colab.research.google.com/github/EluciDATALab/elucidatalab.starterkits/blob/main/notebooks/SK_3_4_Time_Series_Preprocessing/elucidata_starterkit_3_4.ipynb" target="_blank" class="mt-4 text-white bg-gradient-to-br from-purple-500 to-blue-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-3xl text-lg px-6 py-3 flex flex-col items-center">
+                          <span>Access notebook</span>
+                          <div class="flex items-center mt-1">
+                            <img src="../src/assets/colab_favicon.png" alt="Icon" class="w-16 h-8 mr-1">
+                            <span class="icon"><i class="fas fa-external-link-alt"></i></span>
+                          </div>
+                        </a>
+                      
                     </div>
+                
                 </article>
             </div>
         </section>

@@ -143,6 +143,7 @@
     <title>Advanced Data Visualization</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body class="font-[Poppins] bg-gradient-to-br from-gray-50 via-sky-200 to-blue-300 min-h-screen">
     <div class="mt-16 lg:px-30 xl:px-48">
@@ -199,6 +200,21 @@
 <li><a href="#temporal-and-seasonal-visualisations" class="text-blue-500 hover:underline">Temporal and Seasonal Visualisations</a></li>
 <li><a href="#outlier-detection" class="text-blue-500 hover:underline">Outlier Detection</a></li>
 <li><a href="#key-take-away-messages" class="text-blue-500 hover:underline">Key Take Away Messages</a></li></ul>
+                
+                
+                    <div class="flex justify-center pb-16">
+                      
+                        <a href="https://colab.research.google.com/github/EluciDATALab/elucidatalab.starterkits/blob/main/notebooks/SK_3_1_Advanced_Visualisation/elucidata_demonstrator_3_1%20-%20Interactive.ipynb" target="_blank" class="mt-4 text-white bg-gradient-to-br from-purple-500 to-blue-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-3xl text-lg px-6 py-3 flex flex-col items-center">
+                          <span>Access notebook</span>
+                          <div class="flex items-center mt-1">
+                            <img src="../src/assets/colab_favicon.png" alt="Icon" class="w-16 h-8 mr-1">
+                            <span class="icon"><i class="fas fa-external-link-alt"></i></span>
+                          </div>
+                        </a>
+                      
+                    </div>
+                
+
             </div>
 
             <!-- Content section -->
@@ -235,6 +251,7 @@ many time series show some underlying periodicity or seasonality. Depending on t
 
 <p>In the next video, we will explain the data in more detail before we continue in the following videos with a number of more advanced visualisation techniques to extract insights from this data.</p>
 
+<p><br /></p>
 <h2 id='data-understanding-and-preprocessing' class='text-3xl font-bold text-gray-700'>Data Understanding and Preprocessing</h2>
 <p><br /></p>
 <p align="center"><iframe src="https://player.vimeo.com/video/613344124?h=2f5296fec3&amp;color=e700ef" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>
@@ -268,6 +285,7 @@ Fremont Bridge, the data spans even over 6 years. We can also see that Spokane S
 
 <p>With this first simple visualisation, we can already explain some characteristics of the data. In the next video, we will concentrate on the temporal evolution and seasonal patterns of the data at the different locations.</p>
 
+<p><br /></p>
 <h2 id='temporal-and-seasonal-visualisations' class='text-3xl font-bold text-gray-700'>Temporal and Seasonal Visualisations</h2>
 <p><br /></p>
 <p align="center"><iframe src="https://player.vimeo.com/video/613346966?h=1514fc5af0&amp;color=e700ef" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>
@@ -335,6 +353,7 @@ and use a matrix heatmap in which each day of the week is represented as a row a
 
 <p>In this video, we have seen how we can explain some of the habits of people of Seattle - and this only by means of smartly chosen visualisations. In the next video, we will show how we can use visualisations for outlier detection.</p>
 
+<p><br /></p>
 <h2 id='outlier-detection' class='text-3xl font-bold text-gray-700'>Outlier Detection</h2>
 <p><br /></p>
 <p align="center"><iframe src="https://player.vimeo.com/video/613344630?h=53e3f086f8&amp;color=e700ef" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>
@@ -385,6 +404,7 @@ we see that the two arms mainly belong to either weekdays or weekends. The dots 
 
 <p>We can see that all outliers can be explained: either they are weekdays that are actually holidays or weekdays that are other special days, for example the Friday after Thanksgiving, the days before and after Christmas, and New Year’s Eve. Note that not all holidays are identified as outliers, for example Thanksgiving should occur every fourth Thursday of November, but we did not identify it as an outlier in 2016, 2017 and 2018. This might be due to an inaccuracy of the model, which would require a more elaborate preprocessing of the data in order to resolve this, yet this is out of scope of this Starter Kit.</p>
 
+<p><br /></p>
 <h2 id='key-take-away-messages' class='text-3xl font-bold text-gray-700'>Key Take Away Messages</h2>
 <p><br /></p>
 <p align="center"><iframe src="https://player.vimeo.com/video/613346485?h=e8665ab82c&amp;color=e700ef" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>
@@ -399,11 +419,19 @@ we see that the two arms mainly belong to either weekdays or weekends. The dots 
 
             
                     </div>
+                    
                     <div class="flex justify-center pb-16">
-                        
-                            <a href="https://colab.research.google.com/github/EluciDATALab/elucidatalab.starterkits/blob/main/notebooks/SK_3_1_Advanced_Visualisation/elucidata_demonstrator_3_1%20-%20Interactive.ipynb" target="_blank" class="mt-4 text-white bg-gradient-to-br from-purple-500 to-blue-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-3xl text-lg px-6 py-3">Access notebook</a>
-                        
+                      
+                        <a href="https://colab.research.google.com/github/EluciDATALab/elucidatalab.starterkits/blob/main/notebooks/SK_3_1_Advanced_Visualisation/elucidata_demonstrator_3_1%20-%20Interactive.ipynb" target="_blank" class="mt-4 text-white bg-gradient-to-br from-purple-500 to-blue-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-3xl text-lg px-6 py-3 flex flex-col items-center">
+                          <span>Access notebook</span>
+                          <div class="flex items-center mt-1">
+                            <img src="../src/assets/colab_favicon.png" alt="Icon" class="w-16 h-8 mr-1">
+                            <span class="icon"><i class="fas fa-external-link-alt"></i></span>
+                          </div>
+                        </a>
+                      
                     </div>
+                
                 </article>
             </div>
         </section>

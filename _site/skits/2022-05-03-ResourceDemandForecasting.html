@@ -143,6 +143,7 @@
     <title>Resource Demand Forecasting</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body class="font-[Poppins] bg-gradient-to-br from-gray-50 via-sky-200 to-blue-300 min-h-screen">
     <div class="mt-16 lg:px-30 xl:px-48">
@@ -201,6 +202,21 @@
 <li><a href="#data-modelling-and-forecasting" class="text-blue-500 hover:underline">Data Modelling and Forecasting</a></li>
 <li><a href="#key-take-away-messages" class="text-blue-500 hover:underline">Key Take Away Messages</a></li>
 <li><a href="#additional-information" class="text-blue-500 hover:underline">Additional information</a></li></ul>
+                
+                
+                    <div class="flex justify-center pb-16">
+                      
+                        <a href="https://colab.research.google.com/github/EluciDATALab/elucidatalab.starterkits/blob/main/notebooks/SK_1_3_Resource_Demand_Forecasting/elucidata_demonstrator_1_3.ipynb" target="_blank" class="mt-4 text-white bg-gradient-to-br from-purple-500 to-blue-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-3xl text-lg px-6 py-3 flex flex-col items-center">
+                          <span>Access notebook</span>
+                          <div class="flex items-center mt-1">
+                            <img src="../src/assets/colab_favicon.png" alt="Icon" class="w-16 h-8 mr-1">
+                            <span class="icon"><i class="fas fa-external-link-alt"></i></span>
+                          </div>
+                        </a>
+                      
+                    </div>
+                
+
             </div>
 
             <!-- Content section -->
@@ -234,6 +250,7 @@ In this first video we will provide an overview of the actual business case we a
 
 <p>Let us go ahead with the next video on data preparation, in which we will describe how to deal with the typical problems of raw data and how to perform data fusion when multiple sources of data are available.</p>
 
+<p><br /></p>
 <h2 id='data-preprocessing' class='text-3xl font-bold text-gray-700'>Data Preprocessing</h2>
 <p>Welcome to the second video of the tutorial for the AI Starter Kit on resource demand forecasting! In this video, we will detail the dataset that we will use and perform the necessary preprocessing steps in order to prepare the data for further analysis.</p>
 
@@ -280,6 +297,7 @@ With this, we can join the two data sets. For future analysis, we will only take
 
 <p>Now that we have preprocessed the dataset, we will illustrate how to gain deeper insights in the data through both visual and statistical data exploration. In the next video, we will start with the visual exploration by means of time plots.</p>
 
+<p><br /></p>
 <h2 id='visual-data-exploration' class='text-3xl font-bold text-gray-700'>Visual Data Exploration</h2>
 <p>Welcome to the third video of the tutorial for the AI Starter Kit on resource demand forecasting! Let us now explore the extended dataset in order to understand which factors influence the household energy consumption. Based on this exploration, we will later on identify which features are useful for training a machine learning model to forecast energy consumption.</p>
 
@@ -318,6 +336,7 @@ Like this, we can see that the two show an opposite evolution over the year.</p>
 
 <p>In the next video, we will discuss the statistical significance of the patterns detected and prepare the data for machine learning modelling by extracting meaningful characteristics or features.</p>
 
+<p><br /></p>
 <h2 id='statistical-data-exploration-and-feature-engineering' class='text-3xl font-bold text-gray-700'>Statistical Data Exploration and Feature Engineering</h2>
 <p>In the former video, we performed a visual data exploration. We could already gain quite some insights from the figures we showed. In this video, we will concentrate stronger on statistics in order to verify our findings. Finally, we will prepare the datasets for modelling purposes by extracting a number of distinguishing features which will serve as input for the machine learning algorithm.</p>
 
@@ -357,6 +376,7 @@ In the figure, on the diagonal, we see the correlation of the two time series wi
 
 <p>Before discussing the modelling step in more detail, in the next video, we will provide a theoretical overview of the approaches chosen for the electricity consumption forecast.</p>
 
+<p><br /></p>
 <h2 id='advanced-regression-models' class='text-3xl font-bold text-gray-700'>Advanced Regression Models</h2>
 <p>Before deciding on the most appropriate algorithm to solve a particular data science problem, a first step is to decide which type of task you are trying to solve. In order to do so, you usually need to start with finding the answer to a number of questions, based on the case under consideration. Without a clear understanding of the use case, even the best data science model will not help.</p>
 
@@ -395,7 +415,8 @@ In the figure, on the diagonal, we see the correlation of the two time series wi
 
 <p>There is a bunch of regression algorithms that can be used in various contexts. In our case, we have a comparably small feature set and all of them are numerical. Therefore, we will go for two commonly used algorithms for the prediction, namely Random Forest Regressors and Support Vector Regressors. We will introduce both algorithms in more detail in the remainder of this video.</p>
 
-<h3 id="random-forest-regression">Random Forest Regression</h3>
+<p><br /></p>
+<h3 id='random-forest-regression' class='text-2xl font-semibold text-gray-600'>Random Forest Regression</h3>
 
 <p>We start with Random Forest Regression. The base to build a random forest is a decision tree – which works similarly to the one we just used to determine which class of algorithms is suitable for the electricity forecasting. Since in a random forest, the model is defined by a combination of trees, it is a so-called ensemble method. Ensemble methods help improve machine learning results by combining several models. This approach allows the production of better predictive performance compared to a single model. From each decision tree a value is predicted, and the final prediction will be a weighted function of all predictions.</p>
 
@@ -405,7 +426,8 @@ In the figure, on the diagonal, we see the correlation of the two time series wi
 
 <p>In order to improve the performance of a model, you need to tune the algorithm’s hyperparameters. Hyperparameters can be considered as the algorithm’s settings, or put simply, the knobs that you can turn to gain a better result. These hyperparameters are tuned during the training phase by the data scientist. In the case of a random forest, the most important hyperparameters include the number of decision trees in the forest, the maximum depth of each of these trees, and the minimum number of examples and maximum number of features to consider when splitting an internal node in one of these trees.</p>
 
-<h3 id="support-vector-regression">Support Vector Regression</h3>
+<p><br /></p>
+<h3 id='support-vector-regression' class='text-2xl font-semibold text-gray-600'>Support Vector Regression</h3>
 
 <p>Another type of regression approach is support vector regression. While support vectors are mainly used in the field of classification, with some adaptions, it also works for regression tasks. It works similarly to an ordinary least squares regression where the linear regression line is targeted with the smallest overall deviation from the data points. This is very handy in case of linear dependencies and for clean data. But as soon as there are several outliers in the data set or the relation between the data points is non-linear, the quality of the model can decrease significantly. Especially in the context of industrial data, this can never be fully avoided. For Support Vector Regression a band of width epsilon ε is defined. We call that band the <em>hyperplane</em>. The aim is to search the hyperplane that includes most points while at the same time the sum of the distance of the outlying points may not exceed a given threshold. The training instances closest to the hyperplane that help define the margins are called <em>Support Vectors</em>.</p>
 
@@ -415,6 +437,7 @@ In the figure, on the diagonal, we see the correlation of the two time series wi
 
 <p>Now that we gained some more knowledge on these two frequently used regression approaches, in the next video we will explain how to train a regression model for our household energy consumption prediction problem.</p>
 
+<p><br /></p>
 <h2 id='data-modelling-and-forecasting' class='text-3xl font-bold text-gray-700'>Data Modelling and Forecasting</h2>
 <p>Now that we gained the necessary insights from the data, extracted a number of meaningful features, and gained some theoretical background on regression models, we will use the AI Starter Kit to discover the most important factors for training a machine learning model. More specifically, we will analyze the influence of the training strategy, type of machine learning model and effect of data normalization on the model performance.</p>
 
@@ -464,6 +487,7 @@ Now it is up to you. Train different models and find out which model returns the
 
 <p>In the next video, we will summarize the key take away messages and provide you with a number of suggestions for additional experiments to gain additional insights.</p>
 
+<p><br /></p>
 <h2 id='key-take-away-messages' class='text-3xl font-bold text-gray-700'>Key Take Away Messages</h2>
 <p>In the video tutorial for this AI Starter Kit, we demonstrated forecasting the demand for a particular resource at a particular point in the future, illustrated on the case of energy demand forecasting. In doing so, we have taken you through the different steps in the data science workflow.</p>
 
@@ -482,17 +506,26 @@ Now it is up to you. Train different models and find out which model returns the
 
 <p>We thank you for completing this video series and hope to welcome you in another AI Starter Kit tutorial.</p>
 
+<p><br /></p>
 <h2 id='additional-information' class='text-3xl font-bold text-gray-700'>Additional information</h2>
 
 <p>The video material in this website was developed in the context of the <a href="https://elucidata.be/skaidive">SKAIDive project</a>, financially supported by the <a href="https://www.esf-vlaanderen.be">European Social Fund</a>, the European Union and Flanders. For more information, please contact us at <a href="mailto:elucidatalab@sirris.be">elucidatalab@sirris.be</a></p>
 
             
                     </div>
+                    
                     <div class="flex justify-center pb-16">
-                        
-                            <a href="https://colab.research.google.com/github/EluciDATALab/elucidatalab.starterkits/blob/main/notebooks/SK_1_3_Resource_Demand_Forecasting/elucidata_demonstrator_1_3.ipynb" target="_blank" class="mt-4 text-white bg-gradient-to-br from-purple-500 to-blue-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-3xl text-lg px-6 py-3">Access notebook</a>
-                        
+                      
+                        <a href="https://colab.research.google.com/github/EluciDATALab/elucidatalab.starterkits/blob/main/notebooks/SK_1_3_Resource_Demand_Forecasting/elucidata_demonstrator_1_3.ipynb" target="_blank" class="mt-4 text-white bg-gradient-to-br from-purple-500 to-blue-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-3xl text-lg px-6 py-3 flex flex-col items-center">
+                          <span>Access notebook</span>
+                          <div class="flex items-center mt-1">
+                            <img src="../src/assets/colab_favicon.png" alt="Icon" class="w-16 h-8 mr-1">
+                            <span class="icon"><i class="fas fa-external-link-alt"></i></span>
+                          </div>
+                        </a>
+                      
                     </div>
+                
                 </article>
             </div>
         </section>

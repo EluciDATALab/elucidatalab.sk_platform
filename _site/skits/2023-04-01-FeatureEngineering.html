@@ -143,6 +143,7 @@
     <title>Feature Engineering</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body class="font-[Poppins] bg-gradient-to-br from-gray-50 via-sky-200 to-blue-300 min-h-screen">
     <div class="mt-16 lg:px-30 xl:px-48">
@@ -195,6 +196,21 @@
                 <h2 class="mb-4 font-bold text-3xl text-gray-700">Table of Contents</h2>
                 <ul class='list-disc pl-12'>
 <li><a href="#introduction" class="text-blue-500 hover:underline">Introduction</a></li></ul>
+                
+                
+                    <div class="flex justify-center pb-16">
+                      
+                        <a href="https://colab.research.google.com/github/EluciDATALab/elucidatalab.starterkits/blob/main/notebooks/SK_3_3_Feature_Engineering/elucidata_demonstrator_3_3.ipynb" target="_blank" class="mt-4 text-white bg-gradient-to-br from-purple-500 to-blue-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-3xl text-lg px-6 py-3 flex flex-col items-center">
+                          <span>Access notebook</span>
+                          <div class="flex items-center mt-1">
+                            <img src="../src/assets/colab_favicon.png" alt="Icon" class="w-16 h-8 mr-1">
+                            <span class="icon"><i class="fas fa-external-link-alt"></i></span>
+                          </div>
+                        </a>
+                      
+                    </div>
+                
+
             </div>
 
             <!-- Content section -->
@@ -212,7 +228,8 @@
 <p align="center"><iframe src="https://player.vimeo.com/video/612907452?h=1c07951c12&color=e700ef" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 <br/></p>
 <br/> -->
-<h3 id="description">Description</h3>
+<p><br /></p>
+<h3 id='description' class='text-2xl font-semibold text-gray-600'>Description</h3>
 
 <p>Most data mining and machine learning algorithms do not work well if you just feed them your raw data: such data often contains noise and the most relevant distinguishing information is often implicit. For example, raw sensor data just contains a timestamp and a corresponding value, while interesting aspects of it might be the trends contained within or the number of times a threshold is exceeded.</p>
 
@@ -220,25 +237,36 @@
 
 <p>Feature engineering is one of the most important and creative steps in the data science workflow. However, there is no clearly-defined formal process for engineering features and, consequently, this requires a lot of creativity, a good understanding of the domain and of the available data, some trial-and-error, etc. It is also desirable to have upfront an idea of the modeling and analysis task for which you want to use the resulting features, as this might help you to identify relevant features.</p>
 
-<h3 id="business-goal">Business goal</h3>
+<p><br /></p>
+<h3 id='business-goal' class='text-2xl font-semibold text-gray-600'>Business goal</h3>
 
 <p>The overall goal of this Starter Kit is to present some <strong>advanced feature engineering steps</strong> related to <strong>feature construction</strong> and <strong>extraction</strong>. By keeping in mind <strong>what is your business question</strong> and <strong>what is the corresponding data science task</strong>, you will be able to derive <strong>valuable features</strong> that can be used in the next stage of your analysis.</p>
 
-<h3 id="application-context">Application context</h3>
+<p><br /></p>
+<h3 id='application-context' class='text-2xl font-semibold text-gray-600'>Application context</h3>
 
 <p>Feature engineering is one of the steps in the data science workflow with the most decisive impact on the accuracy of the model you want to develop. It is the final step before actually training the model and it defines how the input data will be fed to the model.</p>
 
-<h3 id="starter-kit-outline">Starter Kit outline</h3>
+<p><br /></p>
+<h3 id='starter-kit-outline' class='text-2xl font-semibold text-gray-600'>Starter Kit outline</h3>
 
 <p>In this Starter Kit we use a dataset from the Regional Rail System of Pennsylvania. Before starting the feature extraction <em>per se</em>, we will first apply some basic preprocessing to the dataset and have a high-level overview of the data. We will then derive several interesting features from the dataset that can be used to characterise train rides and delays.</p>
 
             
                     </div>
+                    
                     <div class="flex justify-center pb-16">
-                        
-                            <a href="https://colab.research.google.com/github/EluciDATALab/elucidatalab.starterkits/blob/main/notebooks/SK_3_3_Feature_Engineering/elucidata_demonstrator_3_3.ipynb" target="_blank" class="mt-4 text-white bg-gradient-to-br from-purple-500 to-blue-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-3xl text-lg px-6 py-3">Access notebook</a>
-                        
+                      
+                        <a href="https://colab.research.google.com/github/EluciDATALab/elucidatalab.starterkits/blob/main/notebooks/SK_3_3_Feature_Engineering/elucidata_demonstrator_3_3.ipynb" target="_blank" class="mt-4 text-white bg-gradient-to-br from-purple-500 to-blue-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-3xl text-lg px-6 py-3 flex flex-col items-center">
+                          <span>Access notebook</span>
+                          <div class="flex items-center mt-1">
+                            <img src="../src/assets/colab_favicon.png" alt="Icon" class="w-16 h-8 mr-1">
+                            <span class="icon"><i class="fas fa-external-link-alt"></i></span>
+                          </div>
+                        </a>
+                      
                     </div>
+                
                 </article>
             </div>
         </section>

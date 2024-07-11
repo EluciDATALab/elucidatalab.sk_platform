@@ -25,3 +25,13 @@ body {
 .hover\:underline:hover {
   text-decoration: underline;
 }
+
+.image-same-height {
+  height: auto;
+  width: auto;
+  max-height: 100%; /* Ensures the image does not exceed the height of the container */
+}
+
+.flex .image-same-height {
+  height: calc(100% - 2rem); /* Adjusts the height considering the margin of the button */
+}

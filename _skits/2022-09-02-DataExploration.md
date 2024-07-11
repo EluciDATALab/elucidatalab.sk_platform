@@ -34,7 +34,7 @@ The goal behind this Starter Kit is to lay out a series of analyses that will te
 
 In the tutorial of this AI Starter Kit, we follow a systematic approach to explore a dataset, based on the number of variables under consideration. We start by exploring individual variables in isolation, which is the simplest form of analysis and is called univariate analysis. We continue by studying pairs of variables, which is called bivariate analysis. And finally, we study the relationship between several variables, called multivariate analysis before we conclude on our findings. But before diving into this, in the next video, we will first introduce you to the dataset that we will use in this analysis and perform some basic preprocessing on it.
 
-
+<br/>
 ## Data Understanding and Preprocessing
 
 <br/>
@@ -95,6 +95,7 @@ The table presents an excerpt of the dataset after these transformations. Note t
 
 With this well-prepared dataset, we can start the actual data exploration in the next video.
 
+<br/>
 ## Univariate Analysis
 <br/>
 <p align="center"><iframe src="https://player.vimeo.com/video/612909604?h=4fd431ac74&color=e700ef" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
@@ -143,7 +144,7 @@ From this univariate analysis we already learnt several things about the biking 
 
 In the next video, we will expand our analysis to bivariate analysis in order to better understand how two variables influence each other.
 
-
+<br/>
 ## Bivariate Analysis
 <br/>
 <p align="center"><iframe src="https://player.vimeo.com/video/612901938?h=675ca4db7a&color=e700ef" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
@@ -247,7 +248,7 @@ Comparing this map to the one before, we can confirm our hypothesis, namely that
 
 With this bivariate analysis, we learnt a lot about the users’ behaviour. In the next video, we will go one step further and perform a multivariate analysis hence take more than two variables into account to find relations between them.
 
-
+<br/>
 ## Multivariate Analysis
 <br/>
 <p align="center"><iframe src="https://player.vimeo.com/video/612904790?h=6427d908ea&color=e700ef" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
@@ -285,7 +286,7 @@ The distribution of circles of different colours confirms that the popular arriv
 
 In order to further explain the differences observed during weekends, a more in-depth knowledge about the city and the shared habits of its inhabitants would be required, which falls outside the scope of this tutorial.
 
-
+<br/>
 ## Key Take Away Messages
 <br/>
 <p align="center"><iframe src="https://player.vimeo.com/video/612906949?h=3b1b51f492&color=e700ef" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>

@@ -35,7 +35,7 @@ In this Starter Kit, we will use advanced visualisations such as timeline plots,
 
 In the next video, we will explain the data in more detail before we continue in the following videos with a number of more advanced visualisation techniques to extract insights from this data.
 
-
+<br/>
 ## Data Understanding and Preprocessing
 <br/>
 <p align="center"><iframe src="https://player.vimeo.com/video/613344124?h=2f5296fec3&color=e700ef" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
@@ -69,7 +69,7 @@ Spokane Street is on clear bottleneck in Seattle’s road network. It is one of 
 
 With this first simple visualisation, we can already explain some characteristics of the data. In the next video, we will concentrate on the temporal evolution and seasonal patterns of the data at the different locations.
 
-
+<br/>
 ## Temporal and Seasonal Visualisations
 <br/>
 <p align="center"><iframe src="https://player.vimeo.com/video/613346966?h=1514fc5af0&color=e700ef" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
@@ -137,7 +137,7 @@ For the locations with a bipolar pattern, it is also interesting to investigate 
 
 In this video, we have seen how we can explain some of the habits of people of Seattle - and this only by means of smartly chosen visualisations. In the next video, we will show how we can use visualisations for outlier detection.
 
-
+<br/>
 ## Outlier Detection
 <br/>
 <p align="center"><iframe src="https://player.vimeo.com/video/613344630?h=53e3f086f8&color=e700ef" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
@@ -188,7 +188,7 @@ The heatmap plot shows the date corresponding to those outliers. By further chec
 
 We can see that all outliers can be explained: either they are weekdays that are actually holidays or weekdays that are other special days, for example the Friday after Thanksgiving, the days before and after Christmas, and New Year's Eve. Note that not all holidays are identified as outliers, for example Thanksgiving should occur every fourth Thursday of November, but we did not identify it as an outlier in 2016, 2017 and 2018. This might be due to an inaccuracy of the model, which would require a more elaborate preprocessing of the data in order to resolve this, yet this is out of scope of this Starter Kit.
 
-
+<br/>
 ## Key Take Away Messages
 <br/>
 <p align="center"><iframe src="https://player.vimeo.com/video/613346485?h=e8665ab82c&color=e700ef" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>

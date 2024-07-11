@@ -14,6 +14,7 @@ layout: default
     <title>{{ page.title }}</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body class="font-[Poppins] bg-gradient-to-br from-gray-50 via-sky-200 to-blue-300 min-h-screen">
     <div class="mt-16 lg:px-30 xl:px-48">
@@ -62,11 +63,26 @@ layout: default
             <!-- <div class="content mt-4">
                 {{ content | slice: 0, 100 }}
             </div> -->
-            {% assign content_with_ids = html_content | add_class_to_h2 %}
+            {% assign content_with_ids = html_content | add_classes_to_headers %}
             <!-- Table of Contents -->
             <div class="md:w-1/4 p-4">
                 <h2 class="mb-4 font-bold text-3xl text-gray-700">Table of Contents</h2>
                 {{ content_with_ids | generate_toc }}
+                {% capture access_notebook %}
+                    <div class="flex justify-center pb-16">
+                      {% if page.notebook %}
+                        <a href="{{ page.notebook }}" target="_blank" class="mt-4 text-white bg-gradient-to-br from-purple-500 to-blue-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-3xl text-lg px-6 py-3 flex flex-col items-center">
+                          <span>Access notebook</span>
+                          <div class="flex items-center mt-1">
+                            <img src="../src/assets/colab_favicon.png" alt="Icon" class="w-16 h-8 mr-1">
+                            <span class="icon"><i class="fas fa-external-link-alt"></i></span>
+                          </div>
+                        </a>
+                      {% endif %}
+                    </div>
+                {% endcapture %}
+                {{ access_notebook }}
+
             </div>
 
             <!-- Content section -->
@@ -80,11 +96,7 @@ layout: default
                     <div class="content mt-4">
                         {{ content_with_ids }}
                     </div>
-                    <div class="flex justify-center pb-16">
-                        {% if page.notebook %}
-                            <a href="{{ page.notebook }}" target="_blank" class="mt-4 text-white bg-gradient-to-br from-purple-500 to-blue-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-3xl text-lg px-6 py-3">Access notebook</a>
-                        {% endif %}
-                    </div>
+                    {{ access_notebook }}
                 </article>
             </div>
         </section>

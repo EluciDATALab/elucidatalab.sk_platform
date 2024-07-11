@@ -1,7 +1,7 @@
 ---
 layout: skit_detail
 title: Time Series Preprocessing
-image: ../src/assets/SDTPhase5.png
+image: ../src/assets/TSP_figure7_introduction.png
 date:  2023-12-01
 author: EluciDATALab
 categories:
@@ -37,7 +37,7 @@ We will use this dataset to illustrate
 
 In the next video, we will perform some initial exploration on the dataset in order to gain some basic understanding of the data.
 
-
+<br/>
 ## Data Understanding
 <br/>
 <p align="center"><iframe src="https://player.vimeo.com/video/596619454?h=55827a6e24&color=e700ef" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
@@ -85,7 +85,7 @@ We will come back to the answers to these questions later on in this Starter Kit
 
 In the next video, we will first concentrate on the smoothening and so-called resampling of the data points. See you there.
 
-
+<br/>
 ## Resampling, Smoothing and Seasonal Patterns
 <br/>
 <p align="center"><iframe src="https://player.vimeo.com/video/596614654?h=9d042bc6d5&color=e700ef" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
@@ -152,7 +152,7 @@ we can clearly observe the yearly temperature pattern, with higher temperatures 
 
 In the next video, we will discuss how outliers can be detected in seasonal data with stochastic fluctuations.
 
-
+<br/>
 ## Outlier Detection
 <br/>
 <p align="center"><iframe src="https://player.vimeo.com/video/596616333?h=bb150f1b93&color=e700ef" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
@@ -217,7 +217,7 @@ The fleet-based approach has the advantage of being able to capture outliers at 
 
 In the next video, we will discuss how we can impute missing data in the dataset and therewith improve the quality of the data.
 
-
+<br/>
 ## Handling Missing Data
 <br/>
 <p align="center"><iframe src="https://player.vimeo.com/video/596617563?h=1e5b81dc2c&color=e700ef" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
@@ -266,7 +266,7 @@ nonetheless will improve the forecasting and avoid the aforementioned shortcomin
 
 Therefore, keep in mind that it is important to understand the data before choosing an interpolation method.
 
-
+<br/>
 ## Key Take Away Messages
 <br/>
 <p align="center"><iframe src="https://player.vimeo.com/video/596618633?h=a324567dda&color=e700ef" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
