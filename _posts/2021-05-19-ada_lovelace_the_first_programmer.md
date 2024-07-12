@@ -5,7 +5,7 @@ date: 2021-05-19
 author: Sarah Klein
 email: sarah.klein@sirris.be
 image: src/assets/ada-lovelace-1068x653-1.jpg
-categories: [Sir Adas' series]
+categories: [Sir_Adas'_series]
 excerpt: Programming is for men! Withroughly 23 %1female workers in the IT sector in Belgium, this assumption seems to suggest itself. And still, the first person ever regarded to be a programmer was a woman  namelyAda Lovelaceback in 1843.
 ---
 
