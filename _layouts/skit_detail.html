@@ -25,19 +25,26 @@ layout: default
             <div class="flex items-center space-x-4">
                 <!-- Dummy image -->
                 <div class="w-12 h-12 flex items-center justify-center border border-gray-300 rounded-full">
-                    <img src="{{ site.baseurl }}/src/assets/author-icon.png" alt="Author face image" class="w-10 h-10 rounded-full">
+                    <img src="{{ site.baseurl }}/src/assets/group_photos/eluciDATA.jpg" alt="Author face image" class="w-10 h-10 rounded-full">
                 </div>
 
                 <!-- Author name and post date -->
                 <div class="text-sm">
                     <div class="font-semibold">Written by
-                        {% if page.author %}
-                          {{ page.author }}
-                        {% else %}
-                          eluciDATA
-                        {% endif %}
+                        {{ page.author }} (copy email
+                            <div class="copy-container">
+                                <i class="fas fa-clipboard copy-icon" onclick="copyToClipboard('elucidatalab@sirris.be', 'copyMessage-1')"></i>
+                                <div class="copy-message" id="copyMessage-1">Copied to clipboard!</div>
+                            </div>)
                     </div>
                     <div class="text-gray-500">On {{ page.date | date_to_string }}</div>
+                    {% if page.permanent_url %}
+                        <a href="{{ page.permanent_url }}" target="_blank" class="text-blue-600 underline">Permanent link</a>
+                    {% endif %}
+                    <!-- <div class="copy-container">
+                        <i class="fas fa-clipboard copy-icon" onclick="copyToClipboard('email@example.com', 'copyMessage-1')"></i>
+                        <div class="copy-message" id="copyMessage-1">Copied to clipboard!</div>
+                    </div> -->
                 </div>
             </div>
             <!-- Right side -->
