@@ -121,7 +121,7 @@ How do the above examples differ from Deep Learning and when does it make sense 
 
 The technique is inspired by the neural networks in human brains. It should learn by itself how to combine the different neurons in the single layers in order to obtain the best results.  The learning is performed by the adjustment of the weights between the neurons in single layers. In the figure, these weights are symbolized by the arrows going from one neuron in one layer to another neuron in the next layer. The final result is given by the output in the output layer, indicated in green in the figure. The textbook example is the classification of images of animals, to discern cats from dogs.
 
-<center><img src="/img/SK_specific/RUL_figure8.png" width="400" class="center" /></center>
+<center><img src="../src/assets/RUL_figure8.png" width="400" class="center" /></center>
 
 Nowadays there is a whole spectrum of different model architectures and flavours of neurons depending on the type of task that is supposed to be solved. The choice for a particular type of network typically depends on the problem you want to solve, the characteristics of your input data and the availability of particular domain knowledge. All these factors influence amongst others the complexity of the network, its interpretability and the learning speed.
 
