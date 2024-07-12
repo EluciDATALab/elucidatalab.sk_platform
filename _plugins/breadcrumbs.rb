@@ -15,7 +15,7 @@ module Jekyll
       else
         # Add collection-specific breadcrumb for 'posts' and 'skits'
         if page['collection'] == 'posts'
-          breadcrumbs << ' / <a href="/blogs" class="text-red-600 hover:underline">Blogs</a>'
+          breadcrumbs << ' / <a href="/blog" class="text-red-600 hover:underline">Blogs</a>'
         elsif page['collection'] == 'skits'
           breadcrumbs << ' / <a href="/skits" class="text-blue-600 hover:underline">Starter Kits</a>'
         end

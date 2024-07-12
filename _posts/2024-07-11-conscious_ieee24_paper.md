@@ -5,7 +5,7 @@ date: 2024-07-11
 author: Fabian Fingerhut
 email: fabian.fingerhut@sirris.be
 image: src/assets/conscious_ieee24_paper.webp
-categories: [Awards, Projects]
+categories: [Awards, Projects, Papers]
 excerpt: "Ensuring the smooth operation of industrial assets is more important than ever. Effective condition monitoring is crucial for maintaining optimal performance and avoiding costly downtime. However, condition monitoring of assets operating in highly dynamic environments (which is an inherent characteristic of many industrial processes) remains a challenge. How do you stay ahead of the curve when dealing with dynamic operating conditions of industrial processes?."
 ---
 <!-- <div class="text-md text-gray-700 "> -->

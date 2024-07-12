@@ -5,7 +5,7 @@ date: 2023-06-26
 author: Robbert Verbeke
 email: robbert.verbeke@sirris.be
 image: src/assets/samuel_itea_award1_piqsels.com-id-zmdsp.jpg
-categories: [Awards, Projects]
+categories: [Awards, Projects, Papers]
 excerpt: We have been collaborating with Materialise and Cr3do to create an AM knowledge base that can assist in all major AM steps. The success of this collaboration has led to the project being selected for the **ITEA Award of Excellence 2023 for Innovation**.
 ---
 <div class="text-md text-gray-700 ">
