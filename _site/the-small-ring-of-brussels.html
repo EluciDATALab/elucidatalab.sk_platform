@@ -9,7 +9,7 @@
 <title>The Small Ring of Brussels is Getting Gradually Cured (i.e. back to normal stagnated traffic) from Covid-19 | Elucidata - Your AI experience</title>
 <meta name="generator" content="Jekyll v4.3.3" />
 <meta property="og:title" content="The Small Ring of Brussels is Getting Gradually Cured (i.e. back to normal stagnated traffic) from Covid-19" />
-<meta name="author" content="Michiel Dhont, Elena Tsiporkova, Tom Tourwé and Nicolás González-Deleito" />
+<meta name="author" content="Michiel Dhont" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="This is the third in a series of blogs, in the context of the MISTic project. This blog we zoom into the traffic situation of the small ring of Brussels since the beginning of the restrictions until now, guided by some elucidating visual analytics." />
 <meta property="og:description" content="This is the third in a series of blogs, in the context of the MISTic project. This blog we zoom into the traffic situation of the small ring of Brussels since the beginning of the restrictions until now, guided by some elucidating visual analytics." />
@@ -23,7 +23,7 @@
 <meta property="twitter:image" content="http://localhost:4000/src/assets/cover%20photo%20-%20blog%203.jpg" />
 <meta property="twitter:title" content="The Small Ring of Brussels is Getting Gradually Cured (i.e. back to normal stagnated traffic) from Covid-19" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Michiel Dhont, Elena Tsiporkova, Tom Tourwé and Nicolás González-Deleito"},"dateModified":"2020-07-01T00:00:00+02:00","datePublished":"2020-07-01T00:00:00+02:00","description":"This is the third in a series of blogs, in the context of the MISTic project. This blog we zoom into the traffic situation of the small ring of Brussels since the beginning of the restrictions until now, guided by some elucidating visual analytics.","headline":"The Small Ring of Brussels is Getting Gradually Cured (i.e. back to normal stagnated traffic) from Covid-19","image":"http://localhost:4000/src/assets/cover%20photo%20-%20blog%203.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/the-small-ring-of-brussels"},"url":"http://localhost:4000/the-small-ring-of-brussels"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Michiel Dhont"},"dateModified":"2020-07-01T00:00:00+02:00","datePublished":"2020-07-01T00:00:00+02:00","description":"This is the third in a series of blogs, in the context of the MISTic project. This blog we zoom into the traffic situation of the small ring of Brussels since the beginning of the restrictions until now, guided by some elucidating visual analytics.","headline":"The Small Ring of Brussels is Getting Gradually Cured (i.e. back to normal stagnated traffic) from Covid-19","image":"http://localhost:4000/src/assets/cover%20photo%20-%20blog%203.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/the-small-ring-of-brussels"},"url":"http://localhost:4000/the-small-ring-of-brussels"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -37,6 +37,7 @@
 
     <!-- Tailwind cascade styling sheet -->
     <link rel="stylesheet" href="/src/styles/output.css" type="text/css">
+    <link rel="stylesheet" href="src/styles/styles.css"">
 
     <!-- Icons and small favicons -->
     <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
@@ -116,6 +117,7 @@
     <title>The Small Ring of Brussels is Getting Gradually Cured (i.e. back to normal stagnated traffic) from Covid-19</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="src/styles/styles.css"">
 </head>
 <body class="font-[Poppins] bg-gradient-to-br from-gray-50 via-sky-200 to-blue-300 min-h-screen">
     <div class="mx-auto px-4 lg:px-60 xl:px-96 pt-32">
@@ -123,19 +125,30 @@
         <div class="flex justify-between pt-8 p-8">
             <!-- Left side -->
             <div class="flex items-center space-x-4">
+                
                 <!-- Dummy image -->
                 <div class="w-12 h-12 flex items-center justify-center border border-gray-300 rounded-full">
-                    <img src="src/assets/author-icon.png" alt="Author face image" class="w-10 h-10 rounded-full">
+                    <img src="src/assets/group_photos/Michiel Dhont.jpg" alt="Author face image" class="w-10 h-10 rounded-full">
                 </div>
 
                 <!-- Author name and post date -->
                 <div class="text-sm">
                     <div class="font-semibold">Written by
+
                         
-                          Michiel Dhont, Elena Tsiporkova, Tom Tourwé and Nicolás González-Deleito
-                        
+
+                        Michiel Dhont (copy email
+                            <div class="copy-container">
+                                <i class="fas fa-clipboard copy-icon" onclick="copyToClipboard('michiel.dhont@sirris.be', 'copyMessage-1')"></i>
+                                <div class="copy-message" id="copyMessage-1">Copied to clipboard!</div>
+                            </div>)
                     </div>
                     <div class="text-gray-500">On 01 Jul 2020</div>
+                    
+                    <!-- <div class="copy-container">
+                        <i class="fas fa-clipboard copy-icon" onclick="copyToClipboard('email@example.com', 'copyMessage-1')"></i>
+                        <div class="copy-message" id="copyMessage-1">Copied to clipboard!</div>
+                    </div> -->
                 </div>
             </div>
             <!-- Right side -->
@@ -160,67 +173,118 @@
             <img src="src/assets/cover photo - blog 3.jpg" alt="The Small Ring of Brussels is Getting Gradually Cured (i.e. back to normal stagnated traffic) from Covid-19 - Featured Image" class="rounded-xl shadow-lg mb-8">
             <!-- <a href="src/assets/cover photo - blog 3.jpg" target="_blank" class="text-center text-blue-600 text-md font-medium pb-8 block hover:underline">Image Link</a> -->
             <div class="text-lg leading-relaxed mb-8">
-                <p>This is the third in a series of blogs, in the context of the MISTic project executed by the EluciDATA Lab of Sirris with Macq and VUB as partners, concerning the traffic situation in Brussels in times of Covid-19 restrictions.</p>
+                
+                
+                    <p>This is the third in a series of blogs, in the context of the MISTic project executed by the EluciDATA Lab of Sirris with Macq and VUB as partners, concerning the traffic situation in Brussels in times of Covid-19 restrictions.</p>
+
+<p><br /></p>
 
 <p>Our analysis is based on the open dataset of Brussels Mobility, which contains vehicle counts on 55 busy locations in the city of Brussels. In our first blog, we discovered that traffic had dramatically reduced overall, but less so on the small ring on Brussels, where peaks of up to 80% retained traffic were observed. In the second blog, we focused on the evolution of traffic during the first wave of relaxations of the restrictions, which revealed some interesting traffic volume patterns. This third blog is zooming into the traffic situation of the small ring of Brussels since the beginning of the restrictions until now, guided by some elucidating visual analytics.</p>
 
-<p>The small ring of Brussels is a sequence of many tunnels around the core center of Brussels, notoriously known for frequent traffic problems. Most of these tunnels are monitored by Brussels Mobility in terms of traffic flow per minute, average speed per minute and occupancy of the road (% of time the sensor is covered by a vehicle). We consider data for 16 of those locations from the beginning of the year until the present. Our aim is to identify and characterize traffic modes, i.e., distinct periods of time with similar traffic patterns, when considering all the 16 locations as one connected trajectory of tunnels. For this purpose, the dataset has been organized in such a way that the locations are sequentially ordered as they spatially appear in reality.
-Divergent Types of Traffic</p>
+<p><br /></p>
+
+<p>The small ring of Brussels is a sequence of many tunnels around the core center of Brussels, notoriously known for frequent traffic problems. Most of these tunnels are monitored by Brussels Mobility in terms of traffic flow per minute, average speed per minute and occupancy of the road (% of time the sensor is covered by a vehicle). We consider data for 16 of those locations from the beginning of the year until the present. Our aim is to identify and characterize traffic modes, i.e., distinct periods of time with similar traffic patterns, when considering all the 16 locations as one connected trajectory of tunnels. For this purpose, the dataset has been organized in such a way that the locations are sequentially ordered as they spatially appear in reality.</p>
+
+<p><br /></p>
+
+<h3 id='divergent-types-of-traffic' class='text-2xl font-semibold text-gray-600'>Divergent Types of Traffic</h3>
+
+<p><br /></p>
 
 <p>Our assumption is that during normal times the small ring goes through several different traffic modes which reoccur day after day. In order to identify those traffic modes, we have considered only the data before the lockdown (normal times) and were able to derive 5 distinct traffic modes by clustering along the time dimension.</p>
 
+<p><br /></p>
+
 <p>In order to understand the specific characteristics of each traffic mode in detail, we turn to visual analytics. In this case, we generate pairwise scatter plots of the flow, speed and road occupancy, averaged over all locations, and represent the clusters we obtain in different colours (see figure below). The scatter plots show well-formed curved patterns, which is the typical shape caused by traffic jams, i.e., high road occupancy results in lower vehicle speeds. The different traffic modes also appear well separated from each other with the exception of one, traffic mode B.</p>
 
-<p>Traffic mode A represents little traffic and high speeds on average, while traffic mode D seems to represent highly saturated traffic, resulting in lower average speeds. Traffic mode C contains points in time where a lot of traffic is present, but still high average speeds are possible. Traffic mode E denotes in general fluent traffic resulting in higher average speeds. Finally, as mentioned above, traffic mode B is the least distinctive since it overlaps to some extent with traffic mode D. It seems to correspond to rather congested traffic at low average speeds.
-<img alt="pairwise scatter plots.png" src="assets/pairwise scatter plots.png" /></p>
+<p><br /></p>
+
+<p>Traffic mode A represents little traffic and high speeds on average, while traffic mode D seems to represent highly saturated traffic, resulting in lower average speeds. Traffic mode C contains points in time where a lot of traffic is present, but still high average speeds are possible. Traffic mode E denotes in general fluent traffic resulting in higher average speeds. Finally, as mentioned above, traffic mode B is the least distinctive since it overlaps to some extent with traffic mode D. It seems to correspond to rather congested traffic at low average speeds.</p>
+
+<p><br /></p>
+<center><img alt="pairwise scatter plots.png" src="src/assets/pairwise scatter plots.png" class="center" /></center>
+<p><br /></p>
 
 <p>We can exploit the above traffic modes further in many different ways:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>They can be the basis for anomaly detection, e.g., we know at each moment in time what is the expected traffic mode, and so we can assume an anomaly occurs whenever a different traffic mode is observed at a specific time.
-They can be the basis for traffic prediction, e.g., given a specific moment in time and a specific location, we can predict the amount of traffic and its average speed.
-They can be used in subsequent visualizations to understand and interpret traffic evolution even better, as will be explained next.
-</code></pre></div></div>
+<ul style="list-style-type: disc; margin-left: 20px;">
+  <li>They can be the basis for anomaly detection, e.g., we know at each moment in time what is the expected traffic mode, and so we can assume an anomaly occurs whenever a different traffic mode is observed at a specific time.</li>
+  <li>They can be the basis for traffic prediction, e.g., given a specific moment in time and a specific location, we can predict the amount of traffic and its average speed.</li>
+  <li>They can be used in subsequent visualizations to understand and interpret traffic evolution even better, as will be explained next.</li>
+</ul>
 
-<p>An Infinite Carpet of Traffic Modes</p>
+<p><br /></p>
+
+<h3 id='an-infinite-carpet-of-traffic-modes' class='text-2xl font-semibold text-gray-600'>An Infinite Carpet of Traffic Modes</h3>
+
+<p><br /></p>
 
 <p>We used the 5 traffic modes discussed above to construct a so-called label map by colouring the different time segments in a day with their respective traffic mode colours. If we do this for a sufficiently long time period as illustrated in the figure below, we obtain a colourful carpet, which offers a birds’ eye view of the composition of the different traffic modes over the time period under investigation. On the y-axis we represent the different days of the year, while the x-axis represents the time within each day. Each cell is coloured with the colour of the traffic mode that was observed at that specific day and time, which allows to describe each of the traffic modes in a more intuitive way:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Mode A: Night traffic (avg. occupancy 7%)
-Mode B: Morning rush hour peak (avg. occupancy 26%)
-Mode C: Day traffic outside rush hours (avg. occupancy 22%)
-Mode D: Evening rush hour peak (avg. occupancy 28%)
-Mode E: Early morning and late evening traffic (avg. occupancy 15%)
-</code></pre></div></div>
+<p><br /></p>
+
+<ul style="list-style-type: disc; margin-left: 20px;">
+  <li>Mode A: Night traffic (avg. occupancy 7%)</li>
+  <li>Mode B: Morning rush hour peak (avg. occupancy 26%)</li>
+  <li>Mode C: Day traffic outside rush hours (avg. occupancy 22%)</li>
+  <li>Mode D: Evening rush hour peak (avg. occupancy 28%)</li>
+  <li>Mode E: Early morning and late evening traffic (avg. occupancy 15%)</li>
+</ul>
+
+<p><br /></p>
 
 <p>It is interesting to observe that our algorithm considered the morning and evening peaks as different modes, despite people might expect that the rush hours look the same. This is because the traffic flow is almost mirrored (people who went to their work in the morning, usually take the reverse trajectory in the evening), plus there is on average a more recreational evening traffic. Note that the grey zones indicate missing data.</p>
 
-<p>In the ‘carpet of traffic modes’ below, we can observe a clear repetitive pattern during the pre-Covid-19 period (indicated with ‘normal’). The morning peaks, evening peaks, weekend patterns, etc. are repeating each day and each week.
-<img alt="Carpet of traffic modes.png" src="assets/Carpet of traffic modes.png" />
-Lockdown Traffic = Normal Night Traffic</p>
+<p><br /></p>
 
-<p>Our ‘carpet of traffic modes’ is offering a very concise, but still rather granular, visualization which is ‘infinitely’ expandable in time by rolling it forward over a certain period. It facilitates continuous monitoring of the traffic evolution in time e.g., detecting and interpreting recurring patterns during typical weeks (pre-Covid-19). It also allows for rapid detection of deviating behavior, i.e., which has not been observed in the past. We can easily capture the introduction of the first restrictions (14th of March, day 74) and the start of the lockdown (18th of March, day 78). Since then, mode A is predominantly present, which is typically the traffic mode corresponding to night traffic in normal conditions.
-Rush Hours are Emerging</p>
+<p>In the ‘carpet of traffic modes’ below, we can observe a clear repetitive pattern during the pre-Covid-19 period (indicated with ‘normal’). The morning peaks, evening peaks, weekend patterns, etc. are repeating each day and each week.</p>
+
+<p><br /></p>
+<center><img alt="Carpet of traffic modes.png" src="src/assets/Carpet of traffic modes.png" class="center" /></center>
+<p><br /></p>
+
+<h3 id='lockdown-traffic--normal-night-traffic' class='text-2xl font-semibold text-gray-600'>Lockdown Traffic = Normal Night Traffic</h3>
+
+<p><br /></p>
+
+<p>Our ‘carpet of traffic modes’ is offering a very concise, but still rather granular, visualization which is ‘infinitely’ expandable in time by rolling it forward over a certain period. It facilitates continuous monitoring of the traffic evolution in time e.g., detecting and interpreting recurring patterns during typical weeks (pre-Covid-19). It also allows for rapid detection of deviating behavior, i.e., which has not been observed in the past. We can easily capture the introduction of the first restrictions (14th of March, day 74) and the start of the lockdown (18th of March, day 78). Since then, mode A is predominantly present, which is typically the traffic mode corresponding to night traffic in normal conditions.</p>
+
+<p><br /></p>
+
+<h3 id='rush-hours-are-emerging' class='text-2xl font-semibold text-gray-600'>Rush Hours are Emerging</h3>
+
+<p><br /></p>
 
 <p>Another fascinating phenomenon which can be observed is the traffic mode evolution in time e.g., the gradual emergence of mode E already in the very beginning of the lockdown at around 7 p.m. and then slowly unrolling forward covering wider parts of the day. So, despite the expectation that there should be no difference in traffic intensities between the first four weeks of the lockdown, a small gradual increase can be observed. Subsequently, following on the gradual relaxation of the lockdown restrictions in May (days 122 until 152), we even observe almost constantly traffic mode E during the day. Eventually, mode C and even mode D (evening rush hour peak) are emerging during the typical rush hours, getting closer and closer to the normal situation, but not yet there.
 No Rush during Rush Hours</p>
 
+<p><br /></p>
+
 <p>Zooming into the ‘carpet of traffic modes’ for the most recent couple of days, it appears that the traffic intensity of the small ring of Brussels during the typical rush hours is gradually increasing towards the volumes of the normal day traffic outside rush hours (mode C). Thus, although the traffic volume is steadily increasing, it has not yet been recovered completely to stagnating rush hour volumes, luckily for the daily commuters.</p>
 
-<p>Project subsidized by the Brussels-Capital Region - Innoviris. <img alt="RGB_innoviris_we fund your future_MAIN LOGO.jpg" src="assets/RGB_innoviris_we fund your future_MAIN LOGO.jpg" /></p>
+<p><br /></p>
 
-<p><img alt="button_to_blog.jpg" src="assets/button_to_blog.jpg" /></p>
+<p><em>Project subsidized by the Brussels-Capital Region - Innoviris.</em><br />
+<br /></p>
+<center><img alt="RGB_innoviris_we fund your future_MAIN LOGO.jpg" src="src/assets/RGB_innoviris_we fund your future_MAIN LOGO.jpg" class="center" href="https://innoviris.brussels/" target="_blank" /></center>
+<p><br /></p>
 
+                
             </div>
             <hr class="h-0.5 my-8 bg-gray-500 border-0">
 
-            <p class="mb-4 font-semibold italic text-xl text-gray-700">
+            <!-- <p class="mb-4 font-semibold italic text-xl text-gray-700">
                 Let us know what you think about this article. Submit a letter to the editor at
                 
-                <a href="mailto:michieldhont,elenatsiporkova,tomtourwéandnicolásgonzález-deleito">michieldhont,elenatsiporkova,tomtourwéandnicolásgonzález-deleito</a>.
-            </p>
-            <hr class="h-0.5 my-8 bg-gray-500 border-0">
+                <a href="mailto:michieldhont">michieldhont</a>.
+            </p> -->
+            <!-- <hr class="h-0.5 my-8 bg-gray-500 border-0">
             <h2 class="mb-4 font-bold text-3xl text-gray-700">You Might Also Like …</h2>
             <ul class="list-disc pl-4 mb-8">
+            
+            <li class="mb-2">
+                <a href="/conscious-ieee24-paper" class="text-blue-500 hover:underline">Novel approach on contextual anomaly detection presented at IEEE International Conference on Evolving and Adaptive Systems 2024</a>
+            </li>
             
             <li class="mb-2">
                 <a href="/samuel-itea-excellence-award" class="text-blue-500 hover:underline">Collaboration with Materialise and Cr3do selected for the ITEA Award of Excellence for Innovation</a>
@@ -238,15 +302,11 @@ No Rush during Rush Hours</p>
                 <a href="/giving-circular-economy-a-boost" class="text-blue-500 hover:underline">Giving circular economy a boost by improving refurbishment process of household appliances</a>
             </li>
             
-            <li class="mb-2">
-                <a href="/interview-3e-and-elucidata-lab" class="text-blue-500 hover:underline">Interview 3E and EluciDATA Lab in the framework of the campaign "AI to boost your SME" by the FPS Economie</a>
-            </li>
-            
-            </ul>
+            </ul> -->
 
             <hr class="h-0.5 my-8 bg-gray-500 border-0">
 
-            <div class="mb-8">
+            <!-- <div class="mb-8">
                 <h2 class="font-bold text-3xl mb-4 text-gray-700">Categories</h2>
                 <ul class="flex flex-wrap text-center justify-start">
                     
@@ -255,21 +315,23 @@ No Rush during Rush Hours</p>
                     
                         <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Projects</li>
                     
-                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Sir Adas' series</li>
+                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Sir_Adas'_series</li>
                     
                         <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Circular economy</li>
                     
-                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Events</li>
+                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Sir Adas' series</li>
                     
-                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Intelligent transportation systems</li>
+                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Intelligent_transportation_systems</li>
                     
                         <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Funding</li>
                     
                         <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Trainings</li>
                     
+                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Events</li>
+                    
                 </ul>
             </div>
-            <hr class="h-px my-8 bg-gray-400 border-0">
+            <hr class="h-px my-8 bg-gray-400 border-0"> -->
         </div>
     </div>
 
@@ -338,6 +400,12 @@ No Rush during Rush Hours</p>
                     <li class="mb-2">
                         
                         
+                        <a href="/conscious-ieee24-paper" class="text-slate-100 hover:underline block">Novel approach on...</a>
+                    </li>
+                    
+                    <li class="mb-2">
+                        
+                        
                         <a href="/samuel-itea-excellence-award" class="text-slate-100 hover:underline block">Collaboration with Materialise...</a>
                     </li>
                     
@@ -351,12 +419,6 @@ No Rush during Rush Hours</p>
                         
                         
                         <a href="/the-invisible-war-against-women" class="text-slate-100 hover:underline block">Sir Adas' series...</a>
-                    </li>
-                    
-                    <li class="mb-2">
-                        
-                        
-                        <a href="/giving-circular-economy-a-boost" class="text-slate-100 hover:underline block">Giving circular economy...</a>
                     </li>
                      -->
                 </ul>

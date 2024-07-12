@@ -85,7 +85,7 @@ The process can be illustrated by means of an example as follows.
 
 - In a second phase, a next point is selected, the new linear representation is constructed between the last point that was retained and the next point, and the new tolerance band is defined. If the next point, i.e. point 4, has the new lower bound lower than the previous lower bound, the tolerance band is not updated (the purple area will not be used as a tolerance band update), similar for the upper bound.
 
-<table><tr><td><img src='../src/assets/SK_specific.png'></td><td><img src='../src/assets/SDTPhase4.png'></td></tr></table>
+<table><tr><td><img src='../src/assets/SDTPhase3.png'></td><td><img src='../src/assets/SDTPhase4.png'></td></tr></table>
 
 - As long as there are new points that fall in the tolerance band, they can be represented by the linear representation. Once a new point is considered that falls outside the tolerance band, e.g. point 6, the last point of the linear representation, e.g. point 5, will be retained as the compressed version of points 1 to 5. Starting from point 5 a new linear representation will be constructed with point 6 as the first point to consider.  
 

@@ -35,3 +35,75 @@ body {
 .flex .image-same-height {
   height: calc(100% - 2rem); /* Adjusts the height considering the margin of the button */
 }
+.copy-container {
+    position: relative;
+    display: inline-block;
+}
+
+.copy-icon {
+    cursor: pointer;
+    font-size: 24px;
+    color: #007BFF;
+}
+
+.copy-icon:hover {
+    cursor: pointer;
+}
+
+.copy-message {
+    display: none;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4caf50;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 12px;
+    z-index: 1000;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.blink {
+    animation: blink 0.5s step-end infinite;
+}
+.member-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.member-form h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+.member-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.member-form input,
+.member-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.member-form button {
+    background: #28a745;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.member-form button:hover {
+    background: #218838;
+}

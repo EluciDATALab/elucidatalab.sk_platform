@@ -37,6 +37,7 @@
 
     <!-- Tailwind cascade styling sheet -->
     <link rel="stylesheet" href="/src/styles/output.css" type="text/css">
+    <link rel="stylesheet" href="src/styles/styles.css"">
 
     <!-- Icons and small favicons -->
     <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
@@ -116,6 +117,7 @@
     <title>Sir Adas' series; No laws can empower women career-wise without an adequate social system!</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="src/styles/styles.css"">
 </head>
 <body class="font-[Poppins] bg-gradient-to-br from-gray-50 via-sky-200 to-blue-300 min-h-screen">
     <div class="mx-auto px-4 lg:px-60 xl:px-96 pt-32">
@@ -123,19 +125,32 @@
         <div class="flex justify-between pt-8 p-8">
             <!-- Left side -->
             <div class="flex items-center space-x-4">
+                
                 <!-- Dummy image -->
                 <div class="w-12 h-12 flex items-center justify-center border border-gray-300 rounded-full">
-                    <img src="src/assets/author-icon.png" alt="Author face image" class="w-10 h-10 rounded-full">
+                    <img src="src/assets/group_photos/Elena Tsiporkova.jpg" alt="Author face image" class="w-10 h-10 rounded-full">
                 </div>
 
                 <!-- Author name and post date -->
                 <div class="text-sm">
                     <div class="font-semibold">Written by
+
                         
-                          Elena Tsiporkova
-                        
+
+                        Elena Tsiporkova (copy email
+                            <div class="copy-container">
+                                <i class="fas fa-clipboard copy-icon" onclick="copyToClipboard('elena.tsiporkova@sirris.be', 'copyMessage-1')"></i>
+                                <div class="copy-message" id="copyMessage-1">Copied to clipboard!</div>
+                            </div>)
                     </div>
                     <div class="text-gray-500">On 18 Nov 2020</div>
+                    
+                        <a href="https://www.linkedin.com/pulse/laws-can-empower-women-career-wise-without-adequate-elena-tsiporkova/" target="_blank" class="text-blue-600 underline">Permanent link</a>
+                    
+                    <!-- <div class="copy-container">
+                        <i class="fas fa-clipboard copy-icon" onclick="copyToClipboard('email@example.com', 'copyMessage-1')"></i>
+                        <div class="copy-message" id="copyMessage-1">Copied to clipboard!</div>
+                    </div> -->
                 </div>
             </div>
             <!-- Right side -->
@@ -160,27 +175,49 @@
             <img src="src/assets/sir_adas_empower_woman.jpg" alt="Sir Adas' series; No laws can empower women career-wise without an adequate social system! - Featured Image" class="rounded-xl shadow-lg mb-8">
             <!-- <a href="src/assets/sir_adas_empower_woman.jpg" target="_blank" class="text-center text-blue-600 text-md font-medium pb-8 block hover:underline">Image Link</a> -->
             <div class="text-lg leading-relaxed mb-8">
-                <p>I once had a very frightening, and at the same time weird, experience in Edinburgh. In the beginning of the nineties, I was on a short study visit in the Department of Computer Science. I hardly knew anybody there and my English was far from fluent. One evening, at the end of a movie night, a Brazilian colleague left me behind alone at some bus stop. By the time I realised I took the wrong bus, it was already driving in the darkness somewhere outside of Edinburgh. I panicked and tried to interact, pushing my lousy English to the extreme, with the bus driver. At a certain moment the bus stopped in the middle of the road and to my big surprise a police car, called by the bus driver as turned out later, was waiting for me. They were very friendly and just gave me a lift home. Next morning, still very frightened and humiliated, I was boiling with anger when I met my colleague. I told him that his behaviour was unacceptable. No man in my native country would leave a woman alone at night. Apologising, he told me this was also the case in Brazil. He had actually doubted whether to offer me to see me home, but he feared my reaction. It seems he had pretty bad experience with being accused of sexism when opening the door for a woman or offering to carry her bag or to accompany her on her way home in the evening.
- I never understood this overfocus on these, in my opinion superficial, aspects of women-men interaction. I actually do not mind at all if someone opens the door for me and carries my bag. I am a small woman and considering that most of the stuff in this world has been designed by men for the averaged man (don’t get me started on this topic), I often find doors and other stuff much too big and heavy for me. However, I would certainly mind if I were interrupted during meetings (which was proven to happen to women much more often) and my professional opinion was not taken seriously.
- I grew up in communist Bulgaria.  I do not recall any fuss in particular about feminism at the time, nor having the feeling of having less opportunities or being treated differently because of my gender. It was the cold war era and the iron curtain did not let much news on women rights in the West through. Not that we cared. We had other stuff to worry about e.g. paying the electricity bill or getting hold of a pair of winter shoes and numerous other daily life concerns.
- However, there were also several really good things implemented by the communist system e.g. good quality education accessible for everyone, very well organised child care including a more than 2 year maternity leave, up to 2 months paid sickness leave for mothers per year to be able to nurse their sick children and an excellent network of daycares and kindergartens. Not surprising that all women were working full time. I personally didn’t know anyone who was a housewife. Women were teachers, secretaries, medical doctors, but also accountants, engineers and university professors. We are speaking about the eighties. It took my Dutch husband a while to recall that he encountered only one female professor, the statistics one, in his 5 year university study. When I started working in still communist Bulgaria, late eighties, as an assistant-professor in a technical university, half of our department of computer systems and also half of the sister department of electronics were women. The same was true for our students, the future engineers. Even the head of the electronics department was a woman. When in 2003, my daughter started her engineering study in computer science at the University of Ghent, she and another girl were the only 2 female students.
-I have never understood from where this difference comes between East (ex-communist) and West Europe. The first time I visited West Europe, some 30 years ago, I was impressed by the cool and assertive looking women I met in the streets, some dressed very masculine and radiating independence. It took me quite some time to figure out that these outer signs didn’t always imply inner self confidence and ambition to achieve more in life than just being a good mother and housewife.
+                
+                
+                    <p>I once had a very frightening, and at the same time weird, experience in Edinburgh. In the beginning of the nineties, I was on a short study visit in the Department of Computer Science. I hardly knew anybody there and my English was far from fluent. One evening, at the end of a movie night, a Brazilian colleague left me behind alone at some bus stop. By the time I realised I took the wrong bus, it was already driving in the darkness somewhere outside of Edinburgh. I panicked and tried to interact, pushing my lousy English to the extreme, with the bus driver. At a certain moment the bus stopped in the middle of the road and to my big surprise a police car, called by the bus driver as turned out later, was waiting for me. They were very friendly and just gave me a lift home. Next morning, still very frightened and humiliated, I was boiling with anger when I met my colleague. I told him that his behaviour was unacceptable. No man in my native country would leave a woman alone at night. Apologising, he told me this was also the case in Brazil. He had actually doubted whether to offer me to see me home, but he feared my reaction. It seems he had pretty bad experience with being accused of sexism when opening the door for a woman or offering to carry her bag or to accompany her on her way home in the evening.</p>
+
+<p><br /></p>
+
+<p>I never understood this overfocus on these, in my opinion superficial, aspects of women-men interaction. I actually do not mind at all if someone opens the door for me and carries my bag. I am a small woman and considering that most of the stuff in this world has been designed by men for the averaged man (don’t get me started on this topic), I often find doors and other stuff much too big and heavy for me. However, I would certainly mind if I were interrupted during meetings (which was proven to happen to women much more often) and my professional opinion was not taken seriously.</p>
+
+<p><br /></p>
+
+<p>I grew up in communist Bulgaria.  I do not recall any fuss in particular about feminism at the time, nor having the feeling of having less opportunities or being treated differently because of my gender. It was the cold war era and the iron curtain did not let much news on women rights in the West through. Not that we cared. We had other stuff to worry about e.g. paying the electricity bill or getting hold of a pair of winter shoes and numerous other daily life concerns.</p>
+
+<p><br /></p>
+
+<p>However, there were also several really good things implemented by the communist system e.g. good quality education accessible for everyone, very well organised child care including a more than 2 year maternity leave, up to 2 months paid sickness leave for mothers per year to be able to nurse their sick children and an excellent network of daycares and kindergartens. Not surprising that all women were working full time. I personally didn’t know anyone who was a housewife. Women were teachers, secretaries, medical doctors, but also accountants, engineers and university professors. We are speaking about the eighties. It took my Dutch husband a while to recall that he encountered only one female professor, the statistics one, in his 5 year university study. When I started working in still communist Bulgaria, late eighties, as an assistant-professor in a technical university, half of our department of computer systems and also half of the sister department of electronics were women. The same was true for our students, the future engineers. Even the head of the electronics department was a woman. When in 2003, my daughter started her engineering study in computer science at the University of Ghent, she and another girl were the only 2 female students.</p>
+
+<p><br /></p>
+
+<p>I have never understood from where this difference comes between East (ex-communist) and West Europe. The first time I visited West Europe, some 30 years ago, I was impressed by the cool and assertive looking women I met in the streets, some dressed very masculine and radiating independence. It took me quite some time to figure out that these outer signs didn’t always imply inner self confidence and ambition to achieve more in life than just being a good mother and housewife.
 Anyway, all this stuff was bothering me for quite some time. I was struggling to understand why I, as a woman born and raised in communist Europe, have a somewhat different understanding/expectations of what feminism should be about than fellow women here in the West. Until a colleague sent me a link to this article:
-https://mondediplo.com/2021/07/07women-socialism
-I do not have any intention to provide you with a condensed overview of the content of the article. It would be a shame to waste the richness and depth of its insights in such a way. Just read it for yourself! I would only dare to share my own personal take away. Practically, the women in communist Europe understood from very early on that the true feminism goes beyond fighting the patriarch bias. Namely, it is difficult for a woman to have a solid professional career when: she is expected to leave her newly born baby only after less than 3 months, the daycares are much too expensive, the schools close well before the normal working time for your male colleagues to schedule important meetings, the business travels usually start in the weekend, …!
+<a href="https://mondediplo.com/2021/07/07women-socialism" target="_blank" class="text-blue-600 underline">https://mondediplo.com/2021/07/07women-socialism</a>.</p>
+
+<p><br /></p>
+
+<p>I do not have any intention to provide you with a condensed overview of the content of the article. It would be a shame to waste the richness and depth of its insights in such a way. Just read it for yourself! I would only dare to share my own personal take away. Practically, the women in communist Europe understood from very early on that the true feminism goes beyond fighting the patriarch bias. Namely, it is difficult for a woman to have a solid professional career when: she is expected to leave her newly born baby only after less than 3 months, the daycares are much too expensive, the schools close well before the normal working time for your male colleagues to schedule important meetings, the business travels usually start in the weekend, …!
 Or in other words, <strong>no laws can empower and guarantee equal rights and opportunities for women if we do not create a social system making this feasible.</strong></p>
 
+                
             </div>
             <hr class="h-0.5 my-8 bg-gray-500 border-0">
 
-            <p class="mb-4 font-semibold italic text-xl text-gray-700">
+            <!-- <p class="mb-4 font-semibold italic text-xl text-gray-700">
                 Let us know what you think about this article. Submit a letter to the editor at
                 
                 <a href="mailto:elenatsiporkova">elenatsiporkova</a>.
-            </p>
-            <hr class="h-0.5 my-8 bg-gray-500 border-0">
+            </p> -->
+            <!-- <hr class="h-0.5 my-8 bg-gray-500 border-0">
             <h2 class="mb-4 font-bold text-3xl text-gray-700">You Might Also Like …</h2>
             <ul class="list-disc pl-4 mb-8">
+            
+            <li class="mb-2">
+                <a href="/conscious-ieee24-paper" class="text-blue-500 hover:underline">Novel approach on contextual anomaly detection presented at IEEE International Conference on Evolving and Adaptive Systems 2024</a>
+            </li>
             
             <li class="mb-2">
                 <a href="/samuel-itea-excellence-award" class="text-blue-500 hover:underline">Collaboration with Materialise and Cr3do selected for the ITEA Award of Excellence for Innovation</a>
@@ -198,15 +235,11 @@ Or in other words, <strong>no laws can empower and guarantee equal rights and op
                 <a href="/giving-circular-economy-a-boost" class="text-blue-500 hover:underline">Giving circular economy a boost by improving refurbishment process of household appliances</a>
             </li>
             
-            <li class="mb-2">
-                <a href="/interview-3e-and-elucidata-lab" class="text-blue-500 hover:underline">Interview 3E and EluciDATA Lab in the framework of the campaign "AI to boost your SME" by the FPS Economie</a>
-            </li>
-            
-            </ul>
+            </ul> -->
 
             <hr class="h-0.5 my-8 bg-gray-500 border-0">
 
-            <div class="mb-8">
+            <!-- <div class="mb-8">
                 <h2 class="font-bold text-3xl mb-4 text-gray-700">Categories</h2>
                 <ul class="flex flex-wrap text-center justify-start">
                     
@@ -215,21 +248,23 @@ Or in other words, <strong>no laws can empower and guarantee equal rights and op
                     
                         <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Projects</li>
                     
-                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Sir Adas' series</li>
+                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Sir_Adas'_series</li>
                     
                         <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Circular economy</li>
                     
-                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Events</li>
+                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Sir Adas' series</li>
                     
-                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Intelligent transportation systems</li>
+                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Intelligent_transportation_systems</li>
                     
                         <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Funding</li>
                     
                         <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Trainings</li>
                     
+                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Events</li>
+                    
                 </ul>
             </div>
-            <hr class="h-px my-8 bg-gray-400 border-0">
+            <hr class="h-px my-8 bg-gray-400 border-0"> -->
         </div>
     </div>
 
@@ -298,6 +333,12 @@ Or in other words, <strong>no laws can empower and guarantee equal rights and op
                     <li class="mb-2">
                         
                         
+                        <a href="/conscious-ieee24-paper" class="text-slate-100 hover:underline block">Novel approach on...</a>
+                    </li>
+                    
+                    <li class="mb-2">
+                        
+                        
                         <a href="/samuel-itea-excellence-award" class="text-slate-100 hover:underline block">Collaboration with Materialise...</a>
                     </li>
                     
@@ -311,12 +352,6 @@ Or in other words, <strong>no laws can empower and guarantee equal rights and op
                         
                         
                         <a href="/the-invisible-war-against-women" class="text-slate-100 hover:underline block">Sir Adas' series...</a>
-                    </li>
-                    
-                    <li class="mb-2">
-                        
-                        
-                        <a href="/giving-circular-economy-a-boost" class="text-slate-100 hover:underline block">Giving circular economy...</a>
                     </li>
                      -->
                 </ul>

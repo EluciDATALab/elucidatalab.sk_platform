@@ -9,7 +9,7 @@
 <title>Is traffic volume correlated to Covid-19 infections? | Elucidata - Your AI experience</title>
 <meta name="generator" content="Jekyll v4.3.3" />
 <meta property="og:title" content="Is traffic volume correlated to Covid-19 infections?" />
-<meta name="author" content="Michiel Dhont, Elena Tsiporkova and Tom Tourwé" />
+<meta name="author" content="Michiel Dhont" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="This blog is inspired by a quote of virologist Steven Van Gucht in Het Journaal on December 9; “… what is striking is that we move more often… and we know that that is a pretty good prediction of the future number of new infections.” Since vehicle counts data is closely connected to people’s movements, it is worthwhile to investigate whether Steven Van Gucht’s statement is valid, i.e., how well traffic intensity correlates with Covid-19 infections." />
 <meta property="og:description" content="This blog is inspired by a quote of virologist Steven Van Gucht in Het Journaal on December 9; “… what is striking is that we move more often… and we know that that is a pretty good prediction of the future number of new infections.” Since vehicle counts data is closely connected to people’s movements, it is worthwhile to investigate whether Steven Van Gucht’s statement is valid, i.e., how well traffic intensity correlates with Covid-19 infections." />
@@ -23,7 +23,7 @@
 <meta property="twitter:image" content="http://localhost:4000/src/assets/cover%20photo%20-%20blog%205_1.jpg" />
 <meta property="twitter:title" content="Is traffic volume correlated to Covid-19 infections?" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Michiel Dhont, Elena Tsiporkova and Tom Tourwé"},"dateModified":"2021-02-05T00:00:00+01:00","datePublished":"2021-02-05T00:00:00+01:00","description":"This blog is inspired by a quote of virologist Steven Van Gucht in Het Journaal on December 9; “… what is striking is that we move more often… and we know that that is a pretty good prediction of the future number of new infections.” Since vehicle counts data is closely connected to people’s movements, it is worthwhile to investigate whether Steven Van Gucht’s statement is valid, i.e., how well traffic intensity correlates with Covid-19 infections.","headline":"Is traffic volume correlated to Covid-19 infections?","image":"http://localhost:4000/src/assets/cover%20photo%20-%20blog%205_1.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/is-traffic-volume-correlated-to"},"url":"http://localhost:4000/is-traffic-volume-correlated-to"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Michiel Dhont"},"dateModified":"2021-02-05T00:00:00+01:00","datePublished":"2021-02-05T00:00:00+01:00","description":"This blog is inspired by a quote of virologist Steven Van Gucht in Het Journaal on December 9; “… what is striking is that we move more often… and we know that that is a pretty good prediction of the future number of new infections.” Since vehicle counts data is closely connected to people’s movements, it is worthwhile to investigate whether Steven Van Gucht’s statement is valid, i.e., how well traffic intensity correlates with Covid-19 infections.","headline":"Is traffic volume correlated to Covid-19 infections?","image":"http://localhost:4000/src/assets/cover%20photo%20-%20blog%205_1.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/is-traffic-volume-correlated-to"},"url":"http://localhost:4000/is-traffic-volume-correlated-to"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -37,6 +37,7 @@
 
     <!-- Tailwind cascade styling sheet -->
     <link rel="stylesheet" href="/src/styles/output.css" type="text/css">
+    <link rel="stylesheet" href="src/styles/styles.css"">
 
     <!-- Icons and small favicons -->
     <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
@@ -116,6 +117,7 @@
     <title>Is traffic volume correlated to Covid-19 infections?</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="src/styles/styles.css"">
 </head>
 <body class="font-[Poppins] bg-gradient-to-br from-gray-50 via-sky-200 to-blue-300 min-h-screen">
     <div class="mx-auto px-4 lg:px-60 xl:px-96 pt-32">
@@ -123,19 +125,30 @@
         <div class="flex justify-between pt-8 p-8">
             <!-- Left side -->
             <div class="flex items-center space-x-4">
+                
                 <!-- Dummy image -->
                 <div class="w-12 h-12 flex items-center justify-center border border-gray-300 rounded-full">
-                    <img src="src/assets/author-icon.png" alt="Author face image" class="w-10 h-10 rounded-full">
+                    <img src="src/assets/group_photos/Michiel Dhont.jpg" alt="Author face image" class="w-10 h-10 rounded-full">
                 </div>
 
                 <!-- Author name and post date -->
                 <div class="text-sm">
                     <div class="font-semibold">Written by
+
                         
-                          Michiel Dhont, Elena Tsiporkova and Tom Tourwé
-                        
+
+                        Michiel Dhont (copy email
+                            <div class="copy-container">
+                                <i class="fas fa-clipboard copy-icon" onclick="copyToClipboard('michiel.dhont@sirris.be', 'copyMessage-1')"></i>
+                                <div class="copy-message" id="copyMessage-1">Copied to clipboard!</div>
+                            </div>)
                     </div>
                     <div class="text-gray-500">On 05 Feb 2021</div>
+                    
+                    <!-- <div class="copy-container">
+                        <i class="fas fa-clipboard copy-icon" onclick="copyToClipboard('email@example.com', 'copyMessage-1')"></i>
+                        <div class="copy-message" id="copyMessage-1">Copied to clipboard!</div>
+                    </div> -->
                 </div>
             </div>
             <!-- Right side -->
@@ -160,60 +173,109 @@
             <img src="src/assets/cover photo - blog 5_1.jpg" alt="Is traffic volume correlated to Covid-19 infections? - Featured Image" class="rounded-xl shadow-lg mb-8">
             <!-- <a href="src/assets/cover photo - blog 5_1.jpg" target="_blank" class="text-center text-blue-600 text-md font-medium pb-8 block hover:underline">Image Link</a> -->
             <div class="text-lg leading-relaxed mb-8">
-                <p>This is the fifth blog in a series of blogs concerning the traffic situation in Brussels in times of Covid-19 restrictions. This work has been realized in the context of the MISTic project, executed by the EluciDATA Lab of Sirris with Macq and VUB as partners.</p>
+                
+                
+                    <p>This is the fifth blog in a series of blogs concerning the traffic situation in Brussels in times of Covid-19 restrictions. This work has been realized in the context of the <em>MISTic</em> project, executed by the EluciDATA Lab with with <a href="https://www.macq.eu/nl_BE/" target="_blank" alt="Macq" class="text-blue-600 underline">Macq</a> and <a href="https://www.vub.be/" target="_blank" alt="VUB" class="text-blue-600 underline">VUB</a> as partners.</p>
 
-<p>Our previous analyses were based on a dataset of Brussels Mobility, which contains vehicle counts from 55 busy locations in the city of Brussels. During the first lockdown in March 2020, we discovered, as communicated in our first blog, that traffic had dramatically reduced overall, but less so on the small ring of Brussels, where peaks of up to 80% of retained traffic were observed. In the previous blog (number 4), we investigated the traffic volume evolution in relation to historical values since 2018, in order to consider the seasonality and holiday effects impacting traffic volumes. We observed that the traffic volumes in October 2020 were very close to normal (pre-Covid-19) conditions.</p>
+<p><br /></p>
+
+<p>Our previous analyses were based on a dataset of <a href="http://mobilite-mobiliteit.brussels/en" target="_blank" alt="Brussels Mobility" class="text-blue-600 underline">Brussels Mobility</a>, which contains vehicle counts from 55 busy locations in the city of Brussels. During the first lockdown in March 2020, we discovered, as communicated in our first blog ((<a href="insightful-blueprints-of-brussels-traffic" class="text-blue-600 underline">Insightful blueprints of Brussels traffic emerge in times of covid-19</a>)), that traffic had dramatically reduced overall, but less so on the small ring of Brussels, where peaks of up to 80% of retained traffic were observed. In the previous, 4th blog ((<a href="run-up-in-brussels-traffic-towards" class="text-blue-600 underline">Run-up in Brussels Traffic Towards the 2nd Covid-19 Peak</a>), we investigated the traffic volume evolution in relation to historical values since 2018, in order to consider the seasonality and holiday effects impacting traffic volumes. We observed that the traffic volumes in October 2020 were very close to normal (pre-Covid-19) conditions.</p>
+
+<p><br /></p>
 
 <p>Today’s blog is inspired by a quote of virologist Steven Van Gucht in Het Journaal on December 9:</p>
 
-<p>“…wat wel opvalt is dat we ons vaker verplaatsen… en daarvan weten we dat dat een vrij goede voorspelling is van het toekomstig aantal nieuwe besmettingen.” [… what is striking is that we move more often… and we know that that is a pretty good prediction of the future number of new infections.]</p>
-
-<p>Steven Van Gucht</p>
+<p><em>“…wat wel opvalt is dat we ons vaker verplaatsen… en daarvan weten we dat dat een vrij goede voorspelling is van het toekomstig aantal nieuwe besmettingen.”</em> <em>[… what is striking is that we move more often… and we know that that is a pretty good prediction of the future number of new infections.]</em>
+<em>Steven Van Gucht</em></p>
 
 <p>Since vehicle counts data is closely connected to people’s movements, it is worthwhile to investigate whether Steven Van Gucht’s statement is valid, i.e., how well traffic intensity correlates with, or even more predicts peaks in Covid-19 infections.</p>
+
+<p><br /></p>
 
 <p>The blog reveals three main insights:</p>
 <ol>
   <li>a certain threshold in traffic load needs to be exceeded in order to observe an effect on the number of Covid-19 related hospitalisations;</li>
   <li>there is a clear difference in effect on traffic between residential areas and more business strategic locations;</li>
-  <li>peaks in Covid-19 hospitalisations follow peaks in traffic volumes with a very variable time offset depending on the time of the year.
-Less than 16 000 vehicles a day in Brussels controls the pandemic</li>
+  <li>peaks in Covid-19 hospitalisations follow peaks in traffic volumes with a very variable time offset depending on the time of the year.</li>
 </ol>
 
-<p>As a first use case, we consider the average daily vehicle counts for 50 busy roads in the Brussels Capital Region since the beginning of the Covid-19 pandemic in March 2020. In the figure below, the evolution of these vehicle counts is shown with a blue line. To smooth down the periodic drops due to weekend effects, a rolling window of the average per week is applied. The latter is also aligned with the way the Brussels Covid-19 hospitalisations are reported (orange line). Note that we use the number of new hospitalisations in this study, instead of the number of new infections. The hospitalisation rate also represents the presence of Covid-19, although it is typically lagging a bit behind the number of infections. The big advantage of this parameter is its stability since it is not affected by the varying testing strategy and capacity.
-<img alt="chart" src="src/assets/chart.png" />
-How much time is needed to see the effect of a traffic reduction?</p>
+<p><br /></p>
+<h2 id='less-than-16-000-vehicles-a-day-in-brussels-controls-the-pandemic' class='text-3xl font-bold text-gray-700'>Less than 16 000 vehicles a day in Brussels controls the pandemic</h2>
+
+<p>As a first use case, we consider the average daily vehicle counts for 50 busy roads in the Brussels Capital Region since the beginning of the Covid-19 pandemic in March 2020. In the figure below, the evolution of these vehicle counts is shown with a blue line. To smooth down the periodic drops due to weekend effects, a rolling window of the average per week is applied. The latter is also aligned with the way the Brussels Covid-19 hospitalisations are reported (orange line). Note that we use the number of new hospitalisations in this study, instead of the number of new infections. The hospitalisation rate also represents the presence of Covid-19, although it is typically lagging a bit behind the number of infections. The big advantage of this parameter is its stability since it is not affected by the varying testing strategy and capacity.</p>
+
+<p><br /></p>
+<center><img alt="Graphical user interface, chart, line chartDescription automatically generated" src="src/assets/Covid hospitalisations vs vehicle counts.png" class="center" /></center>
+<p><br /></p>
+
+<p><strong>Legend</strong>:</p>
+
+<ol>
+  <li><em>DIY &amp; garden shops open</em></li>
+  <li><em>B2B companies open</em></li>
+  <li><em>B2C shops open</em></li>
+  <li><em>Contact professions open</em></li>
+  <li><em>Pubs &amp; restaurants closed</em></li>
+  <li><em>Brussels: stricter curfew</em></li>
+  <li><em>Non-essential shops can open again</em>
+<br />
+<br />
+It is interesting to observe that a certain threshold in vehicle counts (around 16 000-17 000) had to be exceeded in order to provoke the reversal of increasing/decreasing trends in Covid-19 hospitalisations. The figure above shows clearly that during the first lockdown in 2020 traffic load decreased to nearly a third of its normal volume. A similar sudden drop in Covid-19 hospitalisations can be observed some weeks later in the beginning of April (mind the log scale). Remarkably, the Covid-19 hospitalisation numbers kept dropping until the beginning of July despite the clear gradual increase in vehicle counts. Subsequently, only in the end of June the vehicle counts clearly exceeded the threshold of 16 000 vehicles, finally resulting in a strong increase of Covid-19 hospitalisations in July. Similarly, the temporary fall in Covid-19 hospitalisations in the beginning of September can be explained by the valley below 16 000 in vehicle counts in the middle of the summer holidays. During the second lockdown, traffic counts were as well only temporary diving below the threshold, followed by a stagnation around the threshold value. As a result, the Covid-19 hospitalisations dropped only for a short period and even stagnated in the second half of December. Note that this threshold might deviate over time as it is depending on external factors as availability of mouth masks and people following the restrictions less stringently.</li>
+</ol>
+
+<p><br /></p>
+<h2 id='increase-in-hospitalizations-in-flanders-is-also-preceded-by-more-traffic' class='text-3xl font-bold text-gray-700'>Increase in hospitalizations in Flanders is also preceded by more traffic</h2>
+
+<p>As an extension to the Brussels vehicle counts, we also consider vehicle counts from the <a href="https://www.telraam.net/en" class="text-blue-600 underline">Telraam</a> dataset. Telraam is an open project where citizens can monitor traffic by attaching a small camera to the inside of a window, which counts vehicles passing by. Since any citizen can participate, a large(r) number of locations can be monitored. Apart from the different Belgian regions, the big difference with the Brussels vehicle counts data is that the Telraam data is typically originating from residential areas, with hotspots in Leuven, Antwerp and Ghent. The Brussels vehicle counts originate from busier and critical traffic locations (e.g., the small ring). A drawback of the Telraam project is that such low-cost hardware is not able to detect vehicles after sunset. So, to allow for a fair comparison over all seasons, we excluded all counts before 9:00 and after 17:00. Additionally, locations with too few data points inside the time interval of interest (March 2020 – December 2020) were filtered out. Finally, we identified 379 qualitative vehicle counting locations in Flanders.</p>
+
+<p><br /></p>
+
+<p>Based on this Telraam data, the same figure as in the Brussels case was constructed below. Focusing solely on the vehicle counts, one can observe a very similar traffic evolution up to the start of the second lockdown in November. However, in contrast to the Brussels numbers, a much steeper drop of vehicle counts was introduced in the beginning of November, leading to even less traffic than during the first lockdown. There can be different explanations for this phenomenon. Maybe Flanders is simply a better student than Brussels when it concerns following the Covid-19 restrictions and recommendations. Most probably, the difference could be attributed to the more residential character of the locations and the exclusion of the peak hours from the Telraam dataset. After all, this sudden drop does not seem to precede a very dramatic decrease in Covid-19 hospitalisations compared to the Brussels case. In general, one can observe again a very similar (lagging behind) behaviour of the vehicle counts and the Covid-19 hospitalisations.</p>
+
+<p><br /></p>
+<center><img alt="Graphical user interface, chart, line chartDescription automatically generated" src="src/assets/Covid hospitalisations vs vehicle counts 9 - 17.png" class="center" /></center>
+<p><br /></p>
+
+<p><br /></p>
+<h2 id='how-much-time-is-needed-to-see-the-effect-of-a-traffic-reduction' class='text-3xl font-bold text-gray-700'>How much time is needed to see the effect of a traffic reduction?</h2>
 
 <p>For both Brussels and Flanders, a delayed effect of the vehicle counts on the Covid-19 hospitalisations is observed. Although the window of delay between traffic and hospitalisation peaks seems very variable in the different periods, there is no doubt that there is some correlation between the vehicle counts evolution and the Covid-19 numbers.</p>
 
+<p><br /></p>
+
 <p>In order to support formally this statement, we calculated the Pearson correlation between the Covid-19 hospitalisations and the average vehicle counts for 3 so called “periods of interest”. Each period of interest represents a different stage (in terms of peaks) in the Covid-19 hospitalisations and is annotated in the two images above. Since we are interested in discovering which time offset leads to the highest correlation for each period of interest, the Pearson correlation was calculated for a time offset between 7 and 60 days for each period.</p>
 
-<p>The most optimal Pearson correlation during the first period of interest (the blue bar below the two plots) was obtained for both regions for a delay of 40-42 days. This indicates that the reduction in traffic (i.e., in people’s movement) needed 40-42 days before it took effect on the Covid-19 hospitalisations.
-For period of interest 2 (small peak during summer break), the offset with the highest Pearson correlation was too high to be reliable. We suppose that too many different factors impacted the hospitalisation rate in the summer period, which obviously cannot be captured solely by traffic counts.
-In period of interest 3 (the second major peak), the optimal Pearson correlation is obtained at a different offset in time for Brussels (36 days) and Flanders (22 days). Such a big difference in delay of effect can be attributed to the different nature of traffic data e.g., more business related in Brussels vs. residential in Flanders, more concentrated location counts in Brussels vs. fragmented ones in Flanders, etc. which are differently affected by Covid-19 measures.</p>
+<p><br /></p>
 
-<p><img alt="chart" src="src/assets/chart2.png" />
-So, is Steven Van Gucht’s claim correct?</p>
+<ul>
+  <li>The most optimal Pearson correlation during the <strong>first period of interest</strong> (the blue bar below the two plots) was obtained for both regions for a delay of 40-42 days. This indicates that the reduction in traffic (i.e., in people’s movement) needed 40-42 days before it took effect on the Covid-19 hospitalisations.</li>
+  <li>For <strong>period of interest 2</strong> (small peak during summer break), the offset with the highest Pearson correlation was too high to be reliable. We suppose that too many different factors impacted the hospitalisation rate in the summer period, which obviously cannot be captured solely by traffic counts.</li>
+  <li>In <strong>period of interest 3</strong> (the second major peak), the optimal Pearson correlation is obtained at a different offset in time for Brussels (36 days) and Flanders (22 days). Such a big difference in delay of effect can be attributed to the different nature of traffic data e.g., more business related in Brussels vs. residential in Flanders, more concentrated location counts in Brussels vs. fragmented ones in Flanders, etc. which are differently affected by Covid</li>
+</ul>
 
-<p>Based on this brief study, it is clear that an increasing trend in traffic volumes can serve as an early indicator for increasing numbers of Covid-19 infections as claimed by Steven Van Gucht. However, the increase of Covid-19 infections is caused by a multitude of very diverse and dynamic factors which are not captured in traffic data, e.g., unpredictable human behaviour and evolution of the virus (e.g., evolving time between symptoms and hospitalisation). Since it is very hard to take such effects into account, monitoring evolution in traffic volumes is not reliable for prediction but still very useful to raise an alarm of caution.</p>
+<p><br /></p>
 
-<p>Project subsidized by the Brussels-Capital Region - Innoviris.</p>
+<p><em>Project subsidized by the Brussels-Capital Region - Innoviris.</em><br />
+<br /></p>
+<center><img alt="RGB_innoviris_we fund your future_MAIN LOGO.jpg" src="src/assets/RGB_innoviris_we fund your future_MAIN LOGO.jpg" class="center" href="https://innoviris.brussels/" target="_blank" /></center>
+<p><br /></p>
 
-<p><a href="https://innoviris.brussels/" target="_blank"><img alt="RGB_innoviris_we fund your future_MAIN LOGO.jpg" src="src/assets/RGB_innoviris_we fund your future_MAIN LOGO.jpg" /></a></p>
-
-<p><a href="https://elucidata.be/blog" target="_self"><img alt="button_to_blog.jpg" src="src/assets/button_to_blog.jpg" /></a></p>
-
+                
             </div>
             <hr class="h-0.5 my-8 bg-gray-500 border-0">
 
-            <p class="mb-4 font-semibold italic text-xl text-gray-700">
+            <!-- <p class="mb-4 font-semibold italic text-xl text-gray-700">
                 Let us know what you think about this article. Submit a letter to the editor at
                 
-                <a href="mailto:michieldhont,elenatsiporkovaandtomtourwé">michieldhont,elenatsiporkovaandtomtourwé</a>.
-            </p>
-            <hr class="h-0.5 my-8 bg-gray-500 border-0">
+                <a href="mailto:michieldhont">michieldhont</a>.
+            </p> -->
+            <!-- <hr class="h-0.5 my-8 bg-gray-500 border-0">
             <h2 class="mb-4 font-bold text-3xl text-gray-700">You Might Also Like …</h2>
             <ul class="list-disc pl-4 mb-8">
+            
+            <li class="mb-2">
+                <a href="/conscious-ieee24-paper" class="text-blue-500 hover:underline">Novel approach on contextual anomaly detection presented at IEEE International Conference on Evolving and Adaptive Systems 2024</a>
+            </li>
             
             <li class="mb-2">
                 <a href="/samuel-itea-excellence-award" class="text-blue-500 hover:underline">Collaboration with Materialise and Cr3do selected for the ITEA Award of Excellence for Innovation</a>
@@ -231,15 +293,11 @@ So, is Steven Van Gucht’s claim correct?</p>
                 <a href="/giving-circular-economy-a-boost" class="text-blue-500 hover:underline">Giving circular economy a boost by improving refurbishment process of household appliances</a>
             </li>
             
-            <li class="mb-2">
-                <a href="/interview-3e-and-elucidata-lab" class="text-blue-500 hover:underline">Interview 3E and EluciDATA Lab in the framework of the campaign "AI to boost your SME" by the FPS Economie</a>
-            </li>
-            
-            </ul>
+            </ul> -->
 
             <hr class="h-0.5 my-8 bg-gray-500 border-0">
 
-            <div class="mb-8">
+            <!-- <div class="mb-8">
                 <h2 class="font-bold text-3xl mb-4 text-gray-700">Categories</h2>
                 <ul class="flex flex-wrap text-center justify-start">
                     
@@ -248,21 +306,23 @@ So, is Steven Van Gucht’s claim correct?</p>
                     
                         <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Projects</li>
                     
-                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Sir Adas' series</li>
+                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Sir_Adas'_series</li>
                     
                         <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Circular economy</li>
                     
-                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Events</li>
+                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Sir Adas' series</li>
                     
-                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Intelligent transportation systems</li>
+                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Intelligent_transportation_systems</li>
                     
                         <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Funding</li>
                     
                         <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Trainings</li>
                     
+                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Events</li>
+                    
                 </ul>
             </div>
-            <hr class="h-px my-8 bg-gray-400 border-0">
+            <hr class="h-px my-8 bg-gray-400 border-0"> -->
         </div>
     </div>
 
@@ -331,6 +391,12 @@ So, is Steven Van Gucht’s claim correct?</p>
                     <li class="mb-2">
                         
                         
+                        <a href="/conscious-ieee24-paper" class="text-slate-100 hover:underline block">Novel approach on...</a>
+                    </li>
+                    
+                    <li class="mb-2">
+                        
+                        
                         <a href="/samuel-itea-excellence-award" class="text-slate-100 hover:underline block">Collaboration with Materialise...</a>
                     </li>
                     
@@ -344,12 +410,6 @@ So, is Steven Van Gucht’s claim correct?</p>
                         
                         
                         <a href="/the-invisible-war-against-women" class="text-slate-100 hover:underline block">Sir Adas' series...</a>
-                    </li>
-                    
-                    <li class="mb-2">
-                        
-                        
-                        <a href="/giving-circular-economy-a-boost" class="text-slate-100 hover:underline block">Giving circular economy...</a>
                     </li>
                      -->
                 </ul>

@@ -9,6 +9,7 @@
 <title>Sir Adas’ series; Ada Lovelace, the first programmer | Elucidata - Your AI experience</title>
 <meta name="generator" content="Jekyll v4.3.3" />
 <meta property="og:title" content="Sir Adas’ series; Ada Lovelace, the first programmer" />
+<meta name="author" content="Sarah Klein" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Programming is for men! Withroughly 23 %1female workers in the IT sector in Belgium, this assumption seems to suggest itself. And still, the first person ever regarded to be a programmer was a woman namelyAda Lovelaceback in 1843." />
 <meta property="og:description" content="Programming is for men! Withroughly 23 %1female workers in the IT sector in Belgium, this assumption seems to suggest itself. And still, the first person ever regarded to be a programmer was a woman namelyAda Lovelaceback in 1843." />
@@ -22,7 +23,7 @@
 <meta property="twitter:image" content="http://localhost:4000/src/assets/ada-lovelace-1068x653-1.jpg" />
 <meta property="twitter:title" content="Sir Adas’ series; Ada Lovelace, the first programmer" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-05-19T00:00:00+02:00","datePublished":"2021-05-19T00:00:00+02:00","description":"Programming is for men! Withroughly 23 %1female workers in the IT sector in Belgium, this assumption seems to suggest itself. And still, the first person ever regarded to be a programmer was a woman namelyAda Lovelaceback in 1843.","headline":"Sir Adas’ series; Ada Lovelace, the first programmer","image":"http://localhost:4000/src/assets/ada-lovelace-1068x653-1.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/ada-lovelace-the-first-programmer"},"url":"http://localhost:4000/ada-lovelace-the-first-programmer"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Sarah Klein"},"dateModified":"2021-05-19T00:00:00+02:00","datePublished":"2021-05-19T00:00:00+02:00","description":"Programming is for men! Withroughly 23 %1female workers in the IT sector in Belgium, this assumption seems to suggest itself. And still, the first person ever regarded to be a programmer was a woman namelyAda Lovelaceback in 1843.","headline":"Sir Adas’ series; Ada Lovelace, the first programmer","image":"http://localhost:4000/src/assets/ada-lovelace-1068x653-1.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/ada-lovelace-the-first-programmer"},"url":"http://localhost:4000/ada-lovelace-the-first-programmer"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -36,6 +37,7 @@
 
     <!-- Tailwind cascade styling sheet -->
     <link rel="stylesheet" href="/src/styles/output.css" type="text/css">
+    <link rel="stylesheet" href="src/styles/styles.css"">
 
     <!-- Icons and small favicons -->
     <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
@@ -115,6 +117,7 @@
     <title>Sir Adas' series; Ada Lovelace, the first programmer</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="src/styles/styles.css"">
 </head>
 <body class="font-[Poppins] bg-gradient-to-br from-gray-50 via-sky-200 to-blue-300 min-h-screen">
     <div class="mx-auto px-4 lg:px-60 xl:px-96 pt-32">
@@ -122,19 +125,30 @@
         <div class="flex justify-between pt-8 p-8">
             <!-- Left side -->
             <div class="flex items-center space-x-4">
+                
                 <!-- Dummy image -->
                 <div class="w-12 h-12 flex items-center justify-center border border-gray-300 rounded-full">
-                    <img src="src/assets/author-icon.png" alt="Author face image" class="w-10 h-10 rounded-full">
+                    <img src="src/assets/group_photos/Sarah Klein.jpg" alt="Author face image" class="w-10 h-10 rounded-full">
                 </div>
 
                 <!-- Author name and post date -->
                 <div class="text-sm">
                     <div class="font-semibold">Written by
+
                         
-                          eluciDATA
-                        
+
+                        Sarah Klein (copy email
+                            <div class="copy-container">
+                                <i class="fas fa-clipboard copy-icon" onclick="copyToClipboard('sarah.klein@sirris.be', 'copyMessage-1')"></i>
+                                <div class="copy-message" id="copyMessage-1">Copied to clipboard!</div>
+                            </div>)
                     </div>
                     <div class="text-gray-500">On 19 May 2021</div>
+                    
+                    <!-- <div class="copy-container">
+                        <i class="fas fa-clipboard copy-icon" onclick="copyToClipboard('email@example.com', 'copyMessage-1')"></i>
+                        <div class="copy-message" id="copyMessage-1">Copied to clipboard!</div>
+                    </div> -->
                 </div>
             </div>
             <!-- Right side -->
@@ -159,37 +173,46 @@
             <img src="src/assets/ada-lovelace-1068x653-1.jpg" alt="Sir Adas' series; Ada Lovelace, the first programmer - Featured Image" class="rounded-xl shadow-lg mb-8">
             <!-- <a href="src/assets/ada-lovelace-1068x653-1.jpg" target="_blank" class="text-center text-blue-600 text-md font-medium pb-8 block hover:underline">Image Link</a> -->
             <div class="text-lg leading-relaxed mb-8">
-                <p><span style="color:#4b4b4b">Programming is for men! With&nbsp;roughly 23 %<sup>1</sup>&nbsp;female workers in the IT sector in Belgium, this assumption seems to suggest itself. And still, the first person ever regarded to be a programmer was a woman – namely&nbsp;Ada Lovelace&nbsp;back in 1843.&nbsp;</span></p>
+                
+                
+                    <p>Programming is for men! With roughly <a href="https://werk.belgie.be/nl/publicaties/de-loonkloof-tussen-vrouwen-en-mannen-belgie-rapport-2021" target="_blank" alt="Gender gap salary" class="text-blue-600 underline">23 %[1] female workers in the IT sector in Belgium</a>, this assumption seems to suggest itself. And still, the first person ever regarded to be a programmer was a woman – namely Ada Lovelace back in 1843.</p>
 
-<p><span style="color:#4b4b4b">Supported by her mother – in her opinion to prevent her&nbsp;from developing her father's&nbsp;(Lord Byron)&nbsp;perceived insanity&nbsp;– she eagerly studied mathematics and logic. When meeting Charles Babbage and learning about his Analytical Engine she was enthusiastic about the idea of a machine that&nbsp;&nbsp;</span></p>
+<p><br /></p>
 
-<p><span style="color:#4b4b4b">“has no pretensions whatever to originate&nbsp;anything. It can do whatever we know how&nbsp;to order it  to perform. It can follow analysis; but it has no power of anticipating any analytical relations or truths.”</span></p>
+<p>Supported by her mother – in her opinion to prevent her from developing her father’s (Lord Byron) perceived insanity – she eagerly studied mathematics and logic. When meeting Charles Babbage and learning about his Analytical Engine she was enthusiastic about the idea of a machine that</p>
 
-<p><span style="color:#4b4b4b">Not only that she developed a method for calculating the Bernoulli number on the Analytical Engine (considered the first&nbsp;published algorithm ever, but&nbsp;unfortunately never built), it was her driving the work and believing in it. That given, she was not only a talented mathematician but also a visioner and innovation driver.&nbsp;And&nbsp;most importantly, recognized&nbsp;as such&nbsp;by others (amongst them many&nbsp;men) in a time and age&nbsp;when&nbsp;women were&nbsp;still seen&nbsp;as just a&nbsp;pretty&nbsp;adornment of&nbsp;the décor.&nbsp;&nbsp;</span></p>
+<p><br /></p>
 
-<p><span style="color:#4b4b4b">On the international day of women in mathematics, we are happy to announce the birth of a new blog series, namely the SirAdas blog. Its mission is to spread and promote achievements of women passionate about science, technology and innovation. In other words, the modern Ada Lovelaces.</span></p>
+<p><em>“has no pretensions whatever to originate anything. It can do whatever we know how to order it to perform. It can follow analysis; but it has no power of anticipating any analytical relations or truths.”</em></p>
 
-<p><span style="color:#4b4b4b">Let’s celebrate and cherish women’s&nbsp;intelligence and creativity!&nbsp;Follow&nbsp;and contribute to&nbsp;our blog!&nbsp;</span></p>
+<p><br /></p>
 
-<p><span style="color:#4b4b4b"><strong>Your SirAdas: Sarah, Anna, Tatiana, Caroline and Elena</strong></span></p>
+<p>Not only that she developed a method for calculating the Bernoulli number on the Analytical Engine (considered the first published algorithm ever, but unfortunately never built), it was her driving the work and believing in it. That given, she was not only a talented mathematician but also a visioner and innovation driver. And most importantly, recognized as such by others (amongst them many men) in a time and age when women were still seen as just a pretty adornment of the décor.</p>
 
-<p><span style="color:#4b4b4b">&nbsp;</span></p>
+<p><br /></p>
 
-<p><span style="color:#4b4b4b"><em><sup>1</sup><a href="https://werk.belgie.be/nl/publicaties/de-loonkloof-tussen-vrouwen-en-mannen-belgie-rapport-2021" style="box-sizing:inherit; text-decoration:underline; text-decoration-skip:ink; transition:all 0.3s ease-in-out; color:#e75012">https://werk.belgie.be/nl/publicaties/de-loonkloof-tussen-vrouwen-en-mannen-belgie-rapport-2021 </a></em></span></p>
+<p>On the international day of women in mathematics, we are happy to announce the birth of a new blog series, namely the SirAdas blog. Its mission is to spread and promote achievements of women passionate about science, technology and innovation. In other words, the modern Ada Lovelaces.</p>
 
-<p><span style="color:#4b4b4b"><em><sup>2</sup><a href="http://www.fourmilab.ch/babbage/sketch.html" style="box-sizing:inherit; text-decoration:underline; text-decoration-skip:ink; transition:all 0.3s ease-in-out; color:#e75012">http://www.fourmilab.ch/babbage/sketch.html</a></em></span></p>
+<p><br /></p>
 
+<p>Let’s celebrate and cherish women’s intelligence and creativity! Follow and contribute to our blog!</p>
+
+                
             </div>
             <hr class="h-0.5 my-8 bg-gray-500 border-0">
 
-            <p class="mb-4 font-semibold italic text-xl text-gray-700">
+            <!-- <p class="mb-4 font-semibold italic text-xl text-gray-700">
                 Let us know what you think about this article. Submit a letter to the editor at
                 
-                <a href="mailto:elucidatalab@sirris.be">elucidatalab@sirris.be</a>.
-            </p>
-            <hr class="h-0.5 my-8 bg-gray-500 border-0">
+                <a href="mailto:sarahklein">sarahklein</a>.
+            </p> -->
+            <!-- <hr class="h-0.5 my-8 bg-gray-500 border-0">
             <h2 class="mb-4 font-bold text-3xl text-gray-700">You Might Also Like …</h2>
             <ul class="list-disc pl-4 mb-8">
+            
+            <li class="mb-2">
+                <a href="/conscious-ieee24-paper" class="text-blue-500 hover:underline">Novel approach on contextual anomaly detection presented at IEEE International Conference on Evolving and Adaptive Systems 2024</a>
+            </li>
             
             <li class="mb-2">
                 <a href="/samuel-itea-excellence-award" class="text-blue-500 hover:underline">Collaboration with Materialise and Cr3do selected for the ITEA Award of Excellence for Innovation</a>
@@ -207,15 +230,11 @@
                 <a href="/giving-circular-economy-a-boost" class="text-blue-500 hover:underline">Giving circular economy a boost by improving refurbishment process of household appliances</a>
             </li>
             
-            <li class="mb-2">
-                <a href="/interview-3e-and-elucidata-lab" class="text-blue-500 hover:underline">Interview 3E and EluciDATA Lab in the framework of the campaign "AI to boost your SME" by the FPS Economie</a>
-            </li>
-            
-            </ul>
+            </ul> -->
 
             <hr class="h-0.5 my-8 bg-gray-500 border-0">
 
-            <div class="mb-8">
+            <!-- <div class="mb-8">
                 <h2 class="font-bold text-3xl mb-4 text-gray-700">Categories</h2>
                 <ul class="flex flex-wrap text-center justify-start">
                     
@@ -224,21 +243,23 @@
                     
                         <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Projects</li>
                     
-                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Sir Adas' series</li>
+                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Sir_Adas'_series</li>
                     
                         <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Circular economy</li>
                     
-                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Events</li>
+                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Sir Adas' series</li>
                     
-                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Intelligent transportation systems</li>
+                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Intelligent_transportation_systems</li>
                     
                         <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Funding</li>
                     
                         <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Trainings</li>
                     
+                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Events</li>
+                    
                 </ul>
             </div>
-            <hr class="h-px my-8 bg-gray-400 border-0">
+            <hr class="h-px my-8 bg-gray-400 border-0"> -->
         </div>
     </div>
 
@@ -307,6 +328,12 @@
                     <li class="mb-2">
                         
                         
+                        <a href="/conscious-ieee24-paper" class="text-slate-100 hover:underline block">Novel approach on...</a>
+                    </li>
+                    
+                    <li class="mb-2">
+                        
+                        
                         <a href="/samuel-itea-excellence-award" class="text-slate-100 hover:underline block">Collaboration with Materialise...</a>
                     </li>
                     
@@ -320,12 +347,6 @@
                         
                         
                         <a href="/the-invisible-war-against-women" class="text-slate-100 hover:underline block">Sir Adas' series...</a>
-                    </li>
-                    
-                    <li class="mb-2">
-                        
-                        
-                        <a href="/giving-circular-economy-a-boost" class="text-slate-100 hover:underline block">Giving circular economy...</a>
                     </li>
                      -->
                 </ul>

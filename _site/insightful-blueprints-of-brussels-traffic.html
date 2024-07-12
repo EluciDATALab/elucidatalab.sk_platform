@@ -9,7 +9,7 @@
 <title>Insightful blueprints of Brussels traffic emerge in times of covid-19 | Elucidata - Your AI experience</title>
 <meta name="generator" content="Jekyll v4.3.3" />
 <meta property="og:title" content="Insightful blueprints of Brussels traffic emerge in times of covid-19" />
-<meta name="author" content="Michiel Dhont and Elena Tsiporkova" />
+<meta name="author" content="Michiel Dhont" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="In the context of the MISTic project, the EluciDATA Lab of Sirris started in the beginning of 2020 to gather publicly available data of the traffic in Brussels. At that moment, we did not have the slightest suspicion that the escalation of the corona epidemic will deliver a unique real-world dataset for our research. We are happy to share some of our very preliminary findings in this blog. More to follow in the upcoming weeks." />
 <meta property="og:description" content="In the context of the MISTic project, the EluciDATA Lab of Sirris started in the beginning of 2020 to gather publicly available data of the traffic in Brussels. At that moment, we did not have the slightest suspicion that the escalation of the corona epidemic will deliver a unique real-world dataset for our research. We are happy to share some of our very preliminary findings in this blog. More to follow in the upcoming weeks." />
@@ -23,7 +23,7 @@
 <meta property="twitter:image" content="http://localhost:4000/src/assets/cover%20photo%20-%20blog%201_0.jpg" />
 <meta property="twitter:title" content="Insightful blueprints of Brussels traffic emerge in times of covid-19" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Michiel Dhont and Elena Tsiporkova"},"dateModified":"2020-04-29T00:00:00+02:00","datePublished":"2020-04-29T00:00:00+02:00","description":"In the context of the MISTic project, the EluciDATA Lab of Sirris started in the beginning of 2020 to gather publicly available data of the traffic in Brussels. At that moment, we did not have the slightest suspicion that the escalation of the corona epidemic will deliver a unique real-world dataset for our research. We are happy to share some of our very preliminary findings in this blog. More to follow in the upcoming weeks.","headline":"Insightful blueprints of Brussels traffic emerge in times of covid-19","image":"http://localhost:4000/src/assets/cover%20photo%20-%20blog%201_0.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/insightful-blueprints-of-brussels-traffic"},"url":"http://localhost:4000/insightful-blueprints-of-brussels-traffic"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Michiel Dhont"},"dateModified":"2020-04-29T00:00:00+02:00","datePublished":"2020-04-29T00:00:00+02:00","description":"In the context of the MISTic project, the EluciDATA Lab of Sirris started in the beginning of 2020 to gather publicly available data of the traffic in Brussels. At that moment, we did not have the slightest suspicion that the escalation of the corona epidemic will deliver a unique real-world dataset for our research. We are happy to share some of our very preliminary findings in this blog. More to follow in the upcoming weeks.","headline":"Insightful blueprints of Brussels traffic emerge in times of covid-19","image":"http://localhost:4000/src/assets/cover%20photo%20-%20blog%201_0.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/insightful-blueprints-of-brussels-traffic"},"url":"http://localhost:4000/insightful-blueprints-of-brussels-traffic"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -37,6 +37,7 @@
 
     <!-- Tailwind cascade styling sheet -->
     <link rel="stylesheet" href="/src/styles/output.css" type="text/css">
+    <link rel="stylesheet" href="src/styles/styles.css"">
 
     <!-- Icons and small favicons -->
     <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
@@ -116,6 +117,7 @@
     <title>Insightful blueprints of Brussels traffic emerge in times of covid-19</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="src/styles/styles.css"">
 </head>
 <body class="font-[Poppins] bg-gradient-to-br from-gray-50 via-sky-200 to-blue-300 min-h-screen">
     <div class="mx-auto px-4 lg:px-60 xl:px-96 pt-32">
@@ -123,19 +125,30 @@
         <div class="flex justify-between pt-8 p-8">
             <!-- Left side -->
             <div class="flex items-center space-x-4">
+                
                 <!-- Dummy image -->
                 <div class="w-12 h-12 flex items-center justify-center border border-gray-300 rounded-full">
-                    <img src="src/assets/author-icon.png" alt="Author face image" class="w-10 h-10 rounded-full">
+                    <img src="src/assets/group_photos/Michiel Dhont.jpg" alt="Author face image" class="w-10 h-10 rounded-full">
                 </div>
 
                 <!-- Author name and post date -->
                 <div class="text-sm">
                     <div class="font-semibold">Written by
+
                         
-                          Michiel Dhont and Elena Tsiporkova
-                        
+
+                        Michiel Dhont (copy email
+                            <div class="copy-container">
+                                <i class="fas fa-clipboard copy-icon" onclick="copyToClipboard('michiel.dhont@sirris.be', 'copyMessage-1')"></i>
+                                <div class="copy-message" id="copyMessage-1">Copied to clipboard!</div>
+                            </div>)
                     </div>
                     <div class="text-gray-500">On 29 Apr 2020</div>
+                    
+                    <!-- <div class="copy-container">
+                        <i class="fas fa-clipboard copy-icon" onclick="copyToClipboard('email@example.com', 'copyMessage-1')"></i>
+                        <div class="copy-message" id="copyMessage-1">Copied to clipboard!</div>
+                    </div> -->
                 </div>
             </div>
             <!-- Right side -->
@@ -160,80 +173,67 @@
             <img src="src/assets/cover photo - blog 1_0.jpg" alt="Insightful blueprints of Brussels traffic emerge in times of covid-19 - Featured Image" class="rounded-xl shadow-lg mb-8">
             <!-- <a href="src/assets/cover photo - blog 1_0.jpg" target="_blank" class="text-center text-blue-600 text-md font-medium pb-8 block hover:underline">Image Link</a> -->
             <div class="text-lg leading-relaxed mb-8">
-                <p>In the context of an industrial PhD project sponsored by Innoviris, the EluciDATA Lab of Sirris joined forces with Macq and VUB to contribute to better traffic management solutions for the city of Brussels. To this end, we aim for developing an advanced trend analytics engine that facilitates understanding traffic situations in an accurate and situation-aware way.</p>
+                
+                
+                    <p><br /></p>
+
+<p>In the context of an industrial PhD project sponsored by Innoviris, the EluciDATA Lab of Sirris joined forces with Macq and VUB to contribute to better traffic management solutions for the city of Brussels. To this end, we aim for developing an advanced trend analytics engine that facilitates understanding traffic situations in an accurate and situation-aware way.</p>
+
+<p><br /></p>
 
 <p>In January 2020, we started gathering publicly available data captured by Brussels Mobility at 55 locations in the city, without having the slightest suspicion that the escalation of the corona epidemic will deliver interesting data to analyse.</p>
 
+<p><br /></p>
+
 <p>The lockdown measures introduced on 13/03 imposed serious restrictions on the traffic in Brussels, permitting only limited commuting. In this way, the observed traffic after the introduction of the measures can be considered as an opportunity to derive some characteristic blueprints of the traffic in Brussels.</p>
 
-<p>Traffic volume unevenly affected by the lockdown</p>
+<p><br /></p>
+
+<h3 id='traffic-volume-unevenly-affected-by-the-lockdown' class='text-2xl font-semibold text-gray-600'>Traffic volume unevenly affected by the lockdown</h3>
+
+<p><br /></p>
 
 <p>As expected, the overall traffic volume in Brussels has dramatically reduced during the lockdown period. The figure below illustrates the percentage of traffic volume retained during the lockdown in comparison to the period before for all observed locations. For some key locations (e.g. Keizer Karellaan, Willebroekkaai and Troontunnel), more than 50% of the traffic was retained, while other locations (e.g. Lorrainedreef, Vleurgattunnel and Stefaniatunnel exit direction centrum) have seen a substantial reduction, up to 80%, of traffic volume in comparison to the pre-lockdown period.</p>
 
+<p><br /></p>
+
 <p>On average 40% of the traffic volume was retained during the lockdown. The blue dots in the image indicate the locations where the amount of traffic has decreased more than the average, while the red dots indicate a smaller decrease than the average. It is clear the small ring of Brussels retains more volume compared to the residential areas around it. This might mean the functional traffic in the city of Brussels is less reduced than the recreational traffic.</p>
+
+<p><br /></p>
 
 <p>However, focusing on the rush hour periods offers completely different figures. For instance, the left figure below depicts the percentage of traffic volume retained during the lockdown period for each location between 6:00 and 9:00 on workdays. It can be observed that the morning traffic for some locations (e.g. Kunst-Wettunnel, Troontunnel and Tervurentunnel) is in the range of 80% of its normal volume, i.e. it is only slightly reduced due to the covid-19 restrictions.</p>
 
+<p><br /></p>
+
 <p>Analogously, the evening traffic between 16:00 and 20:00 on workdays, delivers similar results as visualised in the right figure above. For instance, for the locations at Rogiertunnel, Kunst-Wettunnel and Troontunnel between 65% and 80% of the regular traffic volume has been retained.</p>
+
+<p><br /></p>
 
 <p>All the above is yet one more confirmation of how saturated the traffic in Brussels has become in the recent years. Even a lockdown situation, never experienced before, is not able to relieve the traffic intensity of the busiest locations in Brussels. It is also important to realise that those very hectic traffic locations in Brussels are probably not that much affected by school related as well as by recreational traffic. This explains to some extent why the lockdown does not affect the traffic volume so much for these locations.</p>
 
-<p>Fingerprinting of weekly traffic confirms compliance with lockdown measures</p>
+<p><br /></p>
+
+<h3 id='fingerprinting-of-weekly-traffic-confirms-compliance-with-lockdown-measures' class='text-2xl font-semibold text-gray-600'>Fingerprinting of weekly traffic confirms compliance with lockdown measures</h3>
+
+<p><br /></p>
 
 <p>In the plots below, we have extracted a weekly traffic intensity fingerprint for two monitored locations in the form of a circular heatmap. The circular heatmap depicts the days of the week as concentration circles starting with Monday in the inner circle, followed by Tuesday in the next circle and so on till placing Sunday in on the most outer one. The circles are divided in sectors of 1 hour. The darker the colour of a sector the more intense traffic has been observed.</p>
 
-<p>The plot depicts the intensity fingerprints for weeks 8 to 16 (17th of February to 19th of April) for the Tervurentunnel (in direction of the city centre) and the Troontunnel (direction Belliard). It is interesting to observe how the traffic intensity evolved across the weeks for each of the locations. Starting on Saturday (March the 14th, week 11) restaurants had to close and some non-essential shops were not allowed to open during the weekend, which resulted in a somewhat reduced traffic during the weekend for this week. On Wednesday (March the 18th) at 12:00 in the following week (week 12), even more restrictions were applied, e.g. more shops had to close and non-essential travels by private vehicles were prohibited, which is clearly detectable in the heatmap of week 12.</p>
-
-<p>From week 13 onwards (lockdown), we obtain for each week a very similar profile. The similarity between those consecutive weeks indicates that citizens in Brussels continue to follow the measures as well as at the beginning, no relaxation can be observed. These latter profiles are very interesting since they offer a kind of blueprint for the amount of absolutely inevitable traffic in Brussels.</p>
-
-<p>Distilling traffic volumes associated to specific activities</p>
-
-<p>The collected data spans over a time period covering 3 different distinct traffic situations:</p>
-
-<p>Normal referring to regular work-school etc. weeks.
-Carnival holidays referring to the vacation (week 9), which excludes school-related traffic and some work-related traffic due to parents taking vacation. At the same time, those families have more time for recreational trips (e.g. city trips, sport, shopping, etc.).
-Lockdown weeks referring to the period of activity restrictions due to covid-19 measures, including only traffic related to work which cannot be performed via teleworking and other minimal essential traffic (e.g. shopping for food).</p>
-
-<p>In the figure below, 5 heatmaps are shown concerning traffic information of the Troontunnel. The top three heatmaps are showing the characteristic fingerprints of the three distinct traffic situations. For the normal and regular fingerprints, the traffic volumes represented are aggregated over several weeks, while the carnival fingerprint is based on the traffic counts of a single week (week 9).</p>
-
-<p>Comparing the characteristic fingerprints allows to disaggregate the traffic volume into separate intensities associated with different activities. For instance, by subtracting the vehicle counts during the carnival holidays from the counts of normal weeks, a new (fingerprint) heatmap is obtained, labelled with “1”. The red sectors in the heatmap indicate more traffic volumes for the normal week when comparing with the vacation period and the blue sectors signify less traffic in the regular week, i.e. increase of traffic during the vacation for those time slots. For instance, the Troontunnel shows both increases and decreases of traffic during the carnival period in comparison to the regular weeks. The differences in vehicle counts are spread over the whole heatmap and do not seem to have daily recurring peaks. The latter might be because in general there is not a lot of school traffic in that area. If this is correct, we actually segregated the amount of traffic which is additional recreational traffic due to the holidays.</p>
-
-<p>The fingerprint labeled with “2”, resulting from subtracting lockdown traffic volumes from the corresponding ones during the vacation week, is more intriguing. Both fingerprints summarize traffic volumes not containing school-related travel. However, the vacation week still contains a lot of recreational traffic related to school children, which is not the case for the lockdown weeks. In addition, the vacation week also captures traffic related to people who switched to teleworking or are technically unemployed during the lockdown and also non-essential activities (e.g. non-food shopping, restaurant dinners and events). All those missing activities during the lockdown were captured in heatmap “2”. In there, the red color denotes the amount of traffic volume reduced during the lockdown vs. the vacation week, while the blue color denotes an increase of traffic volume. Clear morning and evening red peaks can be observed, which signify substantial reduction of work-related traffic due to the covid-19 restrictions. Outside the morning and evening segments, more traffic is observed during the vacation week compared to the lockdown weeks, which can be attributed to recreational and other ‘non-essential’ traffic, e.g. sport, restaurants, events, etc.</p>
-
-<p>The purpose of this analysis is to illustrate that due to the unique restrictions for covid-19, we are able to split the characteristic fingerprint of normal traffic into three subcategories. Or in other words, the normal heatmap can be disaggregated into the sum of heatmaps 1, 2 and 3.</p>
-
-<p>Most of the present teleworkers are typically biking to work?</p>
-
-<p>Similarly, as for vehicle traffic, we have extracted a weekly intensity fingerprint for biking traffic since we also have access to bike counting data of the city of Brussels. The heatmaps for two locations during weeks 8-16, displayed below, show that the intensity of the biking traffic has increased in the lockdown weeks. This is not surprising since walking and biking is practically the only allowed outdoor activity. For example, in the Koolmijnkaai, a street in the city centre, we can see that after the covid-19 restrictions the clear morning and evening peaks disappeared, but the amount of traffic (most probably recreational) during the afternoon (especially in the weekend) increases. In the Franklin Rooseveltlaan (near to Ter Kamerenbos) this difference is even more pronounced.</p>
-
-<p>It is also interesting to observe the clear morning and evening peaks in the Koolmijnkaai, which must be mostly representing work commuting as there is no peak on Wednesday afternoon. Note that the morning and evening peaks have fully disappeared in the lockdown weeks. This raises the question whether most of the bikers switched to teleworking during the lockdown.</p>
-
-<p>Is speeding induced by too much traffic?</p>
-
-<p>Another interesting measure for studying Brussels traffic is of course speed. The figure below displays the relative difference in average speed, i.e. lockdown vs. normal period, for each of the 55 locations. For instance, an average slowdown of 14 km/h was detected in the Georges Henri tunnel, while an increase of 12 km/h, on average, was observed in the Troontunnel, more than 50% of the traffic was retained, while other locations (e.g. Lorrainedreef, Vleurgattunnel and Stefaniatunnel exit direction centrum) have seen a substantial reduction, up to 80%, of traffic volume in comparison to the pre-lockdown period.</p>
-
-<p>On average 40% of the traffic volume was retained during the lockdown. The blue dots in the image indicate the locations where the amount of traffic has decreased more than the average, while the red dots indicate a smaller decrease than the average. It is clear the small ring of Brussels retains more volume compared to the residential areas around it. This might mean the functional traffic in the city of Brussels is less reduced than the recreational traffic.</p>
-
-<p><img alt="traffic count 1.png" src="../img/blogs/traffic count 1.png" /></p>
-<p>However, focusing on the rush hour periods offers completely different figures. For instance, the left figure below depicts the percentage of traffic volume retained during the lockdown period for each location between 6:00 and 9:00 on workdays. It can be observed that the morning traffic for some locations (e.g. Kunst-Wettunnel, Troontunnel and Tervurentunnel) is in the range of 80% of its normal volume, i.e. it is only slightly reduced due to the covid-19 restrictions.</p>
-
-<p><img alt="peaks.png" src="../img/blogs/peaks.png" /></p>
-
-<p>Analogously, the evening traffic between 16:00 and 20:00 on workdays, delivers similar results as visualised in the right figure above. For instance, for the locations at Rogiertunnel, Kunst-Wettunnel and Troontunnel between 65% and 80% of the regular traffic volume has been retained.</p>
-
-<p>-All the above is yet one more confirmation of how saturated the traffic in Brussels has become in the recent years. Even a lockdown situation, never experienced before, is not able to relieve the traffic intensity of the busiest locations in Brussels. It is also important to realise that those very hectic traffic locations in Brussels are probably not that much affected by school related as well as by recreational traffic. This explains to some extent why the lockdown does not affect the traffic volume so much for these locations.</p>
-
-<p>Fingerprinting of weekly traffic confirms compliance with lockdown measures</p>
-
-<p>In the plots below, we have extracted a weekly traffic intensity fingerprint for two monitored locations in the form of a circular heatmap. The circular heatmap depicts the days of the week as concentration circles starting with Monday in the inner circle, followed by Tuesday in the next circle and so on till placing Sunday in on the most outer one. The circles are divided in sectors of 1 hour. The darker the colour of a sector the more intense traffic has been observed.</p>
-
-<p><img alt="Tervurentunnel_0.png" src="/sites/default/files/projects/MISTic/Tervurentunnel_0.png" /> <img alt="Troontunnel_0.png" src="../img/blogs/Troontunnel_0.png" /></p>
+<p><br /></p>
+<center><img alt="Tervurentunnel_0.png" src="src/assets/Tervurentunnel_0.png" class="center" /> <img alt="Troontunnel_0.png" src="src/assets/Troontunnel_0.png" class="center" /></center>
+<p><br /></p>
 
 <p>The plot depicts the intensity fingerprints for weeks 8 to 16 (17<sup>th</sup> of February to 19<sup>th</sup> of April) for the Tervurentunnel (in direction of the city centre) and the Troontunnel (direction Belliard). It is interesting to observe how the traffic intensity evolved across the weeks for each of the locations. Starting on Saturday (March the 14<sup>th</sup>, week 11) restaurants had to close and some non-essential shops were not allowed to open during the weekend, which resulted in a somewhat reduced traffic during the weekend for this week. On Wednesday (March the 18<sup>th</sup>) at 12:00 in the following week (week 12), even more restrictions were applied, e.g. more shops had to close and non-essential travels by private vehicles were prohibited, which is clearly detectable in the heatmap of week 12.</p>
 
+<p><br /></p>
+
 <p>From week 13 onwards (lockdown), we obtain for each week a very similar profile. The similarity between those consecutive weeks indicates that citizens in Brussels continue to follow the measures as well as at the beginning, no relaxation can be observed. These latter profiles are very interesting since they offer a kind of blueprint for the amount of absolutely inevitable traffic in Brussels.</p>
 
-<p>Distilling traffic volumes associated to specific activities</p>
+<p><br /></p>
+
+<h3 id='distilling-traffic-volumes-associated-to-specific-activities' class='text-2xl font-semibold text-gray-600'>Distilling traffic volumes associated to specific activities</h3>
+
+<p><br /></p>
 
 <p>The collected data spans over a time period covering 3 different distinct traffic situations:</p>
 
@@ -243,63 +243,95 @@ Lockdown weeks referring to the period of activity restrictions due to covid-19 
 	<li class="rtejustify"><strong>Lockdown</strong> weeks referring to the period of activity restrictions due to covid-19 measures, including only traffic related to work which cannot be performed via teleworking and other minimal essential traffic (e.g. shopping for food).</li>
 </ol>
 
+<p><br /></p>
+
 <p>In the figure below, 5 heatmaps are shown concerning traffic information of the Troontunnel. The top three heatmaps are showing the characteristic fingerprints of the three distinct traffic situations. For the normal and regular fingerprints, the traffic volumes represented are aggregated over several weeks, while the carnival fingerprint is based on the traffic counts of a single week (week 9).</p>
+
+<p><br /></p>
 
 <p>Comparing the characteristic fingerprints allows to disaggregate the traffic volume into separate intensities associated with different activities. For instance, by subtracting the vehicle counts during the carnival holidays from the counts of normal weeks, a new (fingerprint) heatmap is obtained, labelled with “1”. The red sectors in the heatmap indicate more traffic volumes for the normal week when comparing with the vacation period and the blue sectors signify less traffic in the regular week, i.e. increase of traffic during the vacation for those time slots. For instance, the Troontunnel shows both increases and decreases of traffic during the carnival period in comparison to the regular weeks. The differences in vehicle counts are spread over the whole heatmap and do not seem to have daily recurring peaks. The latter might be because in general there is not a lot of school traffic in that area. If this is correct, we actually segregated the amount of traffic which is additional recreational traffic due to the hollidays.</p>
 
-<p><img alt="Troontunnel 1.png" src="../img/blogs/Troontunnel 1.png" /></p>
+<p><br /></p>
+<center><img alt="Tervurentunnel_1.png" src="src/assets/Troontunnel 1.png" class="center" /></center>
+<p><br /></p>
 
 <p>The fingerprint labeled with “2”,  resulting from subtracting lockdown traffic volumes from the corresponding ones during the vacation week, is more intriguing. Both fingerprints summarize traffic volumes not containing school-related travel. However, the vacation week still contains a lot of recreational traffic related to school children, which is not the case for the lockdown weeks. In addition, the vacation week also captures traffic related to people who switched to teleworking or are technically unemployed during the lockdown and also non-essential activities (e.g. non-food shopping, restaurant dinners and events). All those missing activities during the lockdown were captured in heatmap “2”. In there, the red color denotes the amount of traffic volume reduced during the lockdown vs. the vacation week, while the blue color denotes an increase of traffic volume. Clear morning and evening red peaks can be observed, which signify substantial reduction of work-related traffic due to the covid-19 restrictions. Outside the morning and evening segments, more traffic is observed during the vacation week compared to the lockdown weeks, which can be attributed to reacreational and other ‘non-essential’ traffic, e.g. sport, restaurants, events, etc.</p>
 
+<p><br /></p>
+
 <p>The purpose of this analysis is to illustrate that due to the unique restrictions for covid-19, we are able to split the characteristic fingerprint of normal traffic into three subcategories. Or in other words, the normal heatmap can be disaggregated into the sum of heatmaps 1 , 2 and 3.</p>
 
-<p>Most of the present teleworkers are typically biking to work?</p>
+<p><br /></p>
+
+<h3 id='most-of-the-present-teleworkers-are-typically-biking-to-work' class='text-2xl font-semibold text-gray-600'>Most of the present teleworkers are typically biking to work?</h3>
+
+<p><br /></p>
 
 <p>Similarly, as for vehicle traffic, we have extracted a weekly intensity fingerprint for biking traffic since we also have access to bike counting data of the city of Brussels. The heatmaps for two locations during weeks 8-16, displayed below, show that the intensity of the biking traffic has increased in the lockdown weeks. This is not surprising since walking and biking is practically the only allowed outdoor activity. For example, in the Koolmijnkaai, a street in the city centre, we can see that after the covid-19 restrictions the clear morning and evening peaks disappeared, but the amount of traffic (most probably recreational) during the afternoon (especially in the weekend) increases. In the Franklin Rooseveltlaan (near to Ter Kamerenbos) this difference is even more pronounced.</p>
 
-<p><img alt="Koolmijnkaai_0.png" src="/sites/default/files/projects/MISTic/Koolmijnkaai_0.png" /><img alt="Franklin_0.png" src="../img/blogs/Franklin_0.png" /></p>
+<p><br /></p>
+<center><img alt="Koolmijnkaai_0.png" src="src/assets/Koolmijnkaai_0.png" class="center" /> <img alt="Franklin_0.png" src="src/assets/Franklin_0.png" class="center" /></center>
+<p><br /></p>
 
 <p>It is also interesting to observe the clear morning and evening peaks in the Koolmijnkaai, which must be mostly representing work commuting as there is no peak on Wednesday afternoon. Note that the morning and evening peaks have fully disappeared in the lockdown weeks. This raises the question whether most of the bikers switched to teleworking during the lockdown.</p>
 
-<p>Is speeding induced by too much traffic?</p>
+<p><br /></p>
+
+<h3 id='is-speeding-induced-by-too-much-traffic' class='text-2xl font-semibold text-gray-600'>Is speeding induced by too much traffic?</h3>
+
+<p><br /></p>
 
 <p>Another interesting measure for studying Brussels traffic is of course speed. The figure below displays the relative difference in average speed, i.e. lockdown vs. normal period, for each of the 55 locations. For instance, an average slowdown of 14 km/h was detected in the Georges Henri tunnel, while an increase of 12 km/h, on average, was observed in the Troontunnel.</p>
 
-<p><img alt="speeds map.png" src="../img/blogs/speeds map.png" /></p>
+<p><br /></p>
+<center><img alt="speeds map.png" src="src/assets/speeds map.png" class="center" /></center>
+<p><br /></p>
 
 <p>It is normal to expect, considering the traffic in Brussels is very saturated, that for many locations the average speed has increased since the start of the covid-19 restrictions. For instance, during a regular workday, the Troontunnel is often clogged with traffic and the maximum allowed speed of 50km/h is hardly possible. It is interesting to observe that, although the morning and evening peaks of traffic volume in the Troontunnel have been reduced with only 21% in the lockdown, the average speed has increased to the legal maximum. Thus, it seems that the modest reduction of traffic volume is already sufficient to permit fluent traffic flow.</p>
 
-<p><img alt="Speed_troontunnel.png" src="/sites/default/files/projects/MISTic/Speed_troontunnel.png" /><img alt="Speed_georges.png" src="../img/blogs/Speed_georges.png" /></p>
+<p><br /></p>
+<center><img alt="Speed_troontunnel.png" src="src/assets/Speed_troontunnel.png" class="center" /> <img alt="Speed_georges.png" src="src/assets/Speed_georges.png" class="center" /></center>
+<p><br /></p>
 
 <p>It is also remarkable that during the lockdown weeks people seem to respect the legal speed limit more. For instance, the Georges Henri tunnel has a speed limit of 50 km/h which is rarely respected during normal times, as it can be observed from the plots above, showing that the average speed hovers around 70 km/h during the day. However, during the lockdown weeks the average speed dropped to the maximum allowed of 50km/h. The same phenomenon can be observed during the weekends for both mentioned locations.</p>
 
 <p>We believe there are 2 possible explanations for this phenomenon. Either the drivers are less stressed since the traffic is less hectic, there are almost no traffic jams, people are not in hurry for a work/school or any other appointment  (e.g. reservation at a restaurant, training in sports club and music event), or the drivers who typically violate speed limits are not driving in Brussels during the lockdown. Or perhaps we are observing a combination of both?</p>
 
-<h2>What’s next?</h2>
+<p><br /></p>
+
+<h2 id='whats-next' class='text-3xl font-bold text-gray-700'>What’s next?</h2>
 
 <p>The covid-19 restrictions will be phased out in the next weeks/months by the government. It will be interesting to see how fast the population will react to this and whether we will return to the original traffic patterns.</p>
 
-<hr />
+<p><br /></p>
 
-<p><em>Project subsidized by the Brussels-Capital Region - Innoviris.</em><a href="https://innoviris.brussels/" target="_blank"><img alt="RGB_innoviris_we fund your future_MAIN LOGO.jpg" src="../img/blogs/RGB_innoviris_we fund your future_MAIN LOGO.jpg" /></a></p>
+<p><em>Project subsidized by the Brussels-Capital Region - Innoviris.</em><br />
+<br /></p>
+<center><img alt="RGB_innoviris_we fund your future_MAIN LOGO.jpg" src="src/assets/RGB_innoviris_we fund your future_MAIN LOGO.jpg" class="center" href="https://innoviris.brussels/" target="_blank" /></center>
+<p><br /></p>
 
 <p>&nbsp;</p>
 
 <hr />
 
-<p><a href="https://elucidata.be/projects/mistic#Blog" target="_self"><img alt="button_to_blog.jpg" src="../img/blogs/button_to_blog.jpg" /></a></p>
+<!-- <p><a href="https://elucidata.be/projects/mistic#Blog" target="_self"><img alt="button_to_blog.jpg" src="../img/blogs/button_to_blog.jpg" /></a></p> -->
 
+                
             </div>
             <hr class="h-0.5 my-8 bg-gray-500 border-0">
 
-            <p class="mb-4 font-semibold italic text-xl text-gray-700">
+            <!-- <p class="mb-4 font-semibold italic text-xl text-gray-700">
                 Let us know what you think about this article. Submit a letter to the editor at
                 
-                <a href="mailto:michieldhontandelenatsiporkova">michieldhontandelenatsiporkova</a>.
-            </p>
-            <hr class="h-0.5 my-8 bg-gray-500 border-0">
+                <a href="mailto:michieldhont">michieldhont</a>.
+            </p> -->
+            <!-- <hr class="h-0.5 my-8 bg-gray-500 border-0">
             <h2 class="mb-4 font-bold text-3xl text-gray-700">You Might Also Like …</h2>
             <ul class="list-disc pl-4 mb-8">
+            
+            <li class="mb-2">
+                <a href="/conscious-ieee24-paper" class="text-blue-500 hover:underline">Novel approach on contextual anomaly detection presented at IEEE International Conference on Evolving and Adaptive Systems 2024</a>
+            </li>
             
             <li class="mb-2">
                 <a href="/samuel-itea-excellence-award" class="text-blue-500 hover:underline">Collaboration with Materialise and Cr3do selected for the ITEA Award of Excellence for Innovation</a>
@@ -317,15 +349,11 @@ Lockdown weeks referring to the period of activity restrictions due to covid-19 
                 <a href="/giving-circular-economy-a-boost" class="text-blue-500 hover:underline">Giving circular economy a boost by improving refurbishment process of household appliances</a>
             </li>
             
-            <li class="mb-2">
-                <a href="/interview-3e-and-elucidata-lab" class="text-blue-500 hover:underline">Interview 3E and EluciDATA Lab in the framework of the campaign "AI to boost your SME" by the FPS Economie</a>
-            </li>
-            
-            </ul>
+            </ul> -->
 
             <hr class="h-0.5 my-8 bg-gray-500 border-0">
 
-            <div class="mb-8">
+            <!-- <div class="mb-8">
                 <h2 class="font-bold text-3xl mb-4 text-gray-700">Categories</h2>
                 <ul class="flex flex-wrap text-center justify-start">
                     
@@ -334,21 +362,23 @@ Lockdown weeks referring to the period of activity restrictions due to covid-19 
                     
                         <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Projects</li>
                     
-                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Sir Adas' series</li>
+                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Sir_Adas'_series</li>
                     
                         <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Circular economy</li>
                     
-                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Events</li>
+                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Sir Adas' series</li>
                     
-                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Intelligent transportation systems</li>
+                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Intelligent_transportation_systems</li>
                     
                         <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Funding</li>
                     
                         <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Trainings</li>
                     
+                        <li class="mr-4 mb-2 font-normal text-xl text-gray-700">Events</li>
+                    
                 </ul>
             </div>
-            <hr class="h-px my-8 bg-gray-400 border-0">
+            <hr class="h-px my-8 bg-gray-400 border-0"> -->
         </div>
     </div>
 
@@ -417,6 +447,12 @@ Lockdown weeks referring to the period of activity restrictions due to covid-19 
                     <li class="mb-2">
                         
                         
+                        <a href="/conscious-ieee24-paper" class="text-slate-100 hover:underline block">Novel approach on...</a>
+                    </li>
+                    
+                    <li class="mb-2">
+                        
+                        
                         <a href="/samuel-itea-excellence-award" class="text-slate-100 hover:underline block">Collaboration with Materialise...</a>
                     </li>
                     
@@ -430,12 +466,6 @@ Lockdown weeks referring to the period of activity restrictions due to covid-19 
                         
                         
                         <a href="/the-invisible-war-against-women" class="text-slate-100 hover:underline block">Sir Adas' series...</a>
-                    </li>
-                    
-                    <li class="mb-2">
-                        
-                        
-                        <a href="/giving-circular-economy-a-boost" class="text-slate-100 hover:underline block">Giving circular economy...</a>
                     </li>
                      -->
                 </ul>

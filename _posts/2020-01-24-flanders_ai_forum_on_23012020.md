@@ -6,17 +6,20 @@ image: src/assets/IMG_5919.JPG
 categories: [Events, Funding]
 excerpt: On January 23rd, Agoria, Voka, imec and Sirris with the support of VLAIO organized the first Flanders AI Forum with the presence of Hilde Crevits, Viceminister-president, Vlaams minister van Economie, Innovatie, Werk, Social economie en Landbouw, to present different initiatives in the framework of the AI impulsprogramme.
 ---
+On January 23<sup>rd</sup>, Agoria, Voka, imec and Sirris with the support of VLAIO organized the first Flanders AI Forum with the presence of Hilde Crevits, Viceminister-president, Vlaams minister van Economie, Innovatie, Werk, Social economie en Landbouw, to present **different initiatives** in the framework of the AI impulsprogramme.
 
-<p>On January 23<sup>rd</sup>, Agoria, Voka, imec and Sirris with the support of VLAIO organized the first Flanders AI Forum with&nbsp;the presence of Hilde Crevits, Viceminister-president, Vlaams minister van Economie, Innovatie, Werk, Social economie en Landbouw, to present <strong>different initiatives</strong> in the framework of the AI impulsprogramme.</p>
+**Two initiatives** of the EluciDATA Lab were presented:  
 
-<p><strong>Two initiatives</strong> of the EluciDATA Lab were presented:&nbsp;&nbsp;</p>
+The SKAIDive project, which aims at creating an interactive Starter Kit Platform for the adoption of industrial AI and Data Science competencies by companies.
 
-<p>The SKAIDive project, which aims at creating an interactive Starter Kit Platform for the adoption of industrial AI and Data Science competencies by companies.&nbsp;</p>
+<br/>
+<center><img alt="Screenshot 2020-01-24 at 15.07.24.png" src="src/assets/Screenshot 2020-01-24 at 15.07.24.png" class="center" /></center>
+<br/>
 
-<p><img alt="Screenshot 2020-01-24 at 15.07.24.png" src="src/assets/Screenshot 2020-01-24 at 15.07.24.png" /></p>
+The AI4DETAIL project aiming at building up and transferring knowledge related to gathering and exploiting in-the-field asset usage data.
 
-<p>The AI4DETAIL project aiming at building up and transfering knowledge related to gathering and exploiting in-the-field asset usage data.&nbsp;</p>
+<br/>
+<center><img alt="Screenshot 2020-01-24 at 15.07.42_0.png" src="src/assets/Screenshot 2020-01-24 at 15.07.42_0.png" class="center" /></center>
+<br/>
 
-<p><img alt="Screenshot 2020-01-24 at 15.07.42_0.png" src="src/assets/Screenshot 2020-01-24 at 15.07.42_0.png" /></p>
-
-<p>Interested in one of the initiatives? Get in touch with <a href="mailto:elucidatalab@sirris.be">us</a>!</p>
+Interested in one of the initiatives? Get in touch with <a href="mailto:elucidatalab@sirris.be">us</a>!
