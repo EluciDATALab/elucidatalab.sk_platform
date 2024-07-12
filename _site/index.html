@@ -247,18 +247,17 @@
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:max-w-none lg:grid-cols-2">
         <div class="flex flex-col justify-center items-center lg:items-start">
-          <h2 class="text-2xl font-bold tracking-tight text-gray-800 sm:text-3xl">Subscribe to our newsletter</h2>
+          <h2 class="text-2xl font-bold tracking-tight text-gray-800 sm:text-3xl">Request to be subscribed to our newsletter</h2>
           <p class="mt-4 text-lg leading-6 text-gray-600 sm:text-base">Get in touch with the intriguing and evolving AI future</p>
           <form
-            action="https://github.us17.list-manage.com/subscribe/post?u=11f93fd334beb7b02fc0f142c&amp;id=80d07d5b18&amp;f_id=009acde3f0"
-            method="POST"
+            onsubmit="sendEmail(event)"
             class="mt-6 flex flex-col items-center sm:flex-row sm:max-w-md lg:max-w-none lg:items-start w-full"
           >
             <label for="email-address" class="sr-only">Email address</label>
             <input id="email-address" name="EMAIL" type="email" autocomplete="email" required class="py-2 w-full sm:w-auto flex-auto rounded-md border border-gray-300 bg-white px-4 text-gray-900 shadow-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none focus:ring-opacity-50" placeholder="Enter your email">
-            <button type="submit" class="mt-4 sm:mt-0 w-full sm:w-auto px-4 py-2 rounded-md bg-gradient-to-br from-purple-600 to-blue-500 text-white font-semibold shadow-sm hover:bg-gradient-to-bl focus:ring-2 focus:ring-indigo-500 focus:outline-none focus:ring-opacity-50">Subscribe</button>
+            <button type="submit" class="mt-4 sm:mt-0 w-full sm:w-auto px-4 py-2 rounded-md bg-gradient-to-br from-purple-600 to-blue-500 text-white font-semibold shadow-sm hover:bg-gradient-to-bl focus:ring-2 focus:ring-indigo-500 focus:outline-none focus:ring-opacity-50">Send request</button>
           </form>
-          <p id="success-message" class="mt-4 text-green-600 hidden">Subscription successful! Thank you for subscribing.</p>
+          <p id="success-message" class="mt-4 text-green-600 hidden">Request sent. Thank you for your interest!.</p>
         </div>
         <div class="grid grid-cols-1 gap-y-8 lg:gap-y-10">
           <div class="flex flex-col justify-center items-center lg:items-start">
@@ -298,6 +297,17 @@
 <link rel="preload" href="src/assets/data-exploration.webp" as="image">
 <link rel="preload" href="src/assets/algorithm-selection.webp" as="image">
 <link rel="preload" href="src/assets/reference-implementation.webp" as="image">
+
+<script>
+    function sendEmail(event) {
+        event.preventDefault();
+        const email = document.getElementById('email-address').value;
+        const subject = 'newsletter';
+        const body = `add ${email} to newsletter`;
+        window.location.href = `mailto:elucidatalab@sirris.be?subject=Request to add to newsletter&body=Hello, \n Could you please add me to your newsletter? \n Thank you!`;
+        document.getElementById('success-message').classList.remove('hidden');
+    }
+</script>
 <footer class="bg-sky-900 dark:bg-slate-700 p-4 border-t-4 border-gray-200 overflow-hidden flex-shrink-0 sticky top-[100vh]">
     <div class="flex flex-col md:flex-row justify-between items-center h-full">
         <!-- Left Section -->
